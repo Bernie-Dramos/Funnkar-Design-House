@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our portfolio of creative projects">
+    <title>Portfolio | Funnkar Design House</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">F</div>
+                <span>Funnkar Design House</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Screen Menu Overlay -->
+    <nav class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <ul class="menu-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-social">
+                <a href="#" target="_blank">Behance</a>
+                <a href="#" target="_blank">Dribble</a>
+                <a href="#" target="_blank">TumblrPin</a>
+            </div>
+            <div class="menu-contact">
+                <p>Let's talk</p>
+                <p><a href="mailto:info@funnkar.com">info@funnkar.com</a></p>
+                <p>+1 (123) 456-7890</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-color: var(--color-bg-primary); min-height: 60vh;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1>Portfolio</h1>
+                <p style="font-size: 1.25rem; margin-top: 1.5rem; color: var(--color-text-secondary);">
+                    Explore our creative work across branding, design, and digital experiences
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section style="background-color: var(--color-bg-primary); padding: 2rem 0;">
+        <div class="container">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="ui-ux">UI/UX Design</button>
+                <button class="filter-btn" data-filter="web-development">Web Development</button>
+                <button class="filter-btn" data-filter="graphics">Graphics</button>
+                <button class="filter-btn" data-filter="vfx">VFX & Animation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="section" style="background-color: var(--color-bg-primary); padding-top: 2rem;">
+        <div class="container">
+            <div class="grid grid-3" id="portfolioGrid">
+                <!-- Portfolio Item 1 -->
+                <div class="card portfolio-item" data-category="branding ui-ux">
+                    <img src="assets/images/portfolio-1.jpg" alt="Brand Identity Project" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Brand Identity</h3>
+                        <p class="card-description">Complete brand redesign for a modern tech startup</p>
+                        <div class="card-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">UI/UX Design</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="card portfolio-item" data-category="web-development ui-ux">
+                    <img src="assets/images/portfolio-2.jpg" alt="E-Commerce Platform" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">E-Commerce Platform</h3>
+                        <p class="card-description">Full-stack e-commerce solution with custom features</p>
+                        <div class="card-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">E-Commerce</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="card portfolio-item" data-category="graphics branding">
+                    <img src="assets/images/portfolio-3.jpg" alt="Print Campaign" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Print Campaign</h3>
+                        <p class="card-description">Award-winning print design for global brand</p>
+                        <div class="card-tags">
+                            <span class="tag">Graphics</span>
+                            <span class="tag">Print Design</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="card portfolio-item" data-category="ui-ux web-development">
+                    <img src="assets/images/portfolio-4.jpg" alt="Mobile App Design" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Mobile App</h3>
+                        <p class="card-description">iOS and Android app design for fitness platform</p>
+                        <div class="card-tags">
+                            <span class="tag">UI/UX Design</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="card portfolio-item" data-category="branding graphics">
+                    <img src="assets/images/portfolio-5.jpg" alt="Fashion Brand" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Fashion Brand</h3>
+                        <p class="card-description">Complete brand identity for luxury fashion label</p>
+                        <div class="card-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">Fashion</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="card portfolio-item" data-category="vfx">
+                    <img src="assets/images/portfolio-6.jpg" alt="Motion Graphics" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Motion Graphics</h3>
+                        <p class="card-description">3D animation for product launch campaign</p>
+                        <div class="card-tags">
+                            <span class="tag">VFX</span>
+                            <span class="tag">3D Animation</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 7 -->
+                <div class="card portfolio-item" data-category="web-development ui-ux">
+                    <img src="assets/images/portfolio-7.jpg" alt="Corporate Website" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Corporate Website</h3>
+                        <p class="card-description">Enterprise website with CMS integration</p>
+                        <div class="card-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Corporate</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 8 -->
+                <div class="card portfolio-item" data-category="graphics">
+                    <img src="assets/images/portfolio-8.jpg" alt="Poster Series" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Poster Series</h3>
+                        <p class="card-description">Creative poster design for music festival</p>
+                        <div class="card-tags">
+                            <span class="tag">Graphics</span>
+                            <span class="tag">Event Design</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 9 -->
+                <div class="card portfolio-item" data-category="branding ui-ux">
+                    <img src="assets/images/portfolio-9.jpg" alt="SaaS Product" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">SaaS Dashboard</h3>
+                        <p class="card-description">User-friendly dashboard for analytics platform</p>
+                        <div class="card-tags">
+                            <span class="tag">UI/UX Design</span>
+                            <span class="tag">SaaS</span>
+                        </div>
+                        <a href="project.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--color-bg-secondary); min-height: 50vh;">
+        <div class="container text-center">
+            <h2 class="text-gradient">Let's talk.</h2>
+            <p style="font-size: 1.25rem; margin: 1.5rem 0 2rem;">We'd love to hear from you</p>
+            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-bg-primary); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container">
+            <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+                Copyright © 2025 Funnkar Design House. All rights reserved.
+            </p>
+            <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-top: 0.5rem;">
+                <a href="#" style="margin: 0 1rem;">Privacy Policy</a> | 
+                <a href="#" style="margin: 0 1rem;">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>

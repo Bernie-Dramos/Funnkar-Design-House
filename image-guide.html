@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Placeholder Generator - Funnkar Design House</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0A0A0A;
+            color: #FFFFFF;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #5B9EFF;
+        }
+        
+        .intro {
+            text-align: center;
+            color: #B0B0B0;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section {
+            background-color: #1A1A1A;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: #5B9EFF;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .image-list {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .image-item {
+            background-color: #0A0A0A;
+            padding: 1rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(91, 158, 255, 0.2);
+        }
+        
+        .image-info {
+            flex: 1;
+        }
+        
+        .image-name {
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 0.25rem;
+        }
+        
+        .image-specs {
+            font-size: 0.875rem;
+            color: #B0B0B0;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            background-color: #5B9EFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.875rem;
+        }
+        
+        .btn:hover {
+            background-color: #4A8ED9;
+        }
+        
+        .note {
+            background-color: rgba(91, 158, 255, 0.1);
+            border: 1px solid rgba(91, 158, 255, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            color: #B0B0B0;
+        }
+        
+        code {
+            background-color: #0A0A0A;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: #5B9EFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Image Placeholder Guide</h1>
+        <p class="intro">
+            Use this guide to generate placeholder images for your Funnkar Design House website. 
+            Visit <a href="https://placeholder.com" style="color: #5B9EFF;" target="_blank">placeholder.com</a> or 
+            <a href="https://via.placeholder.com" style="color: #5B9EFF;" target="_blank">via.placeholder.com</a> 
+            to quickly generate placeholder images with the exact dimensions needed.
+        </p>
+
+        <!-- Landing Page Images -->
+        <div class="section">
+            <h2>Landing Page (index.html)</h2>
+            <div class="image-list">
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">hero-laptop-glow.png</div>
+                        <div class="image-specs">1920x1080px • Hero section laptop with blue glow</div>
+                    </div>
+                    <a href="https://via.placeholder.com/1920x1080/1A1A1A/5B9EFF?text=Hero+Laptop" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">laptop-mockup.png</div>
+                        <div class="image-specs">800x600px • About section mockup</div>
+                    </div>
+                    <a href="https://via.placeholder.com/800x600/1A1A1A/5B9EFF?text=Laptop+Mockup" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">phone-mockup.png</div>
+                        <div class="image-specs">800x600px • Branding section phone</div>
+                    </div>
+                    <a href="https://via.placeholder.com/800x600/1A1A1A/5B9EFF?text=Phone+Mockup" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">portfolio-1.jpg, portfolio-2.jpg, portfolio-3.jpg</div>
+                        <div class="image-specs">600x400px each • Portfolio preview cards</div>
+                    </div>
+                    <a href="https://via.placeholder.com/600x400/1A1A1A/5B9EFF?text=Portfolio+Item" class="btn" target="_blank">Generate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Page Images -->
+        <div class="section">
+            <h2>Services Page (services.html)</h2>
+            <div class="image-list">
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">service-branding.png</div>
+                        <div class="image-specs">800x600px • Branding service illustration</div>
+                    </div>
+                    <a href="https://via.placeholder.com/800x600/1A1A1A/5B9EFF?text=Branding+Service" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">service-graphics.jpg</div>
+                        <div class="image-specs">800x600px • Graphics service image</div>
+                    </div>
+                    <a href="https://via.placeholder.com/800x600/1A1A1A/5B9EFF?text=Graphics+Service" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">service-vfx.jpg</div>
+                        <div class="image-specs">800x600px • VFX service image</div>
+                    </div>
+                    <a href="https://via.placeholder.com/800x600/1A1A1A/5B9EFF?text=VFX+Service" class="btn" target="_blank">Generate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Page Images -->
+        <div class="section">
+            <h2>Portfolio Page (portfolio.html)</h2>
+            <div class="image-list">
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">portfolio-4.jpg to portfolio-9.jpg</div>
+                        <div class="image-specs">600x400px each • Portfolio project thumbnails</div>
+                    </div>
+                    <a href="https://via.placeholder.com/600x400/1A1A1A/5B9EFF?text=Portfolio+Project" class="btn" target="_blank">Generate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Page Images -->
+        <div class="section">
+            <h2>Project Detail Page (project.html)</h2>
+            <div class="image-list">
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">project-hero.jpg</div>
+                        <div class="image-specs">1200x800px • Project main hero image</div>
+                    </div>
+                    <a href="https://via.placeholder.com/1200x800/1A1A1A/5B9EFF?text=Project+Hero" class="btn" target="_blank">Generate</a>
+                </div>
+                <div class="image-item">
+                    <div class="image-info">
+                        <div class="image-name">project-1.jpg to project-4.jpg</div>
+                        <div class="image-specs">1200x800px each • Project detail images</div>
+                    </div>
+                    <a href="https://via.placeholder.com/1200x800/1A1A1A/5B9EFF?text=Project+Detail" class="btn" target="_blank">Generate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note -->
+        <div class="note">
+            <strong>📝 Note:</strong> These are placeholder dimensions. For production:
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                <li>Use high-quality images from your Figma designs</li>
+                <li>Source from <a href="https://unsplash.com" style="color: #5B9EFF;">Unsplash</a> or <a href="https://pexels.com" style="color: #5B9EFF;">Pexels</a> for stock photos</li>
+                <li>Optimize all images using <a href="https://tinypng.com" style="color: #5B9EFF;">TinyPNG</a> or <a href="https://squoosh.app" style="color: #5B9EFF;">Squoosh</a></li>
+                <li>Save images in <code>assets/images/</code> directory with exact filenames shown above</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

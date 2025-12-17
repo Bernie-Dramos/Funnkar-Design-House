@@ -102,11 +102,10 @@
   transform: translateY(-4px);
 }
 
-.scroll-number {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  font-variant-numeric: tabular-nums;
+.scroll-icon {
+  width: auto;
+  height: 20px;
+  display: block;
 }
 
 /* Responsive Adjustments */

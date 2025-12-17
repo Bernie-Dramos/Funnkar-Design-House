@@ -1,3 +1,42 @@
+/* Welcome Section (Figma style) */
+.welcome-hero {
+  width: 100%;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.welcome-container {
+  margin-left: 2rem;
+  margin-top: 26px;
+  background: rgba(10,10,10,0.7);
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  max-width: 1173px;
+}
+
+.welcome-title {
+  font-family: 'Poppins', var(--font-secondary), sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 72px;
+  color: #fff;
+  letter-spacing: -0.15px;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.welcome-subtitle {
+  font-family: 'Poppins', var(--font-secondary), sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 72px;
+  color: #b0b0b0;
+  letter-spacing: -0.15px;
+  margin: 0;
+  text-align: left;
+}
 /* =============================================
    BUTTON COMPONENTS
    ============================================= */
@@ -100,8 +139,8 @@
 .header {
   position: fixed;
   top: 60px;
-  left: 60px;
-  right: 60px;
+  left: 0;
+  right: 0;
   height: 43px;
   background-color: transparent;
   backdrop-filter: none;
@@ -114,9 +153,9 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  max-width: 1392px;
-  margin: 0 auto;
-  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 4rem;
 }
 
 .logo {

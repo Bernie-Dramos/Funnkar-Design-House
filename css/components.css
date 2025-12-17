@@ -1,9 +1,33 @@
+/* =============================================
+   WELCOME SECTION
+   ============================================= */
+.welcome-laptop-img {
+  background: #18191b;
+  border-radius: 20px;
+  width: 60vw;
+  max-width: 1328px;
+  height: 70vh;
+  display: block;
+  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.18);
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+}
+/* Welcome Section Image Slot */
+.welcome-image-slot {
+  width: 100%;
+  max-width: 98vw;
+  min-height: 200px;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Welcome Section (Figma style) */
 .welcome-hero {
   width: 100%;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
   display: flex;
+  flex-direction: column; /* Ensure the welcome image is below the text */
   justify-content: flex-start;
 }
 

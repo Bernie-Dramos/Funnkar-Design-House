@@ -694,9 +694,7 @@
   top: 60px;
   left: 0;
   right: 0;
-  height: 43px;
-  background-color: transparent;
-  backdrop-filter: none;
+  height: 45px;
   z-index: 1000;
   border: none;
 }
@@ -719,12 +717,12 @@
 }
 
 .logo-img {
-  height: 65px;
+  height: 75px;
   width: auto;
   display: block;
 }
 .logo-img {
-  margin-top: -12px;
+  margin-top: -16px;
 }
 
 /* =============================================

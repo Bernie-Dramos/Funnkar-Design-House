@@ -7,20 +7,18 @@
     <title>Services | Funnkar Design House</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-content">
             <a href="index.html" class="logo">
-                <div class="logo-icon">F</div>
-                <span>Funnkar Design House</span>
+                <img src="assets/images/funnkar-lofo.png" alt="Funnkar Design House" class="logo-img">
             </a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="menu-btn" id="hamburger">
+                Menu
+            </button>
         </div>
     </header>
 
@@ -47,16 +45,22 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="background-color: var(--color-bg-primary);">
-        <div class="container">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h1>Services</h1>
-                <p style="font-size: 1.25rem; margin-top: 1.5rem; color: var(--color-text-secondary);">
-                    Comprehensive creative solutions tailored to elevate your brand
-                </p>
+        <!-- Hero Section with Full-Cover Video Background -->
+        <section class="hero-landing">
+            <div class="hero-background">
+                <img src="assets/images/phone+laptop-scroll.gif" alt="Hero Background" class="hero-gif">
             </div>
-        </div>
-    </section>
+            <div class="hero-landing-overlay">
+                <div class="hero-landing-bottom">
+                    <div style="width:100%;text-align:center;max-width:800px;margin:0 auto;">
+                        <h1>Services</h1>
+                        <p style="font-size: 1.25rem; margin-top: 1.5rem; color: var(--color-text-secondary);">
+                            Comprehensive creative solutions tailored to elevate your brand
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Services Grid -->
     <section class="section" style="background: linear-gradient(180deg, var(--color-bg-primary) 0%, #1a2b5e 50%, var(--color-bg-primary) 100%);">

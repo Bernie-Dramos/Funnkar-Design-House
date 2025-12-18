@@ -48,7 +48,9 @@
         <!-- Hero Section with Full-Cover Video Background -->
         <section class="hero-landing">
             <div class="hero-background">
-                <img src="assets/images/phone+laptop-scroll.gif" alt="Hero Background" class="hero-bg-gif" 
+                <img src="assets/images/phone+laptop-scroll.gif" 
+                    alt="Hero Background" 
+                    class="hero-bg-gif" 
                     style="
                     position:absolute;
                     top:0;
@@ -75,7 +77,9 @@
 
     <!-- Services Grid with Background Video -->
     <section class="section services-bg-section" style="position:relative;overflow:hidden;">
-        <img src="assets/images/phone+laptop-scroll.gif" alt="Services Background" class="services-bg-gif" 
+        <img src="assets/images/phone+laptop-scroll.gif" 
+            alt="Services Background" 
+            class="services-bg-gif" 
             style="
             position:absolute;
             top:0;
@@ -106,8 +110,22 @@
     </section>
 
     <!-- Graphics Design Section -->
-    <section class="section" style="background-color: var(--color-bg-secondary);">
-        <div class="container">
+    <section class="section graphics-bg-section" style="position:relative;overflow:hidden;background-color: var(--color-bg-secondary);">
+        <img src="assets/images/b&w-visuals.gif" 
+            alt="Graphics Design Background" 
+            class="graphics-bg-gif"
+            style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+            opacity:0.85;
+            pointer-events:none;"
+            loop>
+        <div class="container" style="position:relative;z-index:1;">
             <div class="grid grid-2" style="align-items: center; gap: 4rem; margin-bottom: 6rem;">
                 <div style="order: 1;">
                     <h2>Graphics Design</h2>
@@ -126,8 +144,22 @@
     </section>
 
     <!-- VFX & Animation Section -->
-    <section class="section" style="background: linear-gradient(180deg, var(--color-bg-secondary) 0%, #1a0a2e 50%, var(--color-bg-secondary) 100%);">
-        <div class="container">
+    <section class="section vfx-bg-section" style="position:relative;overflow:hidden;background-color: var(--color-bg-secondary);">
+        <img src="assets/images/vfx.gif" 
+            alt="VFX & Animation Background" 
+            class="vfx-bg-gif"
+            style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+            opacity:0.85;
+            pointer-events:none;"
+            loop>
+        <div class="container" style="position:relative;z-index:1;">
             <div class="grid grid-2" style="align-items: center; gap: 4rem;">
                 <div>
                     <h2>VFX &<br>Animation</h2>
@@ -141,22 +173,28 @@
                         <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Video Production</li>
                     </ul>
                 </div>
-                <div style="position: relative;">
-                    <div class="glow-effect">
-                        <img src="assets/images/service-vfx.jpg" alt="VFX service" style="width: 100%; border-radius: 12px;">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Web Development Section -->
-    <section class="section" style="background-color: var(--color-bg-primary);">
-        <div class="container">
+    <section class="section web-bg-section" style="position:relative;overflow:hidden;background-color: var(--color-bg-secondary);">
+        <img src="assets/images/galaxy-visuals.gif" 
+            alt="Web Development Background" 
+            class="web-bg-gif"
+            style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            z-index:0;
+            opacity:0.85;
+            pointer-events:none;"
+            loop>
+        <div class="container" style="position:relative;z-index:1;">
             <div class="grid grid-2" style="align-items: center; gap: 4rem;">
-                <div style="position: relative; order: 2;">
-                    <img src="assets/images/service-web.jpg" alt="Web development service" style="width: 100%; border-radius: 12px;">
-                </div>
                 <div style="order: 1;">
                     <h2>Web Development</h2>
                     <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
@@ -174,9 +212,23 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section" style="background-color: var(--color-bg-secondary); min-height: 50vh;">
-        <div class="container text-center">
-            <h2>Ready to Start Your Project?</h2>
+    <section class="section cta-bg-section" style="position:relative;overflow:hidden;background-color: var(--color-bg-secondary);">
+            <video class="cta-bg-video" autoplay loop muted playsinline
+                style="
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    object-fit:cover;
+                    z-index:0;
+                    opacity:0.85;
+                    pointer-events:none;">
+                <source src="assets/images/developers-designers.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <div class="container text-center" style="position:relative;z-index:1;">
+            <h2>Ready to Start Your Project?</h2> 
             <p style="font-size: 1.25rem; margin: 1.5rem 0 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                 Let's collaborate to bring your vision to life with our comprehensive creative services.
             </p>

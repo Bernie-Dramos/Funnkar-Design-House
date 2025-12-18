@@ -1,122 +1,124 @@
 /* CTA + Footer Merged Section */
 .cta-footer-merged {
   background: #fff;
-  width: 100vw;
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
-  padding: 0;
-  border: 6px solid #3a5a6e;
-  box-sizing: border-box;
-}
-.cta-footer-content {
   width: 100%;
-  max-width: 1200px;
-  margin: 10 auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 420px;
-  height: 60vh;
+  padding: 120px 60px 40px; /* Generous top padding for spacious feel */
   box-sizing: border-box;
-  padding: 60px 60px 0 60px;
 }
+
+.cta-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .cta-footer-main {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: flex-start; /* Left-align content */
 }
+
 .cta-footer-title {
   font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem; /* Larger for impact */
   font-weight: 400;
-  color: #444;
-  margin: 0 0 32px 0;
-  line-height: 1.1;
-  text-align: left;
+  color: #333; /* Dark gray, uniform */
+  margin: 0 0 40px 0;
+  line-height: 1.15;
 }
-.cta-footer-bold {
-  font-weight: 700;
-  color: #111;
-}
+
 .cta-footer-btn {
   display: inline-block;
-  background: #FF6B6B;
+  background: #FF8787; /* Softer pink to match screenshot */
   color: #fff;
   font-family: 'Poppins', system-ui, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
   border: none;
-  border-radius: 10px;
-  padding: 0.9rem 2.5rem;
-  margin-top: 24px;
-  margin-bottom: 0;
+  border-radius: 50px; /* More rounded */
+  padding: 0.8rem 2.2rem;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 2px 16px 0 rgba(255,107,107,0.10);
-  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(255, 135, 135, 0.15);
+  transition: background 0.3s, transform 0.2s;
   text-decoration: none;
 }
+
 .cta-footer-btn:hover {
-  background: #ff5252;
-  box-shadow: 0 6px 24px 0 rgba(255,107,107,0.18);
+  background: #ff6b6b;
+  transform: translateY(-2px);
 }
+
+/* Footer Bottom */
 .cta-footer-bottom {
   width: 100%;
+  max-width: 1200px;
+  margin: 80px auto 0; /* Space above the line */
+  padding: 20px 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  border-top: 2px solid #e0e0e0;
-  margin-top: 60px;
-  padding: 24px 0 0 0;
+  position: relative;
   font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.9rem;
+  color: #888;
 }
-.cta-footer-copyright {
-  color: #666;
-  font-size: 1.15rem;
+
+.cta-footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e5e5; /* Thinner, lighter line */
 }
+
 .cta-footer-privacy a {
-  color: #666;
-  font-size: 1.15rem;
+  color: #888;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
+
 .cta-footer-privacy a:hover {
-  color: #FF6B6B;
+  color: #FF8787;
 }
+
+/* Media Queries - Improved responsiveness */
 @media (max-width: 900px) {
-  .cta-footer-content {
-    padding: 32px 16px 0 16px;
-    min-height: 320px;
-    height: auto;
+  .cta-footer-merged {
+    padding: 80px 40px 40px;
   }
   .cta-footer-title {
-    font-size: 2rem;
-  }
-  .cta-footer-bottom {
-    font-size: 1rem;
-    margin-top: 32px;
-    padding: 16px 0 0 0;
+    font-size: 2.8rem;
   }
 }
+
 @media (max-width: 600px) {
-  .cta-footer-content {
-    padding: 16px 4vw 0 4vw;
-    min-height: 220px;
-    height: auto;
+  .cta-footer-merged {
+    padding: 60px 20px 30px;
   }
   .cta-footer-title {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  .cta-footer-btn {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
   }
   .cta-footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-top: 16px;
-    padding: 8px 0 0 0;
+    gap: 12px;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  .cta-footer-bottom::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 80%;
   }
 }
 /* Trusted Partner Section */
@@ -167,7 +169,6 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  opacity: 1;
 }
 .trusted-partner-overlay {
   position: absolute;

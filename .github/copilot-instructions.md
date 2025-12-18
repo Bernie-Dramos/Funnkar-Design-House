@@ -1,98 +1,60 @@
-# Funnkar Design House - Copilot Instructions
 
-## Project Overview
-Funnkar Design House is a modern creative agency portfolio website featuring dark-themed design with blue accent colors. The site showcases services in branding, product design, graphics, VFX, and animation.
+# Funnkar Design House – Copilot AI Agent Instructions
 
-## Technology Stack
-- **Frontend**: Vanilla HTML5, CSS3, JavaScript (ES6+)
-- **Design**: Mobile-first responsive design
-- **Theme**: Dark mode with blue (#5B9EFF) and coral (#FF6B6B) accents
-- **No build tools**: Direct file serving for simplicity
+## Project Purpose & Structure
+Funnkar Design House is a static, dark-themed creative agency portfolio. It showcases branding, product design, graphics, VFX, and animation services. The site is built with vanilla HTML, CSS, and JavaScript—no frameworks or build tools.
 
-## Project Structure
-```
-/
-├── index.html              # Landing page
-├── services.html           # Services showcase
-├── portfolio.html          # Project gallery with filters
-├── project.html            # Project detail template
-├── contact.html            # Contact form + FAQ
-├── css/
-│   ├── global.css         # CSS variables, resets, utilities
-│   ├── components.css     # Reusable components (buttons, cards)
-│   └── [page].css         # Page-specific styles
-├── js/
-│   ├── main.js            # Global functionality (nav, menu)
-│   ├── portfolio.js       # Portfolio filtering
-│   └── contact.js         # Form handling, FAQ accordion
-└── assets/
-    └── images/            # All imagery
-```
+**Key files/directories:**
+- `index.html` – Landing page (hero, about, service previews, portfolio preview)
+- `services.html` – Service details (grid sections, image + text pairs)
+- `portfolio.html` – Filterable project gallery (category filter, project cards)
+- `project.html` – Project case study template (challenge, approach, results)
+- `contact.html` – Contact form (client-side validation) and FAQ accordion
+- `css/global.css` – CSS variables, resets, base styles
+- `css/components.css` – All reusable UI components (cards, buttons, overlays, forms, menu, grid)
+- `css/landing.css` – Landing page hero and animation styles
+- `js/main.js` – Global JS: hamburger menu, smooth scroll, nav state, scroll animations
+- `js/portfolio.js` – Portfolio filtering logic (category filter, show/hide with animation)
+- `js/contact.js` – Contact form validation, FAQ accordion logic
+- `assets/images/` – All imagery (see `assets/images/README.md` for required files/specs)
 
-## Design System
-### Colors
-- **Background**: `#0A0A0A` (primary), `#1A1A1A` (secondary)
-- **Accent Blue**: `#5B9EFF`, gradients with opacity
-- **Accent Coral**: `#FF6B6B` (CTAs)
-- **Text**: `#FFFFFF` (headings), `#B0B0B0` (body)
+## Design & UI Patterns
+- **Dark mode:** Uses `--color-bg-primary`/`secondary` and blue/coral accents (see `css/global.css`)
+- **Mobile-first:** Responsive breakpoints at 768px, 1024px, 1440px
+- **Hero sections:** Full viewport, centered, with animated backgrounds (GIFs/WebP preferred)
+- **Cards & grids:** `.card`, `.portfolio-item`, `.grid-2`, `.grid-3` for layout
+- **Hamburger menu:** Full-screen overlay, slide-in, blur backdrop (`js/main.js`)
+- **Portfolio filter:** `.filter-btn` toggles, filters `.portfolio-item` by `data-category` (`js/portfolio.js`)
+- **Forms:** Floating labels, real-time validation, error states (`js/contact.js`)
+- **FAQ accordion:** Expand/collapse with `.accordion-item` and `.accordion-header` (`js/contact.js`)
 
-### Typography
-- **Headings**: Bold, large scale (clamp 2rem-5rem)
-- **Body**: 1rem base, 1.6 line-height
-- **Font**: System fonts for performance
+## Developer Workflow
+- **No build step:** Open `index.html` directly or use VS Code Live Server
+- **Testing:** Manually check all breakpoints and browsers (Chrome, Firefox, Safari, Edge)
+- **Image management:** Place/optimize images in `assets/images/` (see `assets/images/README.md`)
+- **Portfolio updates:** Add new cards in `portfolio.html` (see card markup example in README)
+- **Contact form:** Client-side only; backend integration requires replacing simulated submit in `js/contact.js`
 
-### Key Components
-- **Hero Sections**: Full viewport height, centered content with imagery
-- **Service Cards**: Grid layout, hover effects with blue glow
-- **Portfolio Grid**: 3-column responsive grid with category filters
-- **Hamburger Menu**: Full-screen overlay, slide-in animation
-- **Forms**: Floating labels, validation states
+## Naming & Conventions
+- **HTML:** Lowercase, hyphens (`project-detail.html`)
+- **CSS:** Lowercase, component-based (`button.css`, `hero.css`)
+- **JS:** camelCase (`portfolioFilter.js`)
+- **Images:** Lowercase, hyphens, descriptive (`hero-laptop-glow.png`)
 
-## Critical Patterns
-### Navigation
-- Fixed header with logo and hamburger trigger
-- Full-screen menu overlay with blur backdrop
-- Smooth scroll to sections on same page
-- Active state management across pages
-
-### Responsive Breakpoints
-```css
---mobile: 320px-768px
---tablet: 769px-1024px  
---desktop: 1025px+
-```
-
-### Image Strategy
-- High-quality hero images with overlay gradients
-- Lazy loading for portfolio items
-- WebP format preferred, PNG/JPG fallbacks
-
-## Development Workflow
-1. **Local Development**: Open `index.html` in browser (use Live Server extension)
-2. **Testing**: Check all breakpoints (320px, 768px, 1024px, 1440px)
-3. **Forms**: Currently client-side only, backend integration needed
-
-## Key Interactions
-- Hamburger menu toggle (slide from right)
-- Portfolio category filtering (show/hide items)
-- FAQ accordion (expand/collapse)
-- Smooth scroll navigation
-- Form validation before submit
-
-## File Naming Conventions
-- HTML: lowercase with hyphens (`project-detail.html`)
-- CSS: lowercase, component-based (`button.css`, `hero.css`)
-- JS: camelCase (`portfolioFilter.js`)
-- Images: lowercase-with-hyphens, descriptive (`hero-laptop-glow.png`)
-
-## When Adding New Features
-- Maintain dark theme consistency
-- Use CSS custom properties for colors/spacing
-- Keep JavaScript modular (separate concerns)
-- Test mobile-first, then scale up
-- Add hover states with blue glow effects for interactive elements
+## Integration & Extensibility
+- **No external JS dependencies**; all logic is custom and modular
+- **No CMS/admin**; all content is static and updated manually
+- **Image formats:** Prefer WebP/GIF for animations, JPG/PNG for photos (optimize for web)
 
 ## Known Limitations
-- No backend for contact form (needs integration)
-- Static content (CMS integration possible future enhancement)
-- Manual portfolio item updates (no admin panel)
+- No backend for contact form (API integration needed for production)
+- Static content only (no dynamic/CMS features)
+- Portfolio/project updates require manual HTML edits
+
+---
+**For AI agents:**
+- Follow the modular JS pattern (one concern per file)
+- Use CSS custom properties for all colors/spacing
+- Maintain dark theme and blue/coral accent consistency
+- Reference `assets/images/README.md` for image requirements
+- Test all UI at mobile, tablet, and desktop breakpoints

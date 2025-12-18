@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Open index.html with Live Server",
+			"type": "shell",
+			"command": "code",
+			"args": [
+				"index.html"
+			]
+		}
+	]
+}

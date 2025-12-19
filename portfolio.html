@@ -25,7 +25,6 @@
     <nav class="menu-overlay" id="menuOverlay">
         <div class="menu-content">
             <ul class="menu-nav">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -106,19 +105,18 @@
     </section>
         <style>
         .filter-group.filter-pill {
-            background: #fff;
-            border-radius: 40px;
-            box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
-            padding: 0 2.625rem;
-            white-space: nowrap;
-            gap: 2.5rem;
-            height: 75px;
-            width: 1350px;
-            max-width: 1350px;
-            min-width: 1350px;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
+              background: #fff;
+              border-radius: 40px;
+              box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+              padding: 0 2.625rem;
+              white-space: nowrap;
+              gap: 2.5rem;
+              height: 75px;
+              align-items: center;
+              justify-content: flex-start;
+              margin: 0 auto;
+              overflow-x: auto;
+              flex-wrap: nowrap;
         }
         .filter-btn-pill {
                 background: transparent;
@@ -234,6 +232,8 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem 0 3rem 0;
+        position: relative;
+        left: -60px;
     }
     .portfolio-card {
         background: #EF01020D;
@@ -328,9 +328,9 @@
                         width: 48px;
                         height: 48px;
                         border-radius: 10px;
-                        border: 2px solid #ff0000;
-                        background: #111;
-                        color: #fff;
+                        border: 2px solid #EF010229;
+                        background: #ffffff;
+                        color: #000000;
                         font-size: 0.95rem;
                         font-weight: 590;
                         border-radius: 10px;
@@ -346,13 +346,13 @@
                     .pagination-btn.active {
                         background: #ffffff;
                         color: #000000;
-                        border-color: #ff0000;
-                        font-weight: 700;
+                        border-color: #EF010229;
+                        font-weight: 590;
                         cursor: default;
                     }
                     .pagination-btn:disabled {
                         color: #000000;
-                        border-color: #ff0000;
+                        border-color: #EF010229;
                         background: #fff;
                         cursor: not-allowed;
                         opacity: 1;

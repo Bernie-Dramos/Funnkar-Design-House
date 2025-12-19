@@ -25,7 +25,6 @@
     <nav class="menu-overlay" id="menuOverlay">
         <div class="menu-content">
             <ul class="menu-nav">
-                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -44,119 +43,63 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="background-color: var(--color-bg-primary); min-height: 50vh;">
-        <div class="container">
-            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-                <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 1rem;">CONTACT US</p>
-                <h1>Get in Touch with Us</h1>
-                <p style="font-size: 1.125rem; margin-top: 1.5rem; color: var(--color-text-secondary);">
-                    Starting a project or just have an idea? Whether you're looking to collaborate on a project or just want to say hello, we'd love to hear from you.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="section" style="background-color: var(--color-bg-primary);">
-        <div class="container">
-            <div class="grid grid-2" style="gap: 4rem; align-items: start;">
-                <!-- Contact Form -->
-                <div>
-                    <h2 style="margin-bottom: 2rem;">Send us a Message</h2>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required placeholder="John Doe">
+        <section class="contact-hero-section" style="background: #0A0A0A; padding: 0;">
+            <div class="container" style="max-width: 1200px; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; justify-content: space-between; padding: 4rem 0 2rem 0; margin-top: 90px;">
+                <!-- Left: Hero Text & Info -->
+                <div class="contact-hero-left" style="flex: 1 1 420px; min-width: 340px; max-width: 520px;">
+                    <p style="color: #fff; font-size: 1rem; letter-spacing: 0.04em; font-weight: 500; margin-bottom: 1.5rem; text-transform: uppercase;">CONTACT US</p>
+                    <h1 style="color: #fff; font-size: 2.6rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.15;">Get in Touch with Us</h1>
+                    <p style="color: #B0B0B0; font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 95%;">Craving Creativity or got feedback? Let's dive in. Whether you’re interested in learning more about our services or need support. we’re happy to help</p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem;">
+                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>User-Centric Design</li>
+                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Scalable Solutions</li>
+                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Innovative Concepts</li>
+                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Reliable Delivery</li>
+                    </ul>
+                    <div style="margin-top: 2.5rem;">
+                        <h3 style="color: #fff; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">GENERAL CONTACT INFO</h3>
+                        <p style="color: #B0B0B0; font-size: 1rem; margin-bottom: 1.5rem;">For questions, technical assistance or collaboration opportunities reach out via the information provided.</p>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #fff; font-weight: 700;">Phone:</span> <span style="color: #B0B0B0;">+91 898 351 6874</span></div>
+                        <div style="margin-bottom: 0.5rem;"><span style="color: #fff; font-weight: 700;">Email:</span> <span style="color: #B0B0B0;">funnkar.designhouse@gmail.com</span></div>
+                        <div><span style="color: #fff; font-weight: 700;">Location:</span> <span style="color: #B0B0B0;">Nashik, Maharashtra</span></div>
+                    </div>
+                </div>
+                <!-- Right: Contact Form Card -->
+                <div class="contact-hero-formcard" style="flex: 1 1 380px; min-width: 340px; max-width: 420px; background: #232323; border-radius: 14px; padding: 2.5rem 2rem 2rem 2rem; box-shadow: 0 2px 24px 0 rgba(0,0,0,0.18);">
+                    <form id="contactForm" autocomplete="off">
+                        <div class="form-group" style="margin-bottom: 1.2rem;">
+                            <label for="company" class="form-label" style="color: #fff; font-weight: 400;">Company Name</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Company Name" style="background: #18191b; color: #fff; border-radius: 7px; border: none;">
                         </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
+                        <div class="form-group" style="margin-bottom: 1.2rem;">
+                            <label for="email" class="form-label" style="color: #fff; font-weight: 400;">Email Address<span style="color:#ff8787;">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="Business Email" required style="background: #18191b; color: #fff; border-radius: 7px; border: none;">
                         </div>
-
-                        <div class="grid grid-2" style="gap: 1rem;">
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (123) 456-7890">
+                        <div class="form-group" style="margin-bottom: 1.2rem;">
+                            <label for="subject" class="form-label" style="color: #fff; font-weight: 400;">Subject<span style="color:#ff8787;">*</span></label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter Subject" required style="background: #18191b; color: #fff; border-radius: 7px; border: none;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1.2rem; display: flex; gap: 1rem;">
+                            <div style="flex:1;">
+                                <label for="service" class="form-label" style="color: #fff; font-weight: 400;">What service do you need ?</label>
+                                <select id="service" name="service" class="form-select" style="background: #18191b; color: #fff; border-radius: 7px; border: none; height: 48px;">
+                                    <option disabled selected>Graphics Design</option>
+                                    <option>3D Animation</option>
+                                    <option>UI/UX Design</option>
+                                    <option disabled>Branding</option>
+                                </select>
                             </div>
-
-                            <div class="form-group">
-                                <label for="company" class="form-label">Company</label>
-                                <input type="text" id="company" name="company" class="form-input" placeholder="Your Company">
+                            <div style="flex:1;">
+                                <label for="message" class="form-label" style="color: #fff; font-weight: 400;">Message<span style="color:#ff8787;">*</span></label>
+                                <textarea id="message" name="message" class="form-textarea" required placeholder="Write your message..." style="background: #18191b; color: #fff; border-radius: 7px; border: none; min-height: 48px; height: 48px;"></textarea>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="service" class="form-label">Service Interested In</label>
-                            <select id="service" name="service" class="form-select">
-                                <option value="">Select a service</option>
-                                <option value="branding">Branding & Product Design</option>
-                                <option value="graphics">Graphics Design</option>
-                                <option value="vfx">VFX & Animation</option>
-                                <option value="web">Web Development</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message *</label>
-                            <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; background: #ff8787; color: #fff; font-weight: 600; font-size: 1.1rem; border-radius: 8px; margin-top: 1.5rem; height: 48px;">Send Message</button>
                     </form>
                 </div>
-
-                <!-- Contact Information -->
-                <div>
-                    <div style="background-color: var(--color-bg-secondary); padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
-                        <h3 style="margin-bottom: 1.5rem;">Contact Information</h3>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--color-text-muted); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">General Contact</h4>
-                            <p style="color: var(--color-text-secondary);">
-                                <a href="mailto:info@funnkar.com" style="color: var(--color-accent-blue);">info@funnkar.com</a>
-                            </p>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--color-text-muted); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Phone</h4>
-                            <p style="color: var(--color-text-secondary);">
-                                +1 (123) 456-7890
-                            </p>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="color: var(--color-text-muted); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Office Hours</h4>
-                            <p style="color: var(--color-text-secondary);">
-                                Monday - Friday: 9:00 AM - 6:00 PM<br>
-                                Saturday: 10:00 AM - 4:00 PM<br>
-                                Sunday: Closed
-                            </p>
-                        </div>
-
-                        <div>
-                            <h4 style="color: var(--color-text-muted); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Follow Us</h4>
-                            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                                <a href="#" style="color: var(--color-text-secondary); transition: color 0.3s;">Behance</a>
-                                <a href="#" style="color: var(--color-text-secondary); transition: color 0.3s;">Dribble</a>
-                                <a href="#" style="color: var(--color-text-secondary); transition: color 0.3s;">LinkedIn</a>
-                                <a href="#" style="color: var(--color-text-secondary); transition: color 0.3s;">Instagram</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: linear-gradient(135deg, rgba(91, 158, 255, 0.1) 0%, rgba(91, 158, 255, 0.05) 100%); border: 1px solid rgba(91, 158, 255, 0.2); padding: 2rem; border-radius: 12px;">
-                        <h3 style="margin-bottom: 1rem;">Looking for Career Opportunities?</h3>
-                        <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
-                            We're always looking for talented individuals to join our team.
-                        </p>
-                        <a href="mailto:careers@funnkar.com" class="btn btn-secondary">View Open Positions</a>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
 
     <!-- FAQ Section -->
     <section class="section" style="background-color: var(--color-bg-secondary);">
@@ -229,10 +172,6 @@
     <!-- CTA + Footer Merged Section -->
     <section class="cta-footer-merged">
         <div class="cta-footer-content">
-            <div class="cta-footer-main">
-                <h2 class="cta-footer-title"><span class="cta-footer-bold">Lets talk.</span> We’d love<br>to hear from you</h2>
-                <a href="contact.html" class="cta-footer-btn">Book A Call</a>
-            </div>
             <div class="cta-footer-bottom">
                 <span class="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
                 <span class="cta-footer-privacy"><a href="#">Privacy & Terms</a></span>

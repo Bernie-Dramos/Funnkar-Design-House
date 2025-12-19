@@ -79,22 +79,22 @@
                             <label for="subject" class="form-label" style="color: #fff; font-weight: 400;">Subject<span style="color:#ff8787;">*</span></label>
                             <input type="text" id="subject" name="subject" class="form-input" placeholder="Enter Subject" required style="background: #18191b; color: #fff; border-radius: 7px; border: none;">
                         </div>
-                        <div class="form-group" style="margin-bottom: 1.2rem; display: flex; gap: 1rem;">
-                            <div style="flex:1;">
-                                <label for="service" class="form-label" style="color: #fff; font-weight: 400;">What service do you need ?</label>
-                                <select id="service" name="service" class="form-select" style="background: #18191b; color: #fff; border-radius: 7px; border: none; height: 48px;">
-                                    <option disabled selected>Graphics Design</option>
-                                    <option>3D Animation</option>
-                                    <option>UI/UX Design</option>
-                                    <option disabled>Branding</option>
-                                </select>
-                            </div>
-                            <div style="flex:1;">
-                                <label for="message" class="form-label" style="color: #fff; font-weight: 400;">Message<span style="color:#ff8787;">*</span></label>
-                                <textarea id="message" name="message" class="form-textarea" required placeholder="Write your message..." style="background: #18191b; color: #fff; border-radius: 7px; border: none; min-height: 48px; height: 48px;"></textarea>
-                            </div>
+                        <div class="form-group" style="margin-bottom: 1.2rem;">
+                            <label for="message" class="form-label" style="color: #fff; font-weight: 400;">Message<span style="color:#ff8787;">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" required placeholder="Write your message..." style="background: #18191b; color: #fff; border-radius: 7px; border: none; min-height: 120px;"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; background: #ff8787; color: #fff; font-weight: 600; font-size: 1.1rem; border-radius: 8px; margin-top: 1.5rem; height: 48px;">Send Message</button>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="service" class="form-label" style="color: #fff; font-weight: 400;">What service do you need ?</label>
+                            <select id="service" name="service" class="form-select" style="background: #18191b; color: #fff; border-radius: 7px; border: none; height: 60px;">
+                                <option>Graphics Design</option>
+                                <option>3D Animation</option>
+                                <option>UI/UX Design</option>
+                                <option>Branding</option>
+                                <option>Web Development</option>
+                                <option>VFX</option>
+                            </select>
+                        </div>
+                        <button type="submit" form="contactForm" class="btn btn-primary" style="width: 100%; background: #ff8787; color: #fff; font-weight: 600; font-size: 1.1rem; border-radius: 8px; margin-top: 1.5rem; height: 48px; max-width: 420px; align-self: flex-end;">Send Message</button>
                     </form>
                 </div>
             </div>

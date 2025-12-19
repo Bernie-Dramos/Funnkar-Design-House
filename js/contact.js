@@ -176,12 +176,15 @@ function initFAQAccordion() {
         header.addEventListener('click', function() {
             const accordionItem = this.parentElement;
             const isActive = accordionItem.classList.contains('active');
+            const icon = this.querySelector('.accordion-icon');
 
             // Close all accordion items
             document.querySelectorAll('.accordion-item').forEach(item => {
                 item.classList.remove('active');
                 const content = item.querySelector('.accordion-content');
                 content.style.maxHeight = '0';
+                const itemIcon = item.querySelector('.accordion-icon');
+                if (itemIcon) itemIcon.textContent = '+';
             });
 
             // Open clicked item if it wasn't active
@@ -189,6 +192,10 @@ function initFAQAccordion() {
                 accordionItem.classList.add('active');
                 const content = accordionItem.querySelector('.accordion-content');
                 content.style.maxHeight = content.scrollHeight + 'px';
+                if (icon) icon.textContent = '×';
+            } else {
+                // If closing, set icon back to +
+                if (icon) icon.textContent = '+';
             }
         });
     });

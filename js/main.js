@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initHamburgerMenu() {
     const hamburger = document.getElementById('hamburger');
     const menuOverlay = document.getElementById('menuOverlay');
-    const menuLinks = document.querySelectorAll('.menu-nav a');
+    const menuClose = document.getElementById('menuClose');
+    const menuLinks = document.querySelectorAll('.menu-nav a, .menu-secondary a');
 
     if (!hamburger || !menuOverlay) return;
 
@@ -25,18 +26,18 @@ function initHamburgerMenu() {
         toggleMenu();
     });
 
+    // Close menu on close button click
+    if (menuClose) {
+        menuClose.addEventListener('click', function() {
+            closeMenu();
+        });
+    }
+
     // Close menu when clicking a link
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
             closeMenu();
         });
-    });
-
-    // Close menu when clicking overlay background
-    menuOverlay.addEventListener('click', function(e) {
-        if (e.target === menuOverlay) {
-            closeMenu();
-        }
     });
 
     // Close menu on ESC key

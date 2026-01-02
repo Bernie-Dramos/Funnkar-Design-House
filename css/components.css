@@ -42,12 +42,14 @@
   cursor: pointer;
   text-align: center;
   box-shadow: 0 2px 12px rgba(255, 135, 135, 0.15);
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, border-color 0.3s, color 0.3s;
   text-decoration: none;
 }
 
 .cta-footer-btn:hover {
-  background: #ff6b6b;
+  background-color: #EF0102;
+  border-color: #EF0102;
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -120,6 +122,14 @@
     transform: translateX(-50%);
     width: 80%;
   }
+}
+
+/* Match hover accent used on services page CTAs */
+.cta-footer-btn:hover {
+  background-color: #EF0102;
+  border-color: #EF0102;
+  color: #fff;
+  transform: translateY(-2px);
 }
 /* Trusted Partner Section */
 /* Trusted Partner Section (heading above, gif below) */

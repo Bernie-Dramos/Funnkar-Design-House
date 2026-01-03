@@ -171,83 +171,121 @@
   min-height: 600px;
   overflow: hidden;
   background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .hero-bg-media {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   z-index: 1;
-  opacity: 1;
-  pointer-events: none;
 }
 
 .portfolio-hero-content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
-  padding-left: clamp(2rem, 5vw, 4rem);
-  padding-bottom: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 clamp(2rem, 3vw, 4rem) 6rem;
+  gap: 1.5rem;
+  transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-title {
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  font-size: clamp(64px, 8vw, 94px);
+  font-size: clamp(64px, 7vw, 94px);
   font-weight: 500;
   line-height: 1;
-  color: #FFFFFF;
+  color: #FFF;
   margin: 0;
   letter-spacing: -0.02em;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Filter Wrapper at Bottom of Hero */
+.portfolio-hero-hover-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-hero-description {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  font-size: clamp(24px, 2.8vw, 38px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: #FFF;
+  margin: 0;
+  flex: 1;
+  max-width: 50%;
+}
+
+.portfolio-hero-image {
+  flex-shrink: 0;
+  width: 440px;
+  max-width: 35%;
+}
+
+.portfolio-hero-phone {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Hover State */
+.portfolio-hero:hover .portfolio-hero-content {
+  padding: 12rem clamp(2rem, 3vw, 4rem) 4rem;
+}
+
+.portfolio-hero:hover .portfolio-title {
+  transform: translateY(-20px);
+}
+
+.portfolio-hero:hover .portfolio-hero-hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Filter Wrapper */
 .portfolio-filter-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.98) 30%, #FFFFFF 100%);
-  padding: 4rem 2rem 2.5rem 2rem;
+  padding: 3rem 0 2rem;
 }
 
 .filter-group-horizontal {
   display: flex;
   gap: 0.75rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
   max-width: fit-content;
   margin: 0 auto;
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 40px;
-  background: #FFFFFF;
+  background: #FFF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .filter-btn-hero {
   background: transparent;
-  color: #000000;
+  color: #000;
   font-family: system-ui, -apple-system, sans-serif;
   font-weight: 500;
   font-size: 0.95rem;
   padding: 0.65rem 1.25rem;
-  border-radius: 20px;
   border: none;
-  outline: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.25s ease;
   white-space: nowrap;
-  box-shadow: none;
+  transition: all 0.25s ease;
 }
 
 .filter-btn-hero:hover {
@@ -258,7 +296,7 @@
 
 .filter-btn-hero.active {
   background: #e50914;
-  color: #FFFFFF;
+  color: #FFF;
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(229, 9, 20, 0.2);
 }
@@ -267,44 +305,38 @@
   transform: scale(0.98);
 }
 
-/* Responsive Portfolio Hero */
+/* Responsive */
 @media (max-width: 1024px) {
-  .portfolio-title {
-    font-size: clamp(48px, 10vw, 72px);
+  .portfolio-hero-hover-content {
+    flex-direction: column;
+    gap: 2rem;
   }
   
-  .filter-group-horizontal {
-    gap: 0.75rem;
-  }
-  
-  .filter-btn-hero {
-    font-size: 0.9rem;
-    padding: 0.65rem 1.25rem;
+  .portfolio-hero-description,
+  .portfolio-hero-image {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 768px) {
   .portfolio-hero {
-    height: 80vh;
     min-height: 500px;
   }
   
   .portfolio-hero-content {
-    padding-left: 2rem;
-    padding-bottom: 150px;
+    padding: 0 2rem 4rem;
+  }
+  
+  .portfolio-hero:hover .portfolio-hero-content {
+    padding: 8rem 2rem 3rem;
   }
   
   .portfolio-title {
-    font-size: clamp(40px, 12vw, 60px);
+    font-size: clamp(48px, 10vw, 64px);
   }
   
   .portfolio-filter-wrapper {
-    padding: 2rem 0 1.5rem 0;
-  }
-  
-  .filter-group-horizontal {
-    gap: 0.5rem;
-    padding: 0 1rem;
+    padding: 2rem 0 1.5rem;
   }
   
   .filter-btn-hero {
@@ -315,26 +347,20 @@
 
 @media (max-width: 480px) {
   .portfolio-hero {
-    height: 70vh;
     min-height: 450px;
   }
   
   .portfolio-hero-content {
-    padding-left: 1.5rem;
-    padding-bottom: 180px;
+    padding: 0 1.5rem 3rem;
   }
   
-  .portfolio-title {
-    font-size: clamp(36px, 15vw, 48px);
+  .portfolio-hero:hover .portfolio-hero-content {
+    padding: 6rem 1.5rem 2rem;
   }
   
   .filter-group-horizontal {
-    gap: 0.4rem;
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    gap: 0.5rem;
     scrollbar-width: none;
-    -ms-overflow-style: none;
   }
   
   .filter-group-horizontal::-webkit-scrollbar {
@@ -346,4 +372,3 @@
     padding: 0.5rem 0.9rem;
   }
 }
-

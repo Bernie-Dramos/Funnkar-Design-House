@@ -6,14 +6,15 @@
     <meta name="description" content="Explore our portfolio of creative projects">
     <title>Portfolio | Funnkar Design House</title>
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/components.css"> 
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/landing.css"> 
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-content">
             <a href="index.html" class="logo">
-                <img src="assets/images/funnkar-lofo.png" alt="Funnkar Design House" class="logo-img">
+                <img src="assets/images/fdh-logo.png" alt="Funnkar Design House" class="logo-img">
             </a>
             <button class="menu-btn" id="hamburger">
                 Menu
@@ -43,127 +44,37 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- Hero Section with Left Text, Floating Card, and GIF Background (Full Height) -->
-    <section class="hero-landing" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#0a0f2c 60%,#1a1a3a 100%);">
-        <video src="assets/images/Astro.mp4" alt="Hero Background" class="hero-bg-gif"
-            style="
-                position:absolute;
-                top:0;
-                left:0;
-                width:100%;
-                height:100%;
-                object-fit:cover;
-                z-index:0;
-                opacity:0.9;
-                pointer-events:none;"
-            loop autoplay muted></video>
-        <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1440px;position:relative;z-index:1;min-height:80vh;">
-            <div style="flex:1;min-width:320px;max-width:600px;padding:2rem 0 2rem 1rem;">
-                <h1 style="font-size:4rem;font-weight:800;line-height:1.1;margin-bottom:2rem;color:#fff;">Portfolio</h1>
-                <p style="font-size:2rem;font-weight:500;line-height:1.2;color:#fff;max-width:520px;">
-                    Funnkar Design House creates striking<br>functional designs that set your brand<br>apart.
-                </p>
-            </div>
-            <div style="flex:0 0 420px;display:flex;justify-content:flex-end;align-items:center;">
-                <div style="background:rgba(80,90,200,0.18);backdrop-filter:blur(2px);border-radius:16px;padding:2.5rem 2.5rem 2rem 2.5rem;box-shadow:0 8px 32px 0 rgba(0,0,0,0.25);max-width:420px;">
-                    <img src="assets/images/video-editor.gif" alt="Portfolio Phone Mockup" style="width:100%;height:100%;object-fit:cover;display:block;margin:0 auto;box-shadow:0 4px 24px 0 rgba(0,0,0,0.25);border-radius:18px;">
-                </div>
+    <section class="hero-landing portfolio-hero">
+        <!-- Background Video/Image -->
+        <video src="assets/images/Astro.mp4" alt="Portfolio Hero" class="hero-bg-media"
+            loop autoplay muted playsinline></video>
+        
+        <!-- Hero Content -->
+        <div class="portfolio-hero-content">
+            <h1 class="portfolio-title">Portfolio</h1>
+        </div>
+
+        <!-- Filter Buttons at Bottom of Hero -->
+        <div class="portfolio-filter-wrapper">
+            <div class="filter-group-horizontal">
+                <button class="filter-btn-hero active" data-filter="all">All</button>
+                <button class="filter-btn-hero" data-filter="ui-ux">UI/UX Design</button>
+                <button class="filter-btn-hero" data-filter="interior">Interior Design</button>
+                <button class="filter-btn-hero" data-filter="game">Game Design &amp; Development</button>
+                <button class="filter-btn-hero" data-filter="3d-animation">3D Animation</button>
+                <button class="filter-btn-hero" data-filter="vfx">VFX</button>
+                <button class="filter-btn-hero" data-filter="web-development">Web Development</button>
             </div>
         </div>
     </section>
-
-    <!-- Filter Section -->
-    <section style="background:#fff; padding: 2rem 0;">
-        <div class="container" 
-            style="
-            display:flex;
-            justify-content:center;
-            align-items:center;">
-            <div class="filter-group filter-pill" 
-                style="display:flex;
-                gap:2.5rem;
-                align-items:center;
-                justify-content:center;
-                width:auto;
-                min-width:fit-content;
-                max-width:none;
-                height:75px;
-                background:#fff;
-                border-radius:40px;
-                box-shadow:0 2px 16px 0 rgba(0,0,0,0.06);
-                padding:0 2rem;
-                white-space:nowrap;">
-                <button class="filter-btn filter-btn-pill active" data-filter="all">All</button>
-                <button class="filter-btn filter-btn-pill" data-filter="ui-ux">UI/UX Design</button>
-                <button class="filter-btn filter-btn-pill" data-filter="interior">Interior Design</button>
-                <button class="filter-btn filter-btn-pill" data-filter="game">Game Design &amp; Development</button>
-                <button class="filter-btn filter-btn-pill" data-filter="3d-animation">3D Animation</button>
-                <button class="filter-btn filter-btn-pill" data-filter="vfx-animation">Vfx Animation</button>
-                <button class="filter-btn filter-btn-pill" data-filter="web-development">Web Development</button>
-            </div>
-        </div>
-    </section>
-        <style>
-        .filter-group.filter-pill {
-              background: #fff;
-              border-radius: 40px;
-              box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
-              padding: 0 2.625rem;
-              white-space: nowrap;
-              gap: 2.5rem;
-              height: 75px;
-              align-items: center;
-              justify-content: flex-start;
-              margin: 0 auto;
-              overflow-x: auto;
-              flex-wrap: nowrap;
-        }
-        .filter-btn-pill {
-                background: transparent;
-                color: #000000;
-                font-weight: 600;
-                font-size: 1.08rem;
-                padding: 0.75rem 1.5rem;
-                border-radius: 2rem;
-                border: none;
-                outline: none;
-                transition: background 0.2s, color 0.2s;
-                position: relative;
-                z-index: 1;
-        }
-        .filter-btn-pill.active, .filter-btn-pill:focus {
-                background: #e50914;
-                color: #fff;
-                font-weight: 700;
-                box-shadow: 0 2px 8px 0 rgba(229,9,20,0.12);
-        }
-        .filter-btn-pill:active {
-                background: #b00610;
-        }
-        .filter-group.filter-pill::-webkit-scrollbar {
-                display: none;
-        }
-        </style>
-
-        <script>
-        // Filter button active state logic
-        document.addEventListener('DOMContentLoaded', function() {
-            var filterBtns = document.querySelectorAll('.filter-btn-pill');
-            filterBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-                });
-            });
-        });
-        </script>
 
     <!-- Portfolio Grid -->
-    <section class="section" style="background:#fff; padding-top: 2rem;">
+    <section class="portfolio-section">
         <div class="container">
-            <div class="portfolio-grid-2x3" id="portfolioGrid">
+            <!-- Page 1 Grid -->
+            <div class="portfolio-grid" id="portfolioGridPage1">
                 <!-- Portfolio Card 1 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="ui-ux" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">BRAND DEVELOPMENT</span>
                         <span class="portfolio-tag">BRAND KIT</span>
@@ -173,7 +84,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Card 2 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="ui-ux" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">UI/UX DESIGN</span>
                         <span class="portfolio-tag">MOBILE APP DEVELOPMENT</span>
@@ -183,7 +94,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Card 3 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="ui-ux" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">GRAPHICS DESIGN</span>
                         <span class="portfolio-tag">CONCEPT DESIGN</span>
@@ -193,7 +104,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Card 4 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="ui-ux" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">EMBROIDERY</span>
                         <span class="portfolio-tag">PACKAGING DESIGN</span>
@@ -203,7 +114,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Card 5 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="vfx" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">DIGITAL MARKETING</span>
                         <span class="portfolio-tag">MOTION GRAPHICS</span>
@@ -213,7 +124,7 @@
                     </div>
                 </div>
                 <!-- Portfolio Card 6 -->
-                <div class="portfolio-card">
+                <div class="portfolio-card" data-category="3d-animation interior" data-page="1">
                     <div class="portfolio-card-tags">
                         <span class="portfolio-tag">ARCHITECTURE</span>
                         <span class="portfolio-tag">3D ANIMATION</span>
@@ -222,170 +133,78 @@
                         <img src="assets/images/agent.png" alt="3D Animation" class="portfolio-card-image">
                     </div>
                 </div>
-    <style>
-    .portfolio-grid-2x3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 2.5rem 2.5rem;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem 0 3rem 0;
-        position: relative;
-        left: -60px;
-    }
-    .portfolio-card {
-        background: #EF01020D;
-        border: 3px solid #ffe6ee;
-        border-radius: 18px;
-        box-shadow: 0 2px 12px 0 rgba(255,0,64,0.04);
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 1rem 1rem 0.5rem;
-        min-width: 425px;
-        max-width: 425px;
-        min-height: 450px;
-        max-height: 450px;
-        width: 425px;
-        height: 450px;
-        position: relative;
-        transition: box-shadow 0.2s, border 0.2s;
-    }
-    .portfolio-card-tags {
-        display: flex;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
-        margin-left: 0.2rem;
-        margin-top: 0.25rem;
-        flex-wrap: wrap;
-    }
-    .portfolio-tag {
-        background: #111;
-        color: #fff;
-        font-size: 0.95rem;
-        font-weight: 700;
-        border-radius: 10px;
-        padding: 0.3em 0.3rem 0.3rem 0.3em;
-        letter-spacing: 0.01em;
-        display: inline-block;
-        margin-bottom: 0.1em;
-    }
-    .portfolio-card-imagewrap {
-        flex: 1 1 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #f8f8fa;
-        border-radius: 12px;
-        overflow: hidden;
-        min-width: 400px;
-        max-width: 400px;
-        min-height: 380px;
-        max-height: 380px;
-    }
-    .portfolio-card-image {
-        width: 400px;
-        height: 380px;
-        object-fit: cover;
-        border-radius: 12px;
-        display: block;
-    }
-    @media (max-width: 1100px) {
-        .portfolio-grid-2x3 {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: none;
-        }
-    }
-    @media (max-width: 900px) {
-        .portfolio-grid-2x3 {
-            grid-template-columns: 1fr;
-            grid-template-rows: none;
-        }
-    }
-    </style>
-
-            <!-- Pagination (Inside Portfolio Section, Below Grid) -->
-            <div class="portfolio-pagination" 
-                style="
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                gap:1rem;
-                margin:2.5rem 0 0 0;">
-                <button class="pagination-btn" disabled aria-label="Previous page">&#8592;</button>
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn" aria-label="Next page">&#8594;</button>
             </div>
-        </div>
-    </section>
-                    <style>
-                    .portfolio-pagination {
-                        margin-bottom: 2.5rem;
-                    }
-                    .pagination-btn {
-                        width: 48px;
-                        height: 48px;
-                        border-radius: 10px;
-                        border: 2px solid #EF010229;
-                        background: #ffffff;
-                        color: #000000;
-                        font-size: 0.95rem;
-                        font-weight: 590;
-                        border-radius: 10px;
-                        padding: 0.3em 0.3rem 0.3rem 0.3em;
-                        letter-spacing: 0.01em;
-                        display: inline-block;
-                        margin-bottom: 0.1em;
-                        outline: none;
-                        box-shadow: none;
-                        margin: 0;
-                        padding: 0;
-                    }
-                    .pagination-btn.active {
-                        background: #ffffff;
-                        color: #000000;
-                        border-color: #EF010229;
-                        font-weight: 590;
-                        cursor: default;
-                    }
-                    .pagination-btn:disabled {
-                        color: #000000;
-                        border-color: #EF010229;
-                        background: #fff;
-                        cursor: not-allowed;
-                        opacity: 1;
-                    }
-                    .pagination-btn:not(.active):hover:not(:disabled) {
-                        border-color: #e50914;
-                        color: #e50914;
-                    }
-                    </style>
-                <style>
-                .portfolio-grid-2x3 {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-template-rows: repeat(2, 1fr);
-                    gap: 2.5rem 2.5rem;
-                    width: 100%;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 2rem 0 3rem 0;
-                }
-                @media (max-width: 1100px) {
-                    .portfolio-grid-2x3 {
-                        grid-template-columns: 1fr 1fr;
-                        grid-template-rows: none;
-                    }
-                }
-                @media (max-width: 900px) {
-                    .portfolio-grid-2x3 {
-                        grid-template-columns: 1fr;
-                        grid-template-rows: none;
-                    }
-                }
-                </style>
+
+            <!-- Page 2 Grid (Hidden by default) -->
+            <div class="portfolio-grid" id="portfolioGridPage2" style="display: none;">
+                <!-- Portfolio Card 7 - Web Development -->
+                <div class="portfolio-card" data-category="web-development game" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">WEB DESIGN</span>
+                        <span class="portfolio-tag">DEVELOPMENT</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/red-car.gif" alt="Web Development Project" class="portfolio-card-image">
+                    </div>
+                </div>
+                <!-- Portfolio Card 8 - Mobile App -->
+                <div class="portfolio-card" data-category="ui-ux" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">MOBILE APP</span>
+                        <span class="portfolio-tag">IOS DESIGN</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/phone-app.png" alt="Mobile App Project" class="portfolio-card-image">
+                    </div>
+                </div>
+                <!-- Portfolio Card 9 - Brand Identity -->
+                <div class="portfolio-card" data-category="ui-ux" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">BRAND IDENTITY</span>
+                        <span class="portfolio-tag">VISUAL SYSTEM</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/hoodie.png" alt="Brand Identity Project" class="portfolio-card-image">
+                    </div>
+                </div>
+                <!-- Portfolio Card 10 - 3D Graphics -->
+                <div class="portfolio-card" data-category="3d-animation" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">3D RENDERING</span>
+                        <span class="portfolio-tag">VISUALIZATION</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/agent.png" alt="3D Graphics Project" class="portfolio-card-image">
+                    </div>
+                </div>
+                <!-- Portfolio Card 11 - Motion Design -->
+                <div class="portfolio-card" data-category="vfx" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">MOTION DESIGN</span>
+                        <span class="portfolio-tag">ANIMATION</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/red-car.gif" alt="Motion Design Project" class="portfolio-card-image">
+                    </div>
+                </div>
+                <!-- Portfolio Card 12 - UX Research -->
+                <div class="portfolio-card" data-category="ui-ux" data-page="2">
+                    <div class="portfolio-card-tags">
+                        <span class="portfolio-tag">UX RESEARCH</span>
+                        <span class="portfolio-tag">USER TESTING</span>
+                    </div>
+                    <div class="portfolio-card-imagewrap">
+                        <img src="assets/images/collagen.gif" alt="UX Research Project" class="portfolio-card-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="portfolio-pagination">
+                <button class="pagination-btn prev-btn" id="prevBtn" aria-label="Previous page">&#8592;</button>
+                <button class="pagination-btn page-btn active" data-page="1">1</button>
+                <button class="pagination-btn page-btn" data-page="2">2</button>
+                <button class="pagination-btn next-btn" id="nextBtn" aria-label="Next page">&#8594;</button>
             </div>
         </div>
     </section>

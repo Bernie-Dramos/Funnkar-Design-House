@@ -29,6 +29,10 @@
   line-height: 1.15;
 }
 
+.cta-footer-bold {
+  font-weight: 700;
+}
+
 .cta-footer-btn {
   display: inline-block;
   background: #F67F80; /* Softer pink to match screenshot */
@@ -727,12 +731,12 @@
 }
 
 .logo-img {
-  height: 75px;
+  height: 45px;
   width: auto;
   display: block;
 }
 .logo-img {
-  margin-top: -16px;
+  margin-top: -0px;
 }
 
 /* =============================================
@@ -1219,5 +1223,212 @@
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+  }
+}
+
+/* =============================================
+   PORTFOLIO GRID & CARDS
+   ============================================= */
+
+.portfolio-section {
+  background: #FFFFFF;
+  padding: 6rem 0 3rem 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 422px);
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+}
+
+.portfolio-card {
+  background: #FFFFFF;
+  border: 3px solid rgba(239, 1, 2, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+  width: 422px;
+  height: 448px;
+  padding: 0;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(239, 1, 2, 0.2);
+  border-color: #EF0102;
+}
+
+.portfolio-card-tags {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  border-bottom: none;
+  background: #FFFFFF;
+}
+
+.portfolio-tag {
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.portfolio-card-imagewrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F8FA;
+  overflow: hidden;
+  position: relative;
+  width: 400px;
+  height: 379px;
+  margin: 0 auto;
+}
+
+.portfolio-card-imagewrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(91, 158, 255, 0) 0%, rgba(91, 158, 255, 0.08) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.portfolio-card:hover .portfolio-card-imagewrap::after {
+  opacity: 1;
+}
+
+.portfolio-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover .portfolio-card-image {
+  transform: scale(1.05);
+}
+
+/* Portfolio Pagination */
+.portfolio-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.pagination-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: var(--color-accent-coral);
+  color: var(--color-accent-coral);
+  background: rgba(239, 1, 2, 0.05);
+}
+
+.pagination-btn.active {
+  background: var(--color-accent-coral);
+  border-color: var(--color-accent-coral);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(239, 1, 2, 0.2);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #E5E5E5;
+}
+
+/* Responsive Portfolio Grid */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 422px);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 422px;
+    gap: 2rem;
+  }
+
+  .pagination-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-pagination {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .portfolio-card {
+    width: 100%;
+    max-width: 422px;
+    height: auto;
+  }
+
+  .portfolio-card-imagewrap {
+    width: 100%;
+    height: 300px;
+  }
+
+  .portfolio-section {
+    padding: 2rem 0;
+  }
+
+  .portfolio-pagination {
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .pagination-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
   }
 }

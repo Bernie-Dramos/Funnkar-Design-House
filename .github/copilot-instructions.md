@@ -10,6 +10,7 @@ Funnkar Design House is a static, dark-themed creative agency portfolio. It show
 - `portfolio.html` – Filterable project gallery (category filter, project cards)
 - `project.html` – Project case study template (challenge, approach, results)
 - `contact.html` – Contact form (client-side validation) and FAQ accordion
+- `image-guide.html` – Interactive image placeholder generator for development
 - `css/global.css` – CSS variables, resets, base styles
 - `css/components.css` – All reusable UI components (cards, buttons, overlays, forms, menu, grid)
 - `css/landing.css` – Landing page hero and animation styles
@@ -17,6 +18,9 @@ Funnkar Design House is a static, dark-themed creative agency portfolio. It show
 - `js/portfolio.js` – Portfolio filtering logic (category filter, show/hide with animation)
 - `js/contact.js` – Contact form validation, FAQ accordion logic
 - `assets/images/` – All imagery (see `assets/images/README.md` for required files/specs)
+- `README.md` – Complete project documentation
+- `QUICKSTART.md` – Quick setup guide
+- `PROJECT-COMPLETE.md` – Project completion checklist
 
 ## Design & UI Patterns
 - **Dark mode:** Uses `--color-bg-primary`/`secondary` and blue/coral accents (see `css/global.css`)
@@ -31,7 +35,7 @@ Funnkar Design House is a static, dark-themed creative agency portfolio. It show
 ## Developer Workflow
 - **No build step:** Open `index.html` directly or use VS Code Live Server
 - **Testing:** Manually check all breakpoints and browsers (Chrome, Firefox, Safari, Edge)
-- **Image management:** Place/optimize images in `assets/images/` (see `assets/images/README.md`)
+- **Image management:** Place/optimize images in `assets/images/` (see `assets/images/README.md`). Use `image-guide.html` for placeholder generation during development
 - **Portfolio updates:** Add new cards in `portfolio.html` (see card markup example in README)
 - **Contact form:** Client-side only; backend integration requires replacing simulated submit in `js/contact.js`
 

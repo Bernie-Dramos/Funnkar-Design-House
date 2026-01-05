@@ -1,4 +1,27 @@
 // =============================================
+// GOOGLE FORM INTEGRATION
+// =============================================
+// Form ID: 1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q
+
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q/formResponse';
+
+// Map form field IDs to Google Form entry IDs
+// Follow these steps to get entry IDs:
+// 1. Go to: https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q/prefill
+// 2. Right-click each form field and select "Inspect"
+// 3. Find the 'name' attribute (e.g., name="entry.1234567890")
+// 4. Copy that number and paste it below
+
+const GOOGLE_FORM_FIELDS = {
+    firstName: 'entry.1234567890',   // First Name - REPLACE WITH ACTUAL ID
+    lastName: 'entry.1234567891',    // Last Name - REPLACE WITH ACTUAL ID
+    email: 'entry.1234567892',       // Email - REPLACE WITH ACTUAL ID
+    phone: 'entry.1234567893',       // Phone - REPLACE WITH ACTUAL ID
+    subject: 'entry.1234567894',     // Subject - REPLACE WITH ACTUAL ID
+    message: 'entry.1234567895'      // Details - REPLACE WITH ACTUAL ID
+};
+
+// =============================================
 // CONTACT FORM FUNCTIONALITY
 // =============================================
 
@@ -20,11 +43,12 @@ function initContactForm() {
 
         // Get form data
         const formData = {
-            name: document.getElementById('name').value,
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
             email: document.getElementById('email').value,
+            countryCode: document.getElementById('countryCode').value,
             phone: document.getElementById('phone').value,
-            company: document.getElementById('company').value,
-            service: document.getElementById('service').value,
+            subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         };
 
@@ -36,17 +60,8 @@ function initContactForm() {
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Success
-                showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-                form.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-
-            // In production, replace the setTimeout with actual form submission:
-            // submitForm(formData);
+            // Submit to Google Form
+            submitToGoogleForm(formData, submitBtn, originalText, form);
         }
     });
 
@@ -66,17 +81,81 @@ function initContactForm() {
 }
 
 // =============================================
+// SUBMIT TO GOOGLE FORM
+// =============================================
+function submitToGoogleForm(formData, submitBtn, originalText, form) {
+    // Check if form ID is configured
+    if (GOOGLE_FORM_URL.includes('YOUR_FORM_ID')) {
+        showNotification('Error: Google Form is not configured. Please contact the administrator.', 'error');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        return;
+    }
+
+    // Create FormData object
+    const data = new FormData();
+
+    // Merge phone with country code for submission
+    const phoneWithCode = formData.phone
+        ? `${formData.countryCode ? formData.countryCode + ' ' : ''}${formData.phone}`.trim()
+        : '';
+
+    const payload = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: phoneWithCode,
+        subject: formData.subject,
+        message: formData.message
+    };
+
+    // Map form fields to Google Form entry IDs
+    for (const [key, entryId] of Object.entries(GOOGLE_FORM_FIELDS)) {
+        data.append(entryId, payload[key] || '');
+    }
+
+    // Send to Google Form using fetch with no-cors
+    fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'
+    })
+    .then(() => {
+        // Success - Google Forms doesn't return a success response in no-cors mode
+        // So we assume success if no error is thrown
+        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        form.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    })
+    .catch((error) => {
+        console.error('Form submission error:', error);
+        showNotification('Failed to send message. Please try again later.', 'error');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
+}
+
+// =============================================
 // FORM VALIDATION
 // =============================================
 function validateForm(formData) {
     let isValid = true;
 
-    // Validate name
-    if (formData.name.trim().length < 2) {
-        showFieldError('name', 'Please enter a valid name');
+    // Validate first name
+    if (formData.firstName.trim().length < 2) {
+        showFieldError('firstName', 'Please enter a valid first name');
         isValid = false;
     } else {
-        clearFieldError('name');
+        clearFieldError('firstName');
+    }
+
+    // Validate last name
+    if (formData.lastName.trim().length < 2) {
+        showFieldError('lastName', 'Please enter a valid last name');
+        isValid = false;
+    } else {
+        clearFieldError('lastName');
     }
 
     // Validate email
@@ -86,6 +165,14 @@ function validateForm(formData) {
         isValid = false;
     } else {
         clearFieldError('email');
+    }
+
+    // Validate subject
+    if (formData.subject.trim().length < 3) {
+        showFieldError('subject', 'Subject must be at least 3 characters long');
+        isValid = false;
+    } else {
+        clearFieldError('subject');
     }
 
     // Validate message
@@ -104,9 +191,16 @@ function validateField(field) {
     const fieldName = field.id;
 
     switch (fieldName) {
-        case 'name':
+        case 'firstName':
             if (value.length < 2) {
-                showFieldError(fieldName, 'Please enter a valid name');
+                showFieldError(fieldName, 'Please enter a valid first name');
+            } else {
+                clearFieldError(fieldName);
+            }
+            break;
+        case 'lastName':
+            if (value.length < 2) {
+                showFieldError(fieldName, 'Please enter a valid last name');
             } else {
                 clearFieldError(fieldName);
             }
@@ -115,6 +209,13 @@ function validateField(field) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(value)) {
                 showFieldError(fieldName, 'Please enter a valid email address');
+            } else {
+                clearFieldError(fieldName);
+            }
+            break;
+        case 'subject':
+            if (value.length < 3) {
+                showFieldError(fieldName, 'Subject must be at least 3 characters long');
             } else {
                 clearFieldError(fieldName);
             }
@@ -164,41 +265,6 @@ function clearFieldError(fieldId) {
     if (errorMessage) {
         errorMessage.remove();
     }
-}
-
-// =============================================
-// FAQ ACCORDION
-// =============================================
-function initFAQAccordion() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            const accordionItem = this.parentElement;
-            const isActive = accordionItem.classList.contains('active');
-            const icon = this.querySelector('.accordion-icon');
-
-            // Close all accordion items
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
-                const content = item.querySelector('.accordion-content');
-                content.style.maxHeight = '0';
-                const itemIcon = item.querySelector('.accordion-icon');
-                if (itemIcon) itemIcon.textContent = '+';
-            });
-
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                accordionItem.classList.add('active');
-                const content = accordionItem.querySelector('.accordion-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                if (icon) icon.textContent = '×';
-            } else {
-                // If closing, set icon back to +
-                if (icon) icon.textContent = '+';
-            }
-        });
-    });
 }
 
 // =============================================
@@ -265,26 +331,36 @@ style.textContent = `
 document.head.appendChild(style);
 
 // =============================================
-// ACTUAL FORM SUBMISSION (Production)
+// FAQ ACCORDION
 // =============================================
-async function submitForm(formData) {
-    try {
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
+function initFAQAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
 
-        if (response.ok) {
-            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-            document.getElementById('contactForm').reset();
-        } else {
-            throw new Error('Failed to send message');
-        }
-    } catch (error) {
-        showNotification('Failed to send message. Please try again later.', 'error');
-        console.error('Form submission error:', error);
-    }
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const accordionItem = this.parentElement;
+            const isActive = accordionItem.classList.contains('active');
+            const icon = this.querySelector('.accordion-icon');
+
+            // Close all accordion items
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                item.classList.remove('active');
+                const content = item.querySelector('.accordion-content');
+                content.style.maxHeight = '0';
+                const itemIcon = item.querySelector('.accordion-icon');
+                if (itemIcon) itemIcon.textContent = '+';
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                accordionItem.classList.add('active');
+                const content = accordionItem.querySelector('.accordion-content');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (icon) icon.textContent = '×';
+            } else {
+                // If closing, set icon back to +
+                if (icon) icon.textContent = '+';
+            }
+        });
+    });
 }

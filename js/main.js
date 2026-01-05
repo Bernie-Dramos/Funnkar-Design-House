@@ -159,3 +159,89 @@ function debounce(func, wait) {
 window.addEventListener('resize', debounce(function() {
     // Handle any resize-specific logic here
 }, 250));
+// =============================================
+// PRIVACY POLICY MODAL
+// =============================================
+function initPrivacyModal() {
+    // Create modal HTML if it doesn't exist
+    let modal = document.getElementById('privacyModal');
+    if (!modal) {
+        const modalHTML = `
+            <div class="privacy-modal" id="privacyModal">
+                <div class="privacy-modal-content">
+                    <button class="privacy-modal-close" onclick="closePrivacyModal()">×</button>
+                    <h2 class="privacy-modal-title">Privacy Policy</h2>
+                    <div class="privacy-modal-body">
+                        <h3>Data Collection & Usage</h3>
+                        <p>We collect information submitted through our contact form including name, email, phone, company, and message. This data is used solely to respond to your inquiries.</p>
+                        
+                        <h3>Data Storage</h3>
+                        <p>Your information is securely stored in a Google Sheet via Google Apps Script. We implement industry-standard security measures to protect your data.</p>
+                        
+                        <h3>Third-Party Services</h3>
+                        <p>We use Google Apps Script and Google Workspace to process and store submissions. Google's privacy practices apply to this data.</p>
+                        
+                        <h3>Data Retention</h3>
+                        <p>Contact information is retained for 2 years from submission unless an ongoing business relationship exists.</p>
+                        
+                        <h3>Your Rights</h3>
+                        <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at funnkar.designhouse@gmail.com.</p>
+                        
+                        <h3>Contact</h3>
+                        <p><strong>Email:</strong> funnkar.designhouse@gmail.com<br><strong>Phone:</strong> +91 898 351 6874<br><strong>Location:</strong> Nashik, Maharashtra, India</p>
+                        
+                        <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #888;">For the complete Privacy Policy, <a href="privacy.html" style="color: #5b9eff; text-decoration: none;" onclick="closePrivacyModal()">click here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        modal = document.getElementById('privacyModal');
+    }
+
+    // Add event listeners to all privacy policy links
+    const privacyLinks = document.querySelectorAll('a[href="#privacy"], .menu-footer-right a[href="privacy.html"]');
+    privacyLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // If it's a link to privacy.html page, allow normal navigation
+            if (this.getAttribute('href') === 'privacy.html') {
+                return;
+            }
+            e.preventDefault();
+            openPrivacyModal();
+        });
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closePrivacyModal();
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('privacyModal').classList.contains('active')) {
+            closePrivacyModal();
+        }
+    });
+}
+
+function openPrivacyModal() {
+    const modal = document.getElementById('privacyModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closePrivacyModal() {
+    const modal = document.getElementById('privacyModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Initialize privacy modal
+document.addEventListener('DOMContentLoaded', initPrivacyModal);

@@ -1,0 +1,73 @@
+/* =============================================
+   MOBILE HEADER & NAVIGATION FIXES
+   ============================================= */
+
+/* Hamburger Menu Icon Styles */
+.menu-btn-text {
+  font-size: clamp(11px, 2.5vw, 14px);
+  letter-spacing: 0.5px;
+}
+
+/* Mobile: Show hamburger icon */
+@media (max-width: 768px) {
+  .menu-btn-fixed {
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+  }
+
+  .menu-btn-text {
+    display: none;
+  }
+
+  .menu-btn-fixed::before {
+    content: '≡';
+    font-size: 24px;
+    line-height: 1;
+    color: #FFF;
+    display: block;
+    font-weight: 300;
+  }
+
+  .menu-btn-fixed.active::before {
+    content: '';
+  }
+
+  .menu-btn-fixed.active .menu-btn-close {
+    opacity: 1;
+    pointer-events: auto;
+    font-size: 28px;
+  }
+}
+
+/* Logo scaling for smaller screens */
+@media (max-width: 768px) {
+  .logo-fixed {
+    top: clamp(12px, 3vh, 50px);
+    left: clamp(12px, 3vw, 2rem);
+  }
+
+  .logo-img {
+    height: clamp(40px, 6vh, 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-fixed {
+    top: clamp(10px, 2.5vh, 40px);
+    left: clamp(10px, 2.5vw, 1.5rem);
+  }
+
+  .logo-img {
+    height: clamp(35px, 5vh, 50px);
+  }
+
+  .menu-btn-fixed {
+    width: 40px;
+    height: 40px;
+    top: clamp(10px, 2.5vh, 40px);
+    right: clamp(10px, 2.5vw, 1.5rem);
+  }
+}

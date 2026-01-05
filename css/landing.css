@@ -54,8 +54,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 3rem 4rem;
+  padding: clamp(1.5rem, 4vh, 3rem) clamp(1.5rem, 5vw, 4rem);
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  gap: clamp(1rem, 2vw, 2rem);
+  flex-wrap: wrap;
 }
 
 /* Creative Digital Agency Text */
@@ -71,13 +73,14 @@
 
 .hero-tagline {
   font-family: var(--font-secondary);
-  font-size: 20px;
+  font-size: clamp(14px, 3.5vw, 20px);
   font-weight: 500;
   color: var(--color-text-primary);
   margin: 0;
   letter-spacing: -0.15px;
-  line-height: 30px;
-  white-space: nowrap;
+  line-height: clamp(1.4, 2vh, 30px);
+  white-space: wrap;
+}
 }
 
 /* Scroll Indicator */
@@ -190,8 +193,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 0 clamp(2rem, 3vw, 4rem) 6rem;
-  gap: 1.5rem;
+  padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 6rem);
+  gap: clamp(1rem, 2vh, 1.5rem);
   transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

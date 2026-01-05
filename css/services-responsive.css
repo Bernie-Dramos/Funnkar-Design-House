@@ -1,0 +1,302 @@
+/* =============================================
+   SERVICES SECTIONS RESPONSIVE FIX
+   ============================================= */
+
+/* Story Section Description */
+.story-section-desc {
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.15px;
+  color: #fff;
+  text-align: left;
+  max-width: 95vw;
+  margin: 0;
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 4vh, 2.5rem) 0 clamp(1.5rem, 4vh, 2.5rem) clamp(1.5rem, 4vw, 2.5rem);
+  z-index: 2;
+  background: none;
+}
+
+/* Story Section Background */
+.story-section-with-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  height: clamp(400px, 60vw, 950px);
+  display: flex;
+  align-items: flex-start;
+}
+
+.story-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.story-bg-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.story-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-primary) 100%);
+  opacity: 0.05;
+}
+
+/* VFX Section Background */
+.vfx-section-with-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  height: clamp(400px, 60vw, 950px);
+}
+
+.vfx-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vfx-bg-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.vfx-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-secondary) 100%);
+  opacity: 0.05;
+}
+
+/* Graphics Section Background */
+.graphics-section-with-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  height: clamp(400px, 60vw, 950px);
+}
+
+.graphics-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.graphics-bg-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.graphics-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-primary) 100%);
+  opacity: 0.05;
+}
+
+/* Branding Section Background */
+.branding-section-with-bg {
+  position: relative;
+  overflow: hidden;
+  min-height: auto;
+  height: clamp(400px, 60vw, 950px);
+}
+
+.branding-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.branding-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.branding-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, #1a2b5e 50%, var(--color-bg-primary) 100%);
+  opacity: 0.05;
+}
+
+/* Welcome Section */
+.welcome-hero {
+  width: 100%;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-center;
+  align-items: center;
+}
+
+.welcome-container {
+  margin-left: clamp(1rem, 3vw, 2rem);
+  margin-top: clamp(1rem, 2vh, 26px);
+  background: rgba(10,10,10,0.7);
+  border-radius: 8px;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  max-width: 95vw;
+}
+
+.welcome-title {
+  font-family: 'Poppins', var(--font-secondary), sans-serif;
+  font-size: clamp(2.5rem, 6vw, 64px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.15px;
+  margin-bottom: clamp(0.5rem, 1vh, 0.5rem);
+  text-align: left;
+}
+
+.welcome-subtitle {
+  font-family: 'Poppins', var(--font-secondary), sans-serif;
+  font-size: clamp(2.5rem, 6vw, 64px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #b0b0b0;
+  letter-spacing: -0.15px;
+  margin: 0;
+  text-align: left;
+}
+
+.welcome-laptop-img {
+  background: #18191b;
+  border-radius: 20px;
+  width: clamp(90vw, 80vw, 1328px);
+  max-width: 95vw;
+  height: auto;
+  display: block;
+  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.18);
+  padding: clamp(1rem, 3vw, 2.5rem);
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+}
+
+.welcome-image-slot {
+  width: 100%;
+  max-width: 98vw;
+  min-height: auto;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Adjustments for Services Sections */
+@media (max-width: 768px) {
+  .story-section-desc {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    padding: clamp(1rem, 3vh, 1.5rem) 0 clamp(1rem, 3vh, 1.5rem) clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .story-section-with-bg,
+  .vfx-section-with-bg,
+  .graphics-section-with-bg,
+  .branding-section-with-bg {
+    height: clamp(350px, 50vw, 600px);
+  }
+
+  .welcome-title,
+  .welcome-subtitle {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .welcome-laptop-img {
+    width: 95vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-section-desc {
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    padding: clamp(0.8rem, 2vh, 1rem) 0 clamp(0.8rem, 2vh, 1rem) clamp(0.8rem, 2.5vw, 1rem);
+    line-height: 1.3;
+  }
+
+  .story-section-with-bg,
+  .vfx-section-with-bg,
+  .graphics-section-with-bg,
+  .branding-section-with-bg {
+    height: clamp(300px, 45vw, 500px);
+  }
+
+  .welcome-container {
+    margin-left: clamp(0.8rem, 2vw, 1rem);
+  }
+
+  .welcome-title,
+  .welcome-subtitle {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+  }
+
+  .welcome-laptop-img {
+    padding: clamp(0.8rem, 2vw, 1.5rem);
+  }
+}

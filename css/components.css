@@ -751,7 +751,8 @@
 }
 
 .menu-btn-fixed.active {
-  background-color: var(--color-accent-blue);
+  background-color: rgba(0, 0, 0, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .menu-btn-text {
@@ -864,7 +865,7 @@
 }
 
 .menu-nav a:hover {
-  color: var(--color-accent-blue);
+  color: var(--color-text-primary);
 }
 
 .menu-secondary {
@@ -887,7 +888,7 @@
 }
 
 .menu-secondary a:hover {
-  color: var(--color-accent-blue);
+  color: var(--color-text-secondary);
 }
 
 /* Menu Footer */

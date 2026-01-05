@@ -2,236 +2,198 @@
    MOBILE RESPONSIVE SCALING FIX
    =============================================
    Removes negative margins and scales sections
-   proportionally across all devices
+   proportionally on MOBILE/TABLET ONLY
    ============================================= */
 
-/* CRITICAL: Fix margin-left issues on all sections */
-div[style*="margin-left:-850px"],
-div[style*="margin-left:-760px"] {
-  margin-left: 0 !important;
+/* Apply fixes ONLY on mobile and tablet screens */
+@media (max-width: 1024px) {
+  /* CRITICAL: Fix margin-left issues on all sections */
+  div[style*="margin-left:-850px"],
+  div[style*="margin-left:-760px"] {
+    margin-left: 0 !important;
+  }
+
+  .container > div[style*="display: flex"],
+  .container > div[style*="flex-direction: column"] {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* SECTION SPACING - Removed for seamless flow */
+  .section {
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .hero-landing {
+    margin-bottom: 0;
+    padding: 0;
+    height: clamp(50vh, 65vh, 100vh);
+    min-height: 380px;
+  }
+
+  .welcome-hero {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .portfolio-preview-section {
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Container proper sizing */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: clamp(1.5rem, 3.5vw, 4rem) !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Grid responsiveness */
+  .grid,
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: clamp(1.5rem, 3vw, 4rem) !important;
+    width: 100% !important;
+  }
+
+  /* Content divs proper sizing */
+  .grid > div {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  div[style*="max-width: 720px"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* List and button responsiveness */
+  ul,
+  li {
+    width: 100%;
+  }
+
+  li {
+    padding: clamp(0.4rem, 0.8vh, 0.6rem) 0 !important;
+    font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
+  }
+
+  a.btn,
+  button.btn {
+    padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.8rem) !important;
+    font-size: clamp(0.8rem, 1.8vw, 0.95rem) !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    a.btn,
+    button.btn {
+      padding: 0.6rem 1rem !important;
+      font-size: 0.8rem !important;
+      min-height: 40px !important;
+      height: auto !important;
+    }
+  }
+
+  /* Video and image scaling */
+  video,
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Flex containers fix */
+  div[style*="flex-direction: column"],
+  div[style*="display: flex; flex-direction"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  /* Welcome section scalability */
+  .welcome-title,
+  .welcome-subtitle {
+    font-size: clamp(1.6rem, 4.5vw, 3rem) !important;
+  }
+
+  .welcome-container {
+    width: 95vw !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: clamp(1rem, 2vw, 1.5rem) !important;
+  }
+
+  .welcome-laptop-img {
+    width: 95vw !important;
+    max-width: 100% !important;
+    padding: clamp(1rem, 2vw, 2rem) !important;
+    margin-top: clamp(1rem, 2vh, 2rem) !important;
+  }
+
+  /* Content gap and spacing proportional */
+  div[style*="gap: 1rem"],
+  div[style*="gap: 4rem"] {
+    gap: clamp(1rem, 2vw, 4rem) !important;
+  }
+
+  div[style*="margin-bottom: 6rem"] {
+    margin-bottom: clamp(2rem, 4vh, 6rem) !important;
+  }
+
+  div[style*="margin: 1.5rem 0"] {
+    margin: clamp(1rem, 2vh, 1.5rem) 0 !important;
+  }
+
+  div[style*="margin: 2rem 0"] {
+    margin: clamp(1.5rem, 3vh, 2rem) 0 !important;
+  }
 }
 
-.container > div[style*="display: flex"],
-.container > div[style*="flex-direction: column"] {
-  margin-left: 0 !important;
-  width: 100% !important;
-}
-
-/* SECTION SPACING - Removed for seamless flow */
-.section {
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.hero-landing {
-  margin-bottom: 0;
-  padding: 0;
-  height: clamp(50vh, 65vh, 100vh);
-  min-height: 380px;
-}
-
-.welcome-hero {
-  margin-bottom: 0 !important;
-  padding: 0 !important;
-}
-
-.portfolio-preview-section {
-  margin-bottom: 0 !important;
-  padding: 0 !important;
-}
-
-/* Container proper sizing */
-.container {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: clamp(1.5rem, 3.5vw, 4rem) !important;
-  margin: 0 !important;
-  box-sizing: border-box;
-}
-
-/* Grid responsiveness */
-.grid,
-.grid-2 {
-  grid-template-columns: 1fr !important;
-  gap: clamp(1.5rem, 3vw, 4rem) !important;
-  width: 100% !important;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .grid-2 {
     grid-template-columns: 1fr 1fr !important;
   }
-}
-
-/* Content divs proper sizing */
-.grid > div {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-div[style*="max-width: 720px"] {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
-/* List and button responsiveness */
-ul,
-li {
-  width: 100%;
-}
-
-li {
-  padding: clamp(0.4rem, 0.8vh, 0.6rem) 0 !important;
-  font-size: clamp(0.85rem, 1.8vw, 1rem) !important;
-}
-
-a.btn,
-button.btn {
-  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1.2rem, 2vw, 1.8rem) !important;
-  font-size: clamp(0.8rem, 1.8vw, 0.95rem) !important;
-  min-height: 44px !important;
-  min-width: 44px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: auto !important;
-  white-space: nowrap;
-}
-
-@media (max-width: 480px) {
-  a.btn,
-  button.btn {
-    padding: 0.6rem 1rem !important;
-    font-size: 0.8rem !important;
-    min-height: 40px !important;
-    height: auto !important;
-  }
-}
-
-/* Video and image scaling */
-video,
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 100%;
-}
-
-/* Flex containers fix */
-div[style*="flex-direction: column"],
-div[style*="display: flex; flex-direction"] {
-  width: 100% !important;
-  margin-left: 0 !important;
-}
-
-/* Welcome section scalability */
-.welcome-title,
-.welcome-subtitle {
-  font-size: clamp(1.6rem, 4.5vw, 3rem) !important;
-}
-
-.welcome-container {
-  width: 95vw !important;
-  max-width: 100% !important;
-  margin: 0 auto !important;
-  padding: clamp(1rem, 2vw, 1.5rem) !important;
-}
-
-.welcome-laptop-img {
-  width: 95vw !important;
-  max-width: 100% !important;
-  padding: clamp(1rem, 2vw, 2rem) !important;
-  margin-top: clamp(1rem, 2vh, 2rem) !important;
-}
-
-/* Content gap and spacing proportional */
-div[style*="gap: 1rem"],
-div[style*="gap: 4rem"] {
-  gap: clamp(1rem, 2vw, 4rem) !important;
-}
-
-div[style*="margin-bottom: 6rem"] {
-  margin-bottom: clamp(2rem, 4vh, 6rem) !important;
-}
-
-div[style*="margin: 1.5rem 0"] {
-  margin: clamp(1rem, 2vh, 1.5rem) 0 !important;
-}
-
-div[style*="margin: 2rem 0"] {
-  margin: clamp(1.5rem, 3vh, 2rem) 0 !important;
 }
 
 /* =============================================
    PORTFOLIO SHOWCASE CTA SECTION - Full Text Display
    ============================================= */
 
-.portfolio-cta-section {
-  padding: clamp(2rem, 5vh, 6rem) clamp(1.5rem, 3vw, 3rem) !important;
-  background-color: #000000;
-  overflow: visible;
-}
-
-.portfolio-cta-section .container {
-  max-width: 100% !important;
-  width: 100% !important;
-  padding: 0 !important;
-}
-
-.portfolio-cta-section h2 {
-  font-size: clamp(1.4rem, 4vw, 3rem) !important;
-  line-height: 1.5 !important;
-  margin-bottom: clamp(2rem, 4vh, 3rem) !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
-
-.rolling-gallery {
-  overflow: hidden !important;
-  margin-bottom: clamp(2rem, 3vh, 2.5rem) !important;
-}
-
-.rolling-track {
-  display: flex !important;
-  gap: 0 !important;
-  animation: roll-left 24s linear infinite !important;
-}
-
-@keyframes roll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.portfolio-showcase-card {
-  flex: 0 0 100vw !important;
-  height: clamp(280px, 75vw, 380px) !important;
-  background-color: #EF01020D;
-  border-radius: 12px;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  margin-right: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-}
-
-.rolling-track {
-  animation: roll-left 2s linear infinite !important;
-}
-
-@media (min-width: 768px) {
-  .portfolio-showcase-card {
-    flex: 0 0 380px !important;
-    height: auto !important;
-    margin-right: 12px;
+/* Portfolio CTA Section - Mobile Only */
+@media (max-width: 768px) {
+  .portfolio-cta-section {
+    padding: clamp(2rem, 5vh, 6rem) clamp(1.5rem, 3vw, 3rem) !important;
   }
-  
+
+  .portfolio-cta-section h2 {
+    font-size: clamp(1.4rem, 4vw, 3rem) !important;
+    line-height: 1.5 !important;
+    margin-bottom: clamp(2rem, 4vh, 3rem) !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .portfolio-showcase-card {
+    flex: 0 0 100vw !important;
+    height: clamp(280px, 75vw, 380px) !important;
+    margin-right: 0;
+  }
+
   .rolling-track {
-    animation: roll-left 30s linear infinite !important;
+    animation: roll-left 24s linear infinite !important;
   }
 }
 
@@ -239,108 +201,114 @@ div[style*="margin: 2rem 0"] {
    PORTFOLIO PREVIEW GRID - Mobile Responsive
    ============================================= */
 
-.portfolio-checker-grid {
-  display: flex !important;
-  flex-direction: column;
-  gap: clamp(1.5rem, 3vh, 3.5rem) !important;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+@media (max-width: 1024px) {
+  .portfolio-checker-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vh, 3.5rem) !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .portfolio-item {
+    width: 100% !important;
+    max-width: clamp(280px, 95vw, 668px) !important;
+    height: auto !important;
+    min-height: 280px !important;
+    border-radius: 14px !important;
+    overflow: hidden;
+  }
+
+  .portfolio-item-1 {
+    padding: 10px !important;
+    background: #0f131a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  }
+
+  .portfolio-item-2 {
+    padding: 12px !important;
+    background: #f2f2f4;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    max-width: clamp(280px, 95vw, 535px) !important;
+  }
+
+  .portfolio-gif {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 12px;
+    display: block;
+  }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .portfolio-checker-grid {
     flex-direction: row !important;
     align-items: flex-start !important;
   }
 }
 
-.portfolio-item {
-  width: 100% !important;
-  max-width: clamp(280px, 95vw, 668px) !important;
-  height: auto !important;
-  min-height: 280px !important;
-  border-radius: 14px !important;
-  overflow: hidden;
-}
-
-.portfolio-item-1 {
-  padding: 10px !important;
-  background: #0f131a;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-
-.portfolio-item-2 {
-  padding: 12px !important;
-  background: #f2f2f4;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  max-width: clamp(280px, 95vw, 535px) !important;
-}
-
-.portfolio-gif {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 12px;
-  display: block;
-}
-
 /* =============================================
-   RESPONSIVE TEXT SIZING
+   RESPONSIVE TEXT SIZING - Mobile/Tablet Only
    ============================================= */
 
-h1 {
-  font-size: clamp(1.8rem, 5vw, 5rem) !important;
+@media (max-width: 1024px) {
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 5rem) !important;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 4.5vw, 3.5rem) !important;
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 3vw, 2.5rem) !important;
+  }
+
+  h2 br {
+    display: none;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 2vw, 1.125rem) !important;
+    line-height: 1.6 !important;
+  }
+
+  span[style*="font-size: 1.25rem"] {
+    font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
+  }
 }
 
-h2 {
-  font-size: clamp(1.4rem, 4.5vw, 3.5rem) !important;
-}
-
-h3 {
-  font-size: clamp(1.1rem, 3vw, 2.5rem) !important;
-}
-
-h2 br {
-  display: none;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   h2 br {
     display: inline;
   }
 }
 
-p {
-  font-size: clamp(0.9rem, 2vw, 1.125rem) !important;
-  line-height: 1.6 !important;
-}
-
-span[style*="font-size: 1.25rem"] {
-  font-size: clamp(1rem, 2.5vw, 1.25rem) !important;
-}
-
 /* =============================================
-   SECTION HEIGHTS
+   SECTION HEIGHTS - Mobile/Tablet Only
    ============================================= */
 
-.section,
-.services-bg-section,
-.graphics-bg-section,
-.vfx-bg-section,
-.web-bg-section,
-.cta-bg-section,
-.web-section,
-.story-section-with-bg,
-.vfx-section-with-bg {
-  min-height: auto;
-  height: clamp(350px, 70vh, 950px);
-}
+@media (max-width: 1024px) {
+  .section,
+  .services-bg-section,
+  .graphics-bg-section,
+  .vfx-bg-section,
+  .web-bg-section,
+  .cta-bg-section,
+  .web-section,
+  .story-section-with-bg,
+  .vfx-section-with-bg {
+    min-height: auto;
+    height: clamp(350px, 70vh, 950px);
+  }
 
-/* Ensure no horizontal overflow */
-body,
-html {
-  overflow-x: hidden;
-  width: 100%;
+  /* Ensure no horizontal overflow */
+  body,
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
 }

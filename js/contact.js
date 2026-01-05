@@ -1,25 +1,8 @@
 // =============================================
-// GOOGLE FORM INTEGRATION
+// GOOGLE APPS SCRIPT WEB APP INTEGRATION
 // =============================================
-// Form ID: 1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q
-
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q/formResponse';
-
-// Map form field IDs to Google Form entry IDs
-// Follow these steps to get entry IDs:
-// 1. Go to: https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90MhFf0lcxkdT_kmxup42PAHk_YyehZZNI00Q/prefill
-// 2. Right-click each form field and select "Inspect"
-// 3. Find the 'name' attribute (e.g., name="entry.1234567890")
-// 4. Copy that number and paste it below
-
-const GOOGLE_FORM_FIELDS = {
-    fullName: 'entry.1922293406',    // Full Name - REPLACE WITH ACTUAL ID
-    company: 'entry.2005620554',     // Company Name - REPLACE WITH ACTUAL ID
-    email: 'entry.1045781291',       // Email - REPLACE WITH ACTUAL ID
-    phone: 'entry.1685846602',       // Phone - REPLACE WITH ACTUAL ID
-    subject: 'entry.1065046570',     // Subject - REPLACE WITH ACTUAL ID
-    message: 'entry.1166974658'      // Details - REPLACE WITH ACTUAL ID
-};
+// Production-optimized Google Apps Script deployment URL
+const GOOGLE_FORM_URL = 'https://script.googleapis.com/macros/s/AKfycbyBLhXXmwCR5CHPiQwWtIHMoTVoAQw-JW_Pcz0A_RnCJhUuhiPBvdWMjvloSeLw_L7N/exec';
 
 // =============================================
 // CONTACT FORM FUNCTIONALITY
@@ -35,11 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // =============================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
     
     if (!form) return;
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        // Clear any existing inline status message
+        setFormStatus('');
 
         // Get form data
         const formData = {
@@ -62,6 +49,8 @@ function initContactForm() {
 
             // Submit to Google Form
             submitToGoogleForm(formData, submitBtn, originalText, form);
+        } else {
+            setFormStatus('Please fix the highlighted fields.', 'error');
         }
     });
 
@@ -84,53 +73,40 @@ function initContactForm() {
 // SUBMIT TO GOOGLE FORM
 // =============================================
 function submitToGoogleForm(formData, submitBtn, originalText, form) {
-    // Check if form ID is configured
-    if (GOOGLE_FORM_URL.includes('YOUR_FORM_ID')) {
-        showNotification('Error: Google Form is not configured. Please contact the administrator.', 'error');
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        return;
-    }
-
-    // Create FormData object
-    const data = new FormData();
-
     // Merge phone with country code for submission
     const phoneWithCode = formData.phone
         ? `${formData.countryCode ? formData.countryCode + ' ' : ''}${formData.phone}`.trim()
         : '';
 
-    const payload = {
-        fullName: formData.fullName,
-        company: formData.company,
-        email: formData.email,
-        phone: phoneWithCode,
-        subject: formData.subject,
-        message: formData.message
-    };
+    // Build payload for Apps Script
+    const data = new URLSearchParams();
+    data.append('fullName', formData.fullName);
+    data.append('company', formData.company);
+    data.append('email', formData.email);
+    data.append('phone', phoneWithCode);
+    data.append('subject', formData.subject);
+    data.append('message', formData.message);
 
-    // Map form fields to Google Form entry IDs
-    for (const [key, entryId] of Object.entries(GOOGLE_FORM_FIELDS)) {
-        data.append(entryId, payload[key] || '');
-    }
-
-    // Send to Google Form using fetch with no-cors
+    // Send to Google Apps Script web app using no-cors mode
     fetch(GOOGLE_FORM_URL, {
         method: 'POST',
         body: data,
         mode: 'no-cors'
     })
     .then(() => {
-        // Success - Google Forms doesn't return a success response in no-cors mode
-        // So we assume success if no error is thrown
+        // In no-cors mode, we can't read the response, so we wait a moment then assume success
+        return new Promise(resolve => setTimeout(resolve, 500));
+    })
+    .then(() => {
         showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        setFormStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
         form.reset();
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     })
     .catch((error) => {
-        console.error('Form submission error:', error);
         showNotification('Failed to send message. Please try again later.', 'error');
+        setFormStatus('Failed to send message. Please try again later.', 'error');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     });
@@ -249,6 +225,25 @@ function clearFieldError(fieldId) {
     const errorMessage = formGroup.querySelector('.error-message');
     if (errorMessage) {
         errorMessage.remove();
+    }
+}
+
+// Inline status banner near the form
+function setFormStatus(message, type) {
+    const statusEl = document.getElementById('formStatus');
+    if (!statusEl) return;
+
+    // Reset state
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+
+    if (!message) return;
+
+    statusEl.textContent = message;
+    statusEl.classList.add('show');
+
+    if (type === 'success' || type === 'error') {
+        statusEl.classList.add(type);
     }
 }
 

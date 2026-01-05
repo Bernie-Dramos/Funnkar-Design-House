@@ -1,0 +1,92 @@
+/* =============================================
+   CONTACT PAGE RESPONSIVE OVERRIDES
+   ============================================= */
+
+.contact-hero-section {
+  background: #0A0A0A !important;
+  padding: 0 !important;
+}
+
+.contact-hero-left {
+  flex: 1 1 clamp(320px, 90vw, 520px) !important;
+  min-width: 100% !important;
+  max-width: none !important;
+}
+
+.contact-hero-left p:first-of-type {
+  font-size: clamp(0.85rem, 2vw, 1rem) !important;
+  margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+}
+
+.contact-hero-left h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem) !important;
+  margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+}
+
+.contact-hero-left > p:nth-of-type(2) {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+  margin-bottom: clamp(1.5rem, 3vh, 2.5rem) !important;
+}
+
+.contact-hero-left ul li {
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  margin-bottom: clamp(0.5rem, 1vh, 0.7rem) !important;
+}
+
+.contact-hero-left h3 {
+  font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+  margin-bottom: clamp(0.3rem, 1vh, 0.5rem) !important;
+}
+
+.contact-hero-left h3 + p {
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+  margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+}
+
+.contact-hero-left > div:last-child > div {
+  margin-bottom: clamp(0.3rem, 0.5vh, 0.5rem) !important;
+  font-size: clamp(0.9rem, 2vw, 1rem) !important;
+}
+
+/* Hero section container */
+.contact-hero-section > .container {
+  max-width: 1200px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: clamp(1.5rem, 4vw, 3rem) !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  padding: clamp(2rem, 4vh, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(1rem, 2vh, 2rem) !important;
+  margin: 0 auto !important;
+  margin-top: clamp(70px, 10vh, 90px) !important;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .contact-hero-section > .container {
+    flex-direction: column;
+    gap: clamp(1rem, 3vh, 2rem) !important;
+  }
+
+  .contact-hero-left {
+    order: 1;
+  }
+
+  .contact-form-card {
+    order: 2;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .contact-hero-section > .container {
+    padding: clamp(1.5rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem) !important;
+    margin-top: clamp(60px, 8vh, 70px) !important;
+  }
+
+  .contact-hero-left ul li span {
+    flex-shrink: 0;
+  }
+}

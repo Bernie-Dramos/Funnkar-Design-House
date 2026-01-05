@@ -13,8 +13,8 @@ const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90
 // 4. Copy that number and paste it below
 
 const GOOGLE_FORM_FIELDS = {
-    firstName: 'entry.1234567890',   // First Name - REPLACE WITH ACTUAL ID
-    lastName: 'entry.1234567891',    // Last Name - REPLACE WITH ACTUAL ID
+    fullName: 'entry.1234567890',    // Full Name - REPLACE WITH ACTUAL ID
+    company: 'entry.1234567891',     // Company Name - REPLACE WITH ACTUAL ID
     email: 'entry.1234567892',       // Email - REPLACE WITH ACTUAL ID
     phone: 'entry.1234567893',       // Phone - REPLACE WITH ACTUAL ID
     subject: 'entry.1234567894',     // Subject - REPLACE WITH ACTUAL ID
@@ -43,8 +43,8 @@ function initContactForm() {
 
         // Get form data
         const formData = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
+            fullName: document.getElementById('fullName').value,
+            company: document.getElementById('company').value,
             email: document.getElementById('email').value,
             countryCode: document.getElementById('countryCode').value,
             phone: document.getElementById('phone').value,
@@ -101,8 +101,8 @@ function submitToGoogleForm(formData, submitBtn, originalText, form) {
         : '';
 
     const payload = {
-        firstName: formData.firstName,
-        lastName: formData.lastName,
+        fullName: formData.fullName,
+        company: formData.company,
         email: formData.email,
         phone: phoneWithCode,
         subject: formData.subject,
@@ -142,20 +142,12 @@ function submitToGoogleForm(formData, submitBtn, originalText, form) {
 function validateForm(formData) {
     let isValid = true;
 
-    // Validate first name
-    if (formData.firstName.trim().length < 2) {
-        showFieldError('firstName', 'Please enter a valid first name');
+    // Validate full name
+    if (formData.fullName.trim().length < 2) {
+        showFieldError('fullName', 'Please enter your full name');
         isValid = false;
     } else {
-        clearFieldError('firstName');
-    }
-
-    // Validate last name
-    if (formData.lastName.trim().length < 2) {
-        showFieldError('lastName', 'Please enter a valid last name');
-        isValid = false;
-    } else {
-        clearFieldError('lastName');
+        clearFieldError('fullName');
     }
 
     // Validate email
@@ -191,16 +183,9 @@ function validateField(field) {
     const fieldName = field.id;
 
     switch (fieldName) {
-        case 'firstName':
+        case 'fullName':
             if (value.length < 2) {
-                showFieldError(fieldName, 'Please enter a valid first name');
-            } else {
-                clearFieldError(fieldName);
-            }
-            break;
-        case 'lastName':
-            if (value.length < 2) {
-                showFieldError(fieldName, 'Please enter a valid last name');
+                showFieldError(fieldName, 'Please enter your full name');
             } else {
                 clearFieldError(fieldName);
             }

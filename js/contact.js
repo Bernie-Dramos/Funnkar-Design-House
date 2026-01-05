@@ -13,12 +13,12 @@ const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeGSEJRBLNta90
 // 4. Copy that number and paste it below
 
 const GOOGLE_FORM_FIELDS = {
-    fullName: 'entry.1234567890',    // Full Name - REPLACE WITH ACTUAL ID
-    company: 'entry.1234567891',     // Company Name - REPLACE WITH ACTUAL ID
-    email: 'entry.1234567892',       // Email - REPLACE WITH ACTUAL ID
-    phone: 'entry.1234567893',       // Phone - REPLACE WITH ACTUAL ID
-    subject: 'entry.1234567894',     // Subject - REPLACE WITH ACTUAL ID
-    message: 'entry.1234567895'      // Details - REPLACE WITH ACTUAL ID
+    fullName: 'entry.1922293406',    // Full Name - REPLACE WITH ACTUAL ID
+    company: 'entry.2005620554',     // Company Name - REPLACE WITH ACTUAL ID
+    email: 'entry.1045781291',       // Email - REPLACE WITH ACTUAL ID
+    phone: 'entry.1685846602',       // Phone - REPLACE WITH ACTUAL ID
+    subject: 'entry.1065046570',     // Subject - REPLACE WITH ACTUAL ID
+    message: 'entry.1166974658'      // Details - REPLACE WITH ACTUAL ID
 };
 
 // =============================================

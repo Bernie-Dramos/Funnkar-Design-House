@@ -158,5 +158,4 @@ function debounce(func, wait) {
 // Add resize listener with debounce
 window.addEventListener('resize', debounce(function() {
     // Handle any resize-specific logic here
-    console.log('Window resized');
 }, 250));

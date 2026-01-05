@@ -100,7 +100,7 @@ function initActiveNavLinks() {
     navLinks.forEach(link => {
         const linkPage = link.getAttribute('href');
         if (linkPage === currentPage) {
-            link.style.color = 'var(--color-accent-blue)';
+            link.classList.add('active-page');
         }
     });
 }

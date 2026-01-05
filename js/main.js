@@ -134,30 +134,9 @@ function initScrollAnimations() {
 }
 
 // =============================================
-// HEADER SCROLL EFFECT
+// HEADER SCROLL EFFECT - REMOVED (Fixed logo/menu stay constant)
 // =============================================
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', function() {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll <= 0) {
-        header.style.boxShadow = 'none';
-        return;
-    }
-
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
-    } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
-    }
-
-    lastScroll = currentScroll;
-});
+// No longer needed since logo and menu are independent fixed elements
 
 // =============================================
 // UTILITY FUNCTIONS

@@ -2,7 +2,7 @@
 // GOOGLE APPS SCRIPT WEB APP INTEGRATION
 // =============================================
 // Production-optimized Google Apps Script deployment URL
-const GOOGLE_FORM_URL = 'https://script.googleapis.com/macros/s/AKfycbyBLhXXmwCR5CHPiQwWtIHMoTVoAQw-JW_Pcz0A_RnCJhUuhiPBvdWMjvloSeLw_L7N/exec';
+const GOOGLE_FORM_URL = 'https://script.google.com/macros/s/AKfycbzupof19fjwZplaCpuVssq9oT4BIWPh8Pu3gqX89srruEz2HoEAOg6Jr6u_AK3a-cbQ/exec';
 
 // =============================================
 // CONTACT FORM FUNCTIONALITY

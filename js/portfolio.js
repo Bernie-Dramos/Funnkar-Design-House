@@ -2,7 +2,10 @@
 // PORTFOLIO FILTERING & PAGINATION FUNCTIONALITY
 // =============================================
 
+const PAGE_SIZE = 6;
 let currentPage = 1;
+let activeFilter = 'all';
+let filteredCards = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     initPortfolioFilter();
@@ -46,9 +49,39 @@ function initPagination() {
 }
 
 function showPage(page) {
+    // Filtered view: paginate within matched cards only
+    if (activeFilter !== 'all') {
+        const totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
+        currentPage = Math.min(Math.max(page, 1), totalPages);
+
+        // Hide all cards first
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.style.display = 'none';
+        });
+
+        // Show only the slice for the current filtered page
+        const start = (currentPage - 1) * PAGE_SIZE;
+        const visibleCards = filteredCards.slice(start, start + PAGE_SIZE);
+        
+        visibleCards.forEach((card) => {
+            card.style.display = '';
+            card.style.opacity = '1';
+        });
+
+        // Show only the first grid and hide others for filtered view
+        document.querySelectorAll('.portfolio-grid').forEach((grid, idx) => {
+            grid.style.display = grid.id === 'portfolioGridPage1' ? 'grid' : 'none';
+        });
+
+        updatePaginationButtons(totalPages);
+        updatePrevNext(totalPages);
+        return;
+    }
+
+    // Default "All" view pagination by grid
     currentPage = page;
 
-    // Hide all grids
+    // Hide all grids first
     document.querySelectorAll('.portfolio-grid').forEach(grid => {
         grid.style.display = 'none';
     });
@@ -57,7 +90,6 @@ function showPage(page) {
     const selectedGrid = document.getElementById(`portfolioGridPage${page}`);
     if (selectedGrid) {
         selectedGrid.style.display = 'grid';
-        // Add fade-in animation
         selectedGrid.style.opacity = '0';
         setTimeout(() => {
             selectedGrid.style.transition = 'opacity 0.3s ease';
@@ -65,30 +97,39 @@ function showPage(page) {
         }, 10);
     }
 
-    // Update pagination buttons
-    document.querySelectorAll('.page-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (parseInt(btn.getAttribute('data-page')) === page) {
-            btn.classList.add('active');
-        }
-    });
+    updatePaginationButtons(document.querySelectorAll('.page-btn').length);
+    updatePrevNext(document.querySelectorAll('.page-btn').length);
 
-    // Update prev/next buttons
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const totalPages = document.querySelectorAll('.page-btn').length;
-
-    if (prevBtn) {
-        prevBtn.disabled = page === 1;
-    }
-    if (nextBtn) {
-        nextBtn.disabled = page === totalPages;
-    }
-
-    // Scroll to top of grid
     const grid = document.querySelector('.portfolio-grid:not([style*="display: none"])');
     if (grid) {
         grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function updatePaginationButtons(totalPages) {
+    const pageButtons = document.querySelectorAll('.page-btn');
+    pageButtons.forEach((btn, index) => {
+        const pageNum = index + 1;
+        const shouldShow = pageNum <= totalPages;
+        btn.style.display = shouldShow ? '' : 'none';
+        if (shouldShow) {
+            btn.setAttribute('data-page', pageNum);
+            btn.textContent = pageNum;
+            btn.classList.toggle('active', pageNum === currentPage);
+        }
+    });
+}
+
+function updatePrevNext(totalPages) {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (prevBtn) {
+        prevBtn.disabled = currentPage === 1;
+        prevBtn.style.display = totalPages > 1 ? '' : 'none';
+    }
+    if (nextBtn) {
+        nextBtn.disabled = currentPage === totalPages;
+        nextBtn.style.display = totalPages > 1 ? '' : 'none';
     }
 }
 
@@ -99,6 +140,8 @@ function showPage(page) {
 function initPortfolioFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn, .filter-btn-hero');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const pagination = document.querySelector('.portfolio-pagination');
+    const grids = document.querySelectorAll('.portfolio-grid');
 
     if (filterButtons.length === 0 || portfolioCards.length === 0) return;
 
@@ -106,33 +149,56 @@ function initPortfolioFilter() {
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
+            activeFilter = filterValue;
 
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
 
-            // Filter portfolio items on all pages
-            portfolioCards.forEach(card => {
-                const cardCategories = card.getAttribute('data-category').split(' ');
-                const cardPage = parseInt(card.getAttribute('data-page')) || 1;
-                const parentGrid = card.closest('.portfolio-grid');
+            if (filterValue === 'all') {
+                // Reset to "All" view - show all cards and grids
+                filteredCards = [];
+                
+                // Hide all grids first
+                grids.forEach(grid => grid.style.display = 'none');
+                
+                // Show all cards across all grids
+                portfolioCards.forEach(card => {
+                    card.style.display = '';
+                    card.style.opacity = '1';
+                });
 
-                // Show all if 'all' is selected
-                if (filterValue === 'all') {
-                    card.style.display = '';
-                    card.style.opacity = '1';
-                } 
-                // Show if matches filter
-                else if (cardCategories.includes(filterValue)) {
-                    card.style.display = '';
-                    card.style.opacity = '1';
-                } 
-                // Hide if doesn't match
-                else {
-                    card.style.display = 'none';
-                    card.style.opacity = '0';
+                // Show pagination with 3 pages
+                pagination.style.display = '';
+                updatePaginationButtons(3);
+                updatePrevNext(3);
+                
+                // Show first grid
+                const grid1 = document.getElementById('portfolioGridPage1');
+                if (grid1) {
+                    grid1.style.display = 'grid';
+                }
+                currentPage = 1;
+                updatePaginationButtons(3);
+                return;
+            }
+
+            // Build filtered list for specific category
+            filteredCards = [];
+            portfolioCards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category').split(' ').map(c => c.toLowerCase());
+                const match = cardCategories.includes(filterValue.toLowerCase());
+                if (match) {
+                    filteredCards.push(card);
                 }
             });
+
+            const totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
+
+            // Filtered view: show all grids, paginate only if > PAGE_SIZE
+            grids.forEach(grid => grid.style.display = 'grid');
+            pagination.style.display = filteredCards.length > PAGE_SIZE ? '' : 'none';
+            showPage(1);
         });
     });
 }

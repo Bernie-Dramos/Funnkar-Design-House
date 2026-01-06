@@ -6,6 +6,7 @@ const PAGE_SIZE = 6;
 let currentPage = 1;
 let activeFilter = 'all';
 let filteredCards = [];
+let filteredGrid = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     initPortfolioFilter();
@@ -53,24 +54,22 @@ function showPage(page) {
     if (activeFilter !== 'all') {
         const totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
         currentPage = Math.min(Math.max(page, 1), totalPages);
+        if (!filteredGrid) {
+            filteredGrid = document.getElementById('portfolioGridFiltered');
+        }
+        if (!filteredGrid) return;
 
-        // Hide all cards first
-        document.querySelectorAll('.portfolio-card').forEach(card => {
+        // Hide all filtered cards first
+        filteredCards.forEach(card => {
             card.style.display = 'none';
         });
 
         // Show only the slice for the current filtered page
         const start = (currentPage - 1) * PAGE_SIZE;
         const visibleCards = filteredCards.slice(start, start + PAGE_SIZE);
-        
-        visibleCards.forEach((card) => {
+        visibleCards.forEach(card => {
             card.style.display = '';
             card.style.opacity = '1';
-        });
-
-        // Show ALL grids so cards from all pages are visible
-        document.querySelectorAll('.portfolio-grid').forEach((grid) => {
-            grid.style.display = 'grid';
         });
 
         updatePaginationButtons(totalPages);
@@ -158,6 +157,12 @@ function initPortfolioFilter() {
             if (filterValue === 'all') {
                 // Reset to "All" view - show all cards and grids
                 filteredCards = [];
+                // Remove filtered grid if present
+                if (!filteredGrid) filteredGrid = document.getElementById('portfolioGridFiltered');
+                if (filteredGrid) {
+                    filteredGrid.style.display = 'none';
+                    filteredGrid.innerHTML = '';
+                }
                 
                 // Hide all grids first
                 grids.forEach(grid => grid.style.display = 'none');
@@ -193,10 +198,37 @@ function initPortfolioFilter() {
                 }
             });
 
-            const totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
+            // Build filtered grid container with clones to unify layout
+            filteredGrid = document.getElementById('portfolioGridFiltered');
+            if (!filteredGrid) {
+                filteredGrid = document.createElement('div');
+                filteredGrid.className = 'portfolio-grid';
+                filteredGrid.id = 'portfolioGridFiltered';
+                // Insert after existing grids
+                const lastGrid = document.getElementById('portfolioGridPage3') || grids[grids.length - 1];
+                if (lastGrid && lastGrid.parentNode) {
+                    lastGrid.parentNode.insertBefore(filteredGrid, lastGrid.nextSibling);
+                } else {
+                    const container = document.querySelector('.portfolio-section .container');
+                    if (container) container.appendChild(filteredGrid);
+                }
+            }
+            filteredGrid.innerHTML = '';
 
-            // Filtered view: show all grids, paginate only if > PAGE_SIZE
-            grids.forEach(grid => grid.style.display = 'grid');
+            // Create clones and append to filteredGrid
+            const clones = [];
+            filteredCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clones.push(clone);
+                filteredGrid.appendChild(clone);
+            });
+            // Replace filteredCards with clones for pagination display
+            filteredCards = clones;
+
+            // Hide original grids
+            grids.forEach(grid => grid.style.display = 'none');
+            filteredGrid.style.display = 'grid';
+            const totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
             pagination.style.display = filteredCards.length > PAGE_SIZE ? '' : 'none';
             showPage(1);
         });

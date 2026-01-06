@@ -68,9 +68,9 @@ function showPage(page) {
             card.style.opacity = '1';
         });
 
-        // Show only the first grid and hide others for filtered view
-        document.querySelectorAll('.portfolio-grid').forEach((grid, idx) => {
-            grid.style.display = grid.id === 'portfolioGridPage1' ? 'grid' : 'none';
+        // Show ALL grids so cards from all pages are visible
+        document.querySelectorAll('.portfolio-grid').forEach((grid) => {
+            grid.style.display = 'grid';
         });
 
         updatePaginationButtons(totalPages);

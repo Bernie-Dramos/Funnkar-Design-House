@@ -314,32 +314,62 @@ document.head.appendChild(style);
 // FAQ ACCORDION
 // =============================================
 function initFAQAccordion() {
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    const items = document.querySelectorAll('.accordion-item');
+    const headers = document.querySelectorAll('.accordion-header');
 
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            const accordionItem = this.parentElement;
-            const isActive = accordionItem.classList.contains('active');
-            const icon = this.querySelector('.accordion-icon');
+    // Initialize all items collapsed with ARIA markup
+    items.forEach((item, idx) => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+        if (!header || !content) return;
 
-            // Close all accordion items
-            document.querySelectorAll('.accordion-item').forEach(item => {
-                item.classList.remove('active');
-                const content = item.querySelector('.accordion-content');
-                content.style.maxHeight = '0';
-                const itemIcon = item.querySelector('.accordion-icon');
-                if (itemIcon) itemIcon.textContent = '+';
-            });
+        // Assign ids for ARIA linking
+        const contentId = content.id || `faq-content-${idx+1}`;
+        content.id = contentId;
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('aria-controls', contentId);
+        header.setAttribute('aria-expanded', 'false');
 
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                accordionItem.classList.add('active');
-                const content = accordionItem.querySelector('.accordion-content');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                if (icon) icon.textContent = '×';
-            } else {
-                // If closing, set icon back to +
-                if (icon) icon.textContent = '+';
+        // Ensure collapsed state on load
+        item.classList.remove('active');
+        content.style.maxHeight = '0px';
+        const icon = header.querySelector('.accordion-icon');
+        if (icon) icon.textContent = '+';
+    });
+
+    function toggleItem(header) {
+        const accordionItem = header.parentElement;
+        const isActive = accordionItem.classList.contains('active');
+        const icon = header.querySelector('.accordion-icon');
+
+        // Close all items
+        items.forEach(item => {
+            item.classList.remove('active');
+            const c = item.querySelector('.accordion-content');
+            if (c) c.style.maxHeight = '0px';
+            const i = item.querySelector('.accordion-icon');
+            if (i) i.textContent = '+';
+            const h = item.querySelector('.accordion-header');
+            if (h) h.setAttribute('aria-expanded', 'false');
+        });
+
+        // Open target if it was not active
+        if (!isActive) {
+            accordionItem.classList.add('active');
+            const content = accordionItem.querySelector('.accordion-content');
+            if (content) content.style.maxHeight = content.scrollHeight + 'px';
+            if (icon) icon.textContent = '×';
+            header.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    headers.forEach(header => {
+        header.addEventListener('click', () => toggleItem(header));
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleItem(header);
             }
         });
     });

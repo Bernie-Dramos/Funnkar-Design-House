@@ -50,12 +50,15 @@ function initHamburgerMenu() {
     function toggleMenu() {
         hamburger.classList.toggle('active');
         menuOverlay.classList.toggle('active');
-        document.body.style.overflow = menuOverlay.classList.contains('active') ? 'hidden' : '';
+        const isActive = menuOverlay.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isActive.toString());
+        document.body.style.overflow = isActive ? 'hidden' : '';
     }
 
     function closeMenu() {
         hamburger.classList.remove('active');
         menuOverlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 }

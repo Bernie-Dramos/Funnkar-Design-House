@@ -18,7 +18,7 @@
     </a>
 
     <!-- Fixed Menu Button -->
-    <button class="menu-btn-fixed" id="hamburger">
+    <button class="menu-btn-fixed" id="hamburger" aria-expanded="false" aria-controls="menuOverlay" aria-label="Toggle menu">
         <span class="menu-btn-text">Menu</span>
         <span class="menu-btn-close">✕</span>
     </button>
@@ -48,25 +48,25 @@
     </nav>
 
     <!-- Hero Section -->
-        <section class="contact-hero-section" style="background: #0A0A0A; padding: 0;">
-            <div class="container" style="max-width: 1200px; display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start; justify-content: space-between; padding: 4rem 0 2rem 0; margin-top: 90px;">
+        <section class="contact-hero-section">
+            <div class="contact-hero-container container">
                 <!-- Left: Hero Text & Info -->
-                <div class="contact-hero-left" style="flex: 1 1 420px; min-width: 340px; max-width: 520px;">
-                    <p style="color: #fff; font-size: 1rem; letter-spacing: 0.04em; font-weight: 500; margin-bottom: 1.5rem; text-transform: uppercase;">CONTACT US</p>
-                    <h1 style="color: #fff; font-size: 2.6rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.15;">Get in Touch with Us</h1>
-                    <p style="color: #B0B0B0; font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 95%;">Craving Creativity or got feedback? Let's dive in. Whether you’re interested in learning more about our services or need support. we’re happy to help</p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 2.5rem;">
-                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>User-Centric Design</li>
-                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Scalable Solutions</li>
-                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Innovative Concepts</li>
-                        <li style="color: #fff; font-size: 1rem; margin-bottom: 0.7rem; display: flex; align-items: center;"><span style="display:inline-block;width:1.2em;height:1.2em;border-radius:50%;border:2px solid #fff;margin-right:0.7em;line-height:1.2em;text-align:center;font-size:1em;">✓</span>Reliable Delivery</li>
+                <div class="contact-hero-left">
+                    <p class="contact-kicker">CONTACT US</p>
+                    <h1 class="contact-title">Get in Touch with Us</h1>
+                    <p class="contact-subtitle">Craving Creativity or got feedback? Let's dive in. Whether you’re interested in learning more about our services or need support. we’re happy to help</p>
+                    <ul class="contact-list">
+                        <li><span class="checkmark">✓</span>User-Centric Design</li>
+                        <li><span class="checkmark">✓</span>Scalable Solutions</li>
+                        <li><span class="checkmark">✓</span>Innovative Concepts</li>
+                        <li><span class="checkmark">✓</span>Reliable Delivery</li>
                     </ul>
-                    <div style="margin-top: 2.5rem;">
-                        <h3 style="color: #fff; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">GENERAL CONTACT INFO</h3>
-                        <p style="color: #B0B0B0; font-size: 1rem; margin-bottom: 1.5rem;">For questions, technical assistance or collaboration opportunities reach out via the information provided.</p>
-                        <div style="margin-bottom: 0.5rem;"><span style="color: #fff; font-weight: 700;">Phone:</span> <span style="color: #B0B0B0;">+91 898 351 6874</span></div>
-                        <div style="margin-bottom: 0.5rem;"><span style="color: #fff; font-weight: 700;">Email:</span> <span style="color: #B0B0B0;">funnkar.designhouse@gmail.com</span></div>
-                        <div><span style="color: #fff; font-weight: 700;">Location:</span> <span style="color: #B0B0B0;">Nashik, Maharashtra</span></div>
+                    <div class="contact-info-block">
+                        <h3>GENERAL CONTACT INFO</h3>
+                        <p>For questions, technical assistance or collaboration opportunities reach out via the information provided.</p>
+                        <div><span class="label">Phone:</span> <span class="value">+91 898 351 6874</span></div>
+                        <div><span class="label">Email:</span> <span class="value">funnkar.designhouse@gmail.com</span></div>
+                        <div><span class="label">Location:</span> <span class="value">Nashik, Maharashtra</span></div>
                     </div>
                 </div>
                 <!-- Right: Contact Form Card -->
@@ -211,7 +211,7 @@
         <div class="cta-footer-content">
             <div class="cta-footer-bottom">
                 <span class="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
-                <span class="cta-footer-privacy"><a href="#">Privacy & Terms</a></span>
+                <span class="cta-footer-privacy"><a href="privacy.html">Privacy & Terms</a></span>
             </div>
         </div>
     </section>

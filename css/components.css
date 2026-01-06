@@ -789,11 +789,15 @@
   z-index: 999;
   display: flex;
   flex-direction: column;
-  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, visibility 0.4s;
 }
 
 .menu-overlay.active {
   right: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Menu Header (Logo + Close) */

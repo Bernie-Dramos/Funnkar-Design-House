@@ -260,6 +260,17 @@
   gap: 1.2rem;
 }
 
+/* Contact page footer visibility: keep compact */
+.cta-footer-merged {
+  max-height: 200px;
+  padding: 24px 32px;
+  overflow: hidden;
+}
+
+.cta-footer-bottom {
+  margin: 0 auto;
+}
+
 .accordion-item {
   background: #2d2d2d;
   border-radius: 12px;

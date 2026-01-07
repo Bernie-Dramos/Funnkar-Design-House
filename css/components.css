@@ -1393,8 +1393,8 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   cursor: pointer;
-  width: 316px;
-  height: 336px;
+  width: 360px;
+  height: 380px;
   padding: 0;
 }
 
@@ -1432,8 +1432,8 @@
   background: #F8F8FA;
   overflow: hidden;
   position: relative;
-  width: 300px;
-  height: 284px;
+  width: 344px;
+  height: 328px;
   margin: 0 auto;
 }
 
@@ -1515,17 +1515,17 @@
 /* Responsive Portfolio Grid */
 @media (max-width: 1024px) {
   .portfolio-grid {
-    grid-template-columns: repeat(2, 316px);
+    grid-template-columns: repeat(2, 360px);
     gap: 2rem;
-    max-width: 700px;
+    max-width: 760px;
   }
 }
 
 @media (max-width: 768px) {
   .portfolio-grid {
-    grid-template-columns: 316px;
+    grid-template-columns: 360px;
     gap: 2rem;
-    max-width: 340px;
+    max-width: 380px;
   }
 
   .pagination-btn {

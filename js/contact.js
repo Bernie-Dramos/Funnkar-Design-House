@@ -1,8 +1,8 @@
 // =============================================
-// GOOGLE APPS SCRIPT WEB APP INTEGRATION
+// NETLIFY FUNCTION INTEGRATION
 // =============================================
-// Production-optimized Google Apps Script deployment URL
-const GOOGLE_FORM_URL = 'https://script.google.com/macros/s/AKfycbzupof19fjwZplaCpuVssq9oT4BIWPh8Pu3gqX89srruEz2HoEAOg6Jr6u_AK3a-cbQ/exec';
+// Serverless function endpoint for contact form submission
+const CONTACT_FORM_ENDPOINT = '/.netlify/functions/contact-form';
 
 // =============================================
 // CONTACT FORM FUNCTIONALITY
@@ -70,7 +70,7 @@ function initContactForm() {
 }
 
 // =============================================
-// SUBMIT TO GOOGLE FORM
+// SUBMIT TO NETLIFY FUNCTION
 // =============================================
 function submitToGoogleForm(formData, submitBtn, originalText, form) {
     // Merge phone with country code for submission
@@ -78,35 +78,58 @@ function submitToGoogleForm(formData, submitBtn, originalText, form) {
         ? `${formData.countryCode ? formData.countryCode + ' ' : ''}${formData.phone}`.trim()
         : '';
 
-    // Build payload for Apps Script
-    const data = new URLSearchParams();
-    data.append('fullName', formData.fullName);
-    data.append('company', formData.company);
-    data.append('email', formData.email);
-    data.append('phone', phoneWithCode);
-    data.append('subject', formData.subject);
-    data.append('message', formData.message);
+    // Build payload for Netlify Function (JSON format)
+    const payload = {
+        fullName: formData.fullName,
+        company: formData.company,
+        email: formData.email,
+        phone: phoneWithCode,
+        subject: formData.subject,
+        message: formData.message
+    };
 
-    // Send to Google Apps Script web app using no-cors mode
-    fetch(GOOGLE_FORM_URL, {
+    // Send to Netlify Function
+    fetch(CONTACT_FORM_ENDPOINT, {
         method: 'POST',
-        body: data,
-        mode: 'no-cors'
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
     })
-    .then(() => {
-        // In no-cors mode, we can't read the response, so we wait a moment then assume success
-        return new Promise(resolve => setTimeout(resolve, 500));
+    .then(response => {
+        // Read response as JSON
+        return response.json().then(data => ({
+            status: response.status,
+            data: data
+        }));
     })
-    .then(() => {
-        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-        setFormStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
-        form.reset();
+    .then(({ status, data }) => {
+        if (status === 200 && data.success) {
+            // Success
+            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+            setFormStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
+            form.reset();
+        } else if (status === 429) {
+            // Rate limited
+            showNotification('Too many requests. Please wait a moment before trying again.', 'error');
+            setFormStatus('Too many requests. Please try again later.', 'error');
+        } else if (status === 400) {
+            // Validation error
+            const errorMsg = data.details ? data.details.join(', ') : data.error;
+            showNotification('Please fix the errors: ' + errorMsg, 'error');
+            setFormStatus('Validation error: ' + errorMsg, 'error');
+        } else {
+            // Other error
+            showNotification(data.error || 'Failed to send message. Please try again later.', 'error');
+            setFormStatus(data.error || 'Failed to send message. Please try again later.', 'error');
+        }
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     })
     .catch((error) => {
-        showNotification('Failed to send message. Please try again later.', 'error');
-        setFormStatus('Failed to send message. Please try again later.', 'error');
+        console.error('Form submission error:', error);
+        showNotification('Network error. Please check your connection and try again.', 'error');
+        setFormStatus('Network error. Please try again.', 'error');
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     });

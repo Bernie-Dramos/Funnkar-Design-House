@@ -81,18 +81,23 @@ Website Form → Netlify Function → Google Sheets API → Your Spreadsheet
 - **Value**: The entire JSON file you downloaded (paste the raw JSON)
 - ⚠️ **Important**: Keep this secret! Never commit it to GitHub
 
+### Optional Variable 3: GOOGLE_SHEETS_TAB
+- **Key**: `GOOGLE_SHEETS_TAB`
+- **Value**: Your sheet tab name (the name of the tab at the bottom of the spreadsheet, e.g., `FDH_Website_Responses` or `Sheet1`)
+- If omitted, the function defaults to `Sheet1`.
+
 6. Click "Save"
 
 ---
 
 ## Step 6: Ensure Sheet Structure
 
-Make sure your Google Sheet has these headers in row 1:
+Make sure your Google Sheet has these headers in row 1 (on the tab you configured):
 ```
 Timestamp | Full Name | Company | Email Address | Phone | Subject | Message
 ```
 
-The Netlify Function will append data to columns A through G.
+The Netlify Function will append data to columns A through G on the configured tab.
 
 ---
 

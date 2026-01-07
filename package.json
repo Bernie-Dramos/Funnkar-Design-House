@@ -1,0 +1,20 @@
+{
+  "name": "funnkar-design-house",
+  "version": "1.0.0",
+  "description": "Funnkar Design House - Creative Agency Portfolio",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "install-deps": "npm install"
+  },
+  "keywords": [
+    "design",
+    "portfolio",
+    "creative-agency"
+  ],
+  "author": "Funnkar Design House",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^118.0.0"
+  }
+}

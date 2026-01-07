@@ -128,6 +128,9 @@ async function appendToGoogleSheet(data) {
       throw new Error('Missing GOOGLE_SHEETS_ID environment variable');
     }
 
+    // Optional: Sheet tab name (default to Sheet1)
+    const sheetTab = (process.env.GOOGLE_SHEETS_TAB || 'Sheet1').trim();
+
     // Authenticate with Google
     const auth = new google.auth.GoogleAuth({
       credentials: credentials,
@@ -151,7 +154,7 @@ async function appendToGoogleSheet(data) {
     // Append to sheet
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: spreadsheetId,
-      range: 'Sheet1!A:G', // Adjust range if needed
+      range: `${sheetTab}!A:G`, // Use configured sheet tab
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [row],
@@ -160,7 +163,14 @@ async function appendToGoogleSheet(data) {
 
     return { success: true, response };
   } catch (error) {
-    console.error('Google Sheets API Error:', error.message);
+    // Enhance error detail for common misconfigurations
+    const msg = (error && error.response && error.response.data && error.response.data.error && error.response.data.error.message)
+      ? error.response.data.error.message
+      : (error.message || 'Unknown error');
+    console.error('Google Sheets API Error:', msg);
+    if (String(msg).includes('Unable to parse range')) {
+      console.error(`Tip: Check the sheet tab name. Current configured tab: "${process.env.GOOGLE_SHEETS_TAB || 'Sheet1'}". Ensure the tab exists in the spreadsheet.`);
+    }
     throw error;
   }
 }

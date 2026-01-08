@@ -58,14 +58,14 @@ function validateAndSanitize(data) {
     sanitized.fullName = fullName;
   }
 
-  // Company: Optional, 0-100 chars, alphanumeric + special chars
-  const company = (data.company || '').trim();
-  if (company && company.length > 100) {
-    errors.push('Company must be 100 characters or less');
-  } else if (company && !/^[a-zA-Z0-9\s\-&.,()]+$/.test(company)) {
-    errors.push('Company contains invalid characters');
+  // Service: Optional, 0-100 chars, alphanumeric + hyphens
+  const service = (data.service || '').trim();
+  if (service && service.length > 100) {
+    errors.push('Service must be 100 characters or less');
+  } else if (service && !/^[a-zA-Z0-9\s\-]+$/.test(service)) {
+    errors.push('Service contains invalid characters');
   } else {
-    sanitized.company = company;
+    sanitized.service = service;
   }
 
   // Email: Required, valid email format
@@ -144,7 +144,7 @@ async function appendToGoogleSheet(data) {
     const row = [
       timestamp,
       data.fullName,
-      data.company,
+      data.service,
       data.email,
       data.phone,
       data.subject,

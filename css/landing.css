@@ -81,7 +81,6 @@
   line-height: clamp(1.4, 2vh, 30px);
   white-space: wrap;
 }
-}
 
 /* Scroll Indicator */
 .scroll-indicator {
@@ -187,15 +186,17 @@
 
 .portfolio-hero-content {
   position: absolute;
-  inset: 0;
+  left: 60px;
+  top: 850px;
+  bottom: -50px;
+  right: 1065px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 6rem);
   gap: clamp(1rem, 2vh, 1.5rem);
-  transition: padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: top 0.8s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-title {
@@ -247,16 +248,17 @@
 
 /* Hover State */
 .portfolio-hero:hover .portfolio-hero-content {
-  padding: 12rem clamp(2rem, 3vw, 4rem) 4rem;
+  top: 300px;
+  bottom: 500px;
 }
 
 .portfolio-hero:hover .portfolio-title {
-  transform: translateY(-20px);
+  transform: none;
 }
 
 .portfolio-hero:hover .portfolio-hero-hover-content {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Filter Wrapper */

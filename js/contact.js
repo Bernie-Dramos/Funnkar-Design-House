@@ -29,9 +29,12 @@ function initContactForm() {
         setFormStatus('');
 
         // Get form data
+        const selectedServiceEl = document.querySelector('input[name="service"]:checked');
+        const selectedService = selectedServiceEl ? selectedServiceEl.value : '';
+
         const formData = {
             fullName: document.getElementById('fullName').value,
-            company: document.getElementById('company').value,
+            service: selectedService,
             email: document.getElementById('email').value,
             countryCode: document.getElementById('countryCode').value,
             phone: document.getElementById('phone').value,
@@ -81,7 +84,7 @@ function submitToGoogleForm(formData, submitBtn, originalText, form) {
     // Build payload for Netlify Function (JSON format)
     const payload = {
         fullName: formData.fullName,
-        company: formData.company,
+        service: formData.service,
         email: formData.email,
         phone: phoneWithCode,
         subject: formData.subject,
@@ -140,6 +143,12 @@ function submitToGoogleForm(formData, submitBtn, originalText, form) {
 // =============================================
 function validateForm(formData) {
     let isValid = true;
+
+    // Require service selection
+    if (!formData.service) {
+        setFormStatus('Please select a service.', 'error');
+        isValid = false;
+    }
 
     // Validate full name
     if (formData.fullName.trim().length < 2) {

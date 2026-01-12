@@ -24,13 +24,14 @@
   font-family: 'Poppins', system-ui, sans-serif;
   font-size: 3.5rem; /* Larger for impact */
   font-weight: 400;
-  color: #333; /* Dark gray, uniform */
+  color: #666666; /* Dark gray, uniform */
   margin: 0 0 40px 0;
   line-height: 1.15;
 }
 
 .cta-footer-bold {
-  font-weight: 700;
+  font-weight: 600;
+  color: #000000;
 }
 
 .cta-footer-btn {
@@ -41,7 +42,7 @@
   font-size: 1.1rem;
   font-weight: 500;
   border: none;
-  border-radius: 50px; /* More rounded */
+  border-radius: 10px;
   padding: 0.8rem 2.2rem;
   cursor: pointer;
   text-align: center;
@@ -122,6 +123,10 @@
 .menu-footer-right a:hover .social-icon,
 .cta-footer-socials a:hover .social-icon {
   opacity: 0.8;
+}
+
+.cta-footer-privacy {
+  transform: translateX(200px);
 }
 
 .cta-footer-privacy a {
@@ -654,7 +659,7 @@
   font-weight: 600;
   text-align: center;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all var(--transition-speed);
   text-transform: uppercase;
@@ -747,19 +752,23 @@
   top: clamp(16px, 4vh, 60px);
   left: clamp(16px, 4vw, 4rem);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   z-index: 1000;
   pointer-events: auto;
-  transform: translateY(-15px);
-  backdrop-filter: blur(2px);
+  background: rgba(51, 51, 51, 0.75);
+  backdrop-filter: blur(8px);
+  width: clamp(44px, 6vh, 44px);
+  height: clamp(44px, 6vh, 44px);
+  border-radius: 8px;
+  padding: 0;
 }
 
 .logo-img {
-  height: clamp(50px, 8vh, 75px);
+  height: clamp(30px, 5vh, 30px);
   width: auto;
   display: block;
-  border-radius: 8px;
 }
 
 /* =============================================
@@ -775,15 +784,15 @@
   width: clamp(44px, 12vw, 88px);
   height: clamp(44px, 6vh, 43px);
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(51, 51, 51, 0.75);
   color: #FFF;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: clamp(12px, 3vw, 14px);
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
   z-index: 1001;
   display: flex;
   align-items: center;
@@ -1200,7 +1209,7 @@
   padding: clamp(0.9rem, 2vw, 1.1rem) clamp(1.4rem, 4vw, 1.9rem);
   background: #F67B80;
   border: none;
-  border-radius: 14px;
+  border-radius: 8px;
   color: #ffffff;
   font-size: clamp(1rem, 2.5vw, 1.1rem);
   font-weight: 700;
@@ -1526,7 +1535,7 @@
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 316px);
-  gap: 2.5rem;
+  gap: 4rem;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0;
@@ -1535,7 +1544,8 @@
 
 .portfolio-card {
   background: #FFFFFF;
-  border: 3px solid rgba(239, 1, 2, 0.05);
+  background-color: rgba(239, 1, 2, 0.01);
+  border: 3px solid rgba(239, 1, 2, 0.15);
   border-radius: 15px;
   overflow: hidden;
   display: flex;
@@ -1560,7 +1570,7 @@
   padding: 1rem;
   flex-wrap: wrap;
   border-bottom: none;
-  background: #FFFFFF;
+  background: rgba(239, 1, 2, 0.01);
 }
 
 .portfolio-tag {
@@ -1644,16 +1654,29 @@
 }
 
 .pagination-btn:hover:not(:disabled) {
-  border-color: var(--color-accent-coral);
-  color: var(--color-accent-coral);
-  background: rgba(239, 1, 2, 0.05);
+  border-color: #000000;
+  color: #000000;
+  background: #f2f2f2;
+}
+
+.pagination-btn.prev-btn img,
+.pagination-btn.next-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0);
+  transition: filter 0.2s ease;
+}
+
+.pagination-btn.prev-btn:hover:not(:disabled) img,
+.pagination-btn.next-btn:hover:not(:disabled) img {
+  filter: brightness(0);
 }
 
 .pagination-btn.active {
-  background: var(--color-accent-coral);
-  border-color: var(--color-accent-coral);
+  background: #000000;
+  border-color: #000000;
   color: #FFFFFF;
-  box-shadow: 0 4px 12px rgba(239, 1, 2, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .pagination-btn:disabled {

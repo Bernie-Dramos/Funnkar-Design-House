@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(51, 51, 51, 0.75);
   backdrop-filter: blur(4px);
   border-radius: 5.66px;
   gap: 10px;
@@ -90,7 +90,7 @@
   min-width: 50px;
   height: 50px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(51, 51, 51, 0.75);
   backdrop-filter: blur(4px);
   border-radius: 5.66px;
   border: none;
@@ -108,6 +108,16 @@
   width: auto;
   height: 20px;
   display: block;
+  animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Responsive Adjustments */
@@ -173,6 +183,27 @@
   min-height: 600px;
   overflow: hidden;
   background: #000;
+  /* Independent hover position variables */
+  --hero-title-hover-transform: translateY(-50px);
+  --hero-content-hover-top: 400px;
+  --hero-content-hover-bottom: 400px;
+  --hero-text-hover-opacity: 1;
+  --hero-text-hover-transform: none;
+  --hero-image-hover-width: 550px;
+  --hero-image-hover-height: 382px;
+  --hero-image-hover-top: -30px;
+  --hero-image-hover-left: 1200px;
+  --hero-image-hover-opacity: 1;
+  --hero-video-hover-opacity: 1;
+  --hero-video-hover-transform: none;
+  /* Text positioning variables */
+  --hero-description-hover-width: 850px;
+  --hero-description-hover-height: 159px;
+  --hero-description-hover-top: 404px;
+  --hero-description-hover-left: 60px;
+  --hero-description-hover-font-size: 48px;
+  --hero-description-hover-line-height: 53px;
+  --hero-description-hover-letter-spacing: -0.15px;
 }
 
 .hero-bg-media {
@@ -182,6 +213,8 @@
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-hero-content {
@@ -197,6 +230,10 @@
   justify-content: flex-end;
   gap: clamp(1rem, 2vh, 1.5rem);
   transition: top 0.8s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.services-hero .portfolio-hero-content {
+  bottom: 50px;
 }
 
 .portfolio-title {
@@ -225,12 +262,17 @@
 .portfolio-hero-description {
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
   font-size: clamp(24px, 2.8vw, 38px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.35;
   color: #FFF;
   margin: 0;
-  flex: 1;
-  max-width: 50%;
+  width: 850px;
+  flex-shrink: 0;
+  transition: font-size 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              line-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              letter-spacing 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-hero-image {
@@ -256,26 +298,38 @@
 
 /* Hover State */
 .portfolio-hero:hover .portfolio-hero-content {
-  top: 300px;
-  bottom: 500px;
+  top: var(--hero-content-hover-top);
+  bottom: var(--hero-content-hover-bottom);
 }
 
 .portfolio-hero:hover .portfolio-title {
-  transform: none;
+  transform: var(--hero-title-hover-transform);
 }
 
 .portfolio-hero:hover .portfolio-hero-hover-content {
-  opacity: 1;
-  transform: none;
+  opacity: var(--hero-text-hover-opacity);
+  transform: var(--hero-text-hover-transform);
+}
+
+.portfolio-hero:hover .portfolio-hero-description {
+  font-size: var(--hero-description-hover-font-size);
+  line-height: var(--hero-description-hover-line-height);
+  letter-spacing: var(--hero-description-hover-letter-spacing);
+  width: var(--hero-description-hover-width);
+  height: var(--hero-description-hover-height);
 }
 
 .portfolio-hero:hover .portfolio-hero-image {
-  width: 440px;
-  height: 272px;
-  top: 404px;
-  left: 1013px;
-  opacity: 1;
-  transform: rotate(0deg);
+  width: var(--hero-image-hover-width);
+  height: var(--hero-image-hover-height);
+  top: var(--hero-image-hover-top);
+  left: var(--hero-image-hover-left);
+  opacity: var(--hero-image-hover-opacity);
+}
+
+.portfolio-hero:hover .hero-bg-media {
+  opacity: var(--hero-video-hover-opacity);
+  transform: var(--hero-video-hover-transform);
 }
 
 /* Filter Wrapper */

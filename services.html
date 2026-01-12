@@ -16,7 +16,7 @@
 <body>
     <!-- Fixed Logo -->
     <a href="index.html" class="logo-fixed">
-        <img src="assets/images/funnkar-lofo.png" alt="Funnkar Design House" class="logo-img" loading="lazy">
+        <img src="assets/images/funnkar-logo.png" alt="Funnkar Design House" class="logo-img" loading="lazy">
     </a>
 
     <!-- Fixed Menu Button -->
@@ -57,36 +57,21 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-        <!-- Hero Section with Full-Cover Video Background -->
-        <section class="hero-landing">
-            <div class="hero-background">
-                <img src="assets/images/phone+laptop-scroll.gif" loading="lazy" 
-                    alt="Hero Background" 
-                    class="hero-bg-gif" 
-                    style="
-                    position:absolute;
-                    top:0;
-                    left:0;
-                    width:100%;
-                    height:100%;
-                    object-fit:cover;
-                    z-index:0;
-                    opacity:0.9;
-                    pointer-events:none;" 
-                    loop>
-            </div>
-            <div class="hero-landing-overlay">
-                <div class="hero-landing-bottom">
-                    <div style="width:100%;text-align:center;max-width:800px;margin:0 auto;">
-                        <h1>Services</h1>
-                        <p style="font-size: 1.25rem; margin-top: 1.5rem; color: var(--color-text-secondary);">
-                            Comprehensive creative solutions tailored to elevate your brand
-                        </p>
-                    </div>
+    <!-- Hero Section (mirrors portfolio hover behavior) -->
+    <section class="hero-landing portfolio-hero services-hero">
+        <!-- Background Video/Image -->
+            <img src="assets/images/phone+laptop-scroll.gif" alt="Services Hero" class="hero-bg-media" loading="lazy">
+        
+        <!-- Hero Content -->
+        <div class="portfolio-hero-content">
+            <h1 class="portfolio-title">Services</h1>
+            <div class="portfolio-hero-hover-content">
+                <div class="portfolio-hero-image">
+                    <img src="assets/images/video-editor.gif" alt="Video Editor" class="portfolio-hero-phone" loading="lazy">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
     <!-- Services Grid with Background Video -->
     <section class="section services-bg-section" style="position:relative;overflow:hidden;">
@@ -106,21 +91,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">01</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem; margin-bottom: 6rem;">
-                    <div style="max-width: 720px;">
-                        <h2>Branding &<br>Product Design</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
-                            We create distinctive brand identities that resonate with your audience. From logo design to complete brand systems, we ensure consistency and impact across all touchpoints.
+                    <div style="max-width: 500px;">
+                        <h2>Branding <br>& Product Design</h2>
+                        <p style="font-size: 1.125rem; line-height: 1.8; margin: 20rem 0 1rem;">
+                            From concept to experience, we create products that ignite curiosity and empower engagement.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Brand Strategy & Positioning</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Logo & Visual Identity</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ UI/UX Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Product Design & Prototyping</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom:-30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>
@@ -145,21 +124,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">02</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem; margin-bottom: 6rem;">
                     <div style="order: 1; max-width: 720px;">
                         <h2>Graphics Design</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
+                        <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             Visual communication that tells your story. We design everything from marketing materials to digital assets that capture attention and drive engagement.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Print & Digital Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Marketing Collateral</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Social Media Graphics</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Illustration & Icon Design</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom: -30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>
@@ -184,21 +157,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">03</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem;">
                     <div style="max-width: 720px;">
                         <h2>VFX &<br>Animation</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
+                        <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             Bring your vision to life with cutting-edge visual effects and animations. We create immersive experiences that captivate and inspire your audience.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Motion Graphics</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ 3D Animation</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Visual Effects</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Video Production</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom: -30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>
@@ -223,21 +190,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">04</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem;">
                     <div style="order: 1; max-width: 720px;">
                         <h2>3D Design & 3D Modeling</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
+                        <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             We turn concepts into precise, high-quality 3D assets ready for animation, visualization, or production. Each asset is designed with precision, realism, and pipeline compatibility in mind.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ 3D Modeling & Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Asset Creation</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Animation Ready Assets</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Production Pipeline</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom: -30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>
@@ -262,21 +223,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">05</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem;">
                     <div style="max-width: 720px;">
                         <h2>Game Development</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
+                        <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             We develop immersive, well-balanced games with polished mechanics, environments, and player experiences. Worlds that invite exploration and systems that reward skill.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Game Mechanics & Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Environment Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Player Experience Design</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Multiplayer Integration</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom: -30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>
@@ -301,21 +256,15 @@
         </video>
         <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px;">
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
                 <span style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: var(--color-text-secondary);">06</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem;">
                     <div style="max-width: 720px;">
                         <h2>Web Design & Development</h2>
-                        <p style="font-size: 1.125rem; margin: 1.5rem 0; line-height: 1.8;">
+                        <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             From responsive interfaces to robust backend systems, every site is engineered for speed, usability, and brand impact.
                         </p>
-                        <ul style="list-style: none; margin: 2rem 0;">
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Custom Web Development</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ E-Commerce Solutions</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ CMS Integration</li>
-                            <li style="padding: 0.5rem 0; color: var(--color-text-secondary);">✦ Performance Optimization</li>
-                        </ul>
-                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; margin-top: 1.5rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary" style="display: inline-block; bottom: -30px; position: relative;">Book A Call</a>
                     </div>
                 </div>
             </div>

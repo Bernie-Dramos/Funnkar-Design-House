@@ -170,6 +170,36 @@ a:hover {
    RESPONSIVE
    ============================================= */
 
+/* Large Screens (1441px+) */
+@media (min-width: 1441px) {
+  :root {
+    --spacing-md: 3rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 7rem;
+    --header-height: 90px;
+  }
+  
+  .container {
+    max-width: 1600px;
+  }
+}
+
+/* Desktop (1025px - 1440px) - Use default values */
+
+/* Small Desktop/Tablet Landscape (769px - 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --spacing-lg: 4rem;
+    --spacing-xl: 5rem;
+    --header-height: 80px;
+  }
+  
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Tablet Portrait (481px - 768px) */
 @media (max-width: 768px) {
   :root {
     --spacing-lg: 3rem;

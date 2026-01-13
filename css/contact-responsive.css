@@ -170,7 +170,17 @@
   margin-top: clamp(70px, 10vh, 90px) !important;
 }
 
-/* Desktop: lock into a single row */
+/* Large Screens (1441px+) */
+@media (min-width: 1441px) {
+  .contact-hero-section > .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    gap: 4rem !important;
+  }
+}
+
+/* Desktop (1025px - 1440px): lock into a single row */
 @media (min-width: 1025px) {
   .contact-hero-section > .container {
     flex-wrap: nowrap !important;
@@ -178,11 +188,18 @@
   }
 }
 
-/* Tablet and below */
+/* Small Desktop/Tablet Landscape (769px - 1024px) */
+@media (max-width: 1024px) {
+  .contact-hero-section > .container {
+    gap: clamp(2rem, 4vh, 3rem) !important;
+  }
+}
+
+/* Tablet Portrait (481px - 768px) */
 @media (max-width: 768px) {
   .contact-hero-section > .container {
     flex-direction: column;
-    gap: clamp(1rem, 3vh, 2rem) !important;
+    gap: clamp(1.5rem, 3vh, 2.5rem) !important;
   }
 
   .contact-hero-left {
@@ -198,11 +215,12 @@
   }
 }
 
-/* Mobile */
+/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .contact-hero-section > .container {
     padding: clamp(1.5rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem) !important;
     margin-top: clamp(60px, 8vh, 70px) !important;
+    gap: 1rem !important;
   }
 
   .contact-hero-left ul li span {

@@ -228,15 +228,7 @@
 }
 
 .welcome-laptop-img {
-  background: #18191b;
-  border-radius: 20px;
-  width: clamp(90vw, 80vw, 1328px);
-  max-width: 95vw;
-  height: auto;
-  display: block;
-  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.18);
-  padding: clamp(1rem, 3vw, 2.5rem);
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  /* Styling defined in components.css - no overrides */
 }
 
 .welcome-image-slot {
@@ -269,7 +261,7 @@
   }
 
   .welcome-laptop-img {
-    width: 95vw;
+    /* Styling defined in components.css - no overrides */
   }
 }
 
@@ -297,6 +289,6 @@
   }
 
   .welcome-laptop-img {
-    padding: clamp(0.8rem, 2vw, 1.5rem);
+    /* Styling defined in components.css - no overrides */
   }
 }

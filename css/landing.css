@@ -382,7 +382,40 @@
 }
 
 /* Responsive */
+
+/* Large Screens (1441px+) */
+@media (min-width: 1441px) {
+  .portfolio-hero {
+    min-height: 90vh;
+  }
+  
+  .portfolio-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .portfolio-title {
+    font-size: clamp(80px, 6vw, 96px);
+  }
+}
+
+/* Desktop (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .portfolio-hero {
+    min-height: 80vh;
+  }
+  
+  .portfolio-title {
+    font-size: clamp(72px, 5.5vw, 88px);
+  }
+}
+
+/* Small Desktop/Tablet Landscape (769px - 1024px) */
 @media (max-width: 1024px) {
+  .portfolio-hero {
+    min-height: 70vh;
+  }
+  
   .portfolio-hero-hover-content {
     flex-direction: column;
     gap: 2rem;
@@ -392,11 +425,16 @@
   .portfolio-hero-image {
     max-width: 100%;
   }
+  
+  .portfolio-title {
+    font-size: clamp(56px, 7vw, 72px);
+  }
 }
 
+/* Tablet Portrait (481px - 768px) */
 @media (max-width: 768px) {
   .portfolio-hero {
-    min-height: 500px;
+    min-height: 60vh;
   }
   
   .portfolio-hero-content {
@@ -408,7 +446,7 @@
   }
   
   .portfolio-title {
-    font-size: clamp(48px, 10vw, 64px);
+    font-size: clamp(48px, 8vw, 64px);
   }
   
   .portfolio-filter-wrapper {
@@ -421,9 +459,10 @@
   }
 }
 
+/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .portfolio-hero {
-    min-height: 450px;
+    min-height: 55vh;
   }
   
   .portfolio-hero-content {
@@ -432,6 +471,10 @@
   
   .portfolio-hero:hover .portfolio-hero-content {
     padding: 6rem 1.5rem 2rem;
+  }
+  
+  .portfolio-title {
+    font-size: clamp(36px, 9vw, 48px);
   }
   
   .filter-group-horizontal {

@@ -588,14 +588,14 @@
    WELCOME SECTION
    ============================================= */
 .welcome-laptop-img {
-  background: #18191b;
-  border-radius: 20px;
-  width: 60vw;
-  max-width: 1328px;
-  height: 70vh;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  height: auto;
   display: block;
-  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.18);
-  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  object-fit: cover;
 }
 /* Welcome Section Image Slot */
 .welcome-image-slot {

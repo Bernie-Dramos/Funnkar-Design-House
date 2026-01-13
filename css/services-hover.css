@@ -1,0 +1,42 @@
+/* =============================================
+   SERVICE HOVER ANIMATIONS (Left to Right Slide)
+   ============================================= */
+
+/* Service Number - Hidden by default, slides in from left */
+.service-number {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Service Content - Hidden by default, slides in from left */
+.service-content {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover States - Both number and content slide in together */
+.services-bg-section:hover .service-number,
+.graphics-bg-section:hover .service-number,
+.vfx-bg-section:hover .service-number,
+.web-bg-section:hover .service-number,
+.cta-bg-section:hover .service-number,
+.web-section:hover .service-number,
+.service-number.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.services-bg-section:hover .service-content,
+.graphics-bg-section:hover .service-content,
+.vfx-bg-section:hover .service-content,
+.web-bg-section:hover .service-content,
+.cta-bg-section:hover .service-content,
+.web-section:hover .service-content,
+.service-content.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}

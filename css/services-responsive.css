@@ -242,6 +242,40 @@
 }
 
 /* Responsive Adjustments for Services Sections */
+
+/* Large Screens (1441px+) */
+@media (min-width: 1441px) {
+  .story-section-desc {
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+    padding: 2rem 0 2rem 2.5rem;
+  }
+  
+  .story-section-with-bg,
+  .vfx-section-with-bg,
+  .graphics-section-with-bg,
+  .branding-section-with-bg {
+    height: clamp(700px, 70vh, 900px);
+  }
+}
+
+/* Desktop (1025px - 1440px) - Use default styles */
+
+/* Small Desktop/Tablet Landscape (769px - 1024px) */
+@media (max-width: 1024px) {
+  .story-section-desc {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    padding: clamp(1.2rem, 3vh, 1.8rem) 0 clamp(1.2rem, 3vh, 1.8rem) clamp(1.2rem, 3vw, 1.8rem);
+  }
+
+  .story-section-with-bg,
+  .vfx-section-with-bg,
+  .graphics-section-with-bg,
+  .branding-section-with-bg {
+    height: clamp(450px, 55vh, 700px);
+  }
+}
+
+/* Tablet Portrait (481px - 768px) */
 @media (max-width: 768px) {
   .story-section-desc {
     font-size: clamp(1.2rem, 4vw, 1.8rem);
@@ -252,7 +286,7 @@
   .vfx-section-with-bg,
   .graphics-section-with-bg,
   .branding-section-with-bg {
-    height: clamp(350px, 50vw, 600px);
+    height: clamp(350px, 50vh, 600px);
   }
 
   .welcome-title,
@@ -265,6 +299,7 @@
   }
 }
 
+/* Mobile (320px - 480px) */
 @media (max-width: 480px) {
   .story-section-desc {
     font-size: clamp(1rem, 3.5vw, 1.4rem);
@@ -276,7 +311,7 @@
   .vfx-section-with-bg,
   .graphics-section-with-bg,
   .branding-section-with-bg {
-    height: clamp(300px, 45vw, 500px);
+    height: clamp(300px, 45vh, 500px);
   }
 
   .welcome-container {

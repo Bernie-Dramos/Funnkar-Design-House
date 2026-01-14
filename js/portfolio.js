@@ -254,3 +254,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 80);
     });
 });
+
+// =============================================
+// PORTFOLIO CARD CLICK HANDLER
+// =============================================
+
+document.addEventListener('click', function(e) {
+    const portfolioCard = e.target.closest('.portfolio-card');
+    if (portfolioCard) {
+        // Navigate to project detail page
+        window.location.href = 'project.html';
+    }
+});
+

@@ -965,8 +965,8 @@
 
 .menu-footer-center {
   display: flex;
-  align-items: center;
   gap: 0.85rem;
+  margin-left: -100px;
 }
 
 .menu-footer-left p {

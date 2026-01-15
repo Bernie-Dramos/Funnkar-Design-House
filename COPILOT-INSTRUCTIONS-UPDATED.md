@@ -12,22 +12,21 @@ Funnkar Design House is a static, dark-themed creative agency portfolio. It show
 **Key files/directories:**
 - `index.html` – Landing page (hero, about, service previews, portfolio preview)
 - `services.html` – Service details (grid sections, image + text pairs)
-- `portfolio.html` – Filterable project gallery (category filter, project cards)
-- `project.html` – Project case study template (challenge, approach, results)
+- `portfolio.html` – Filterable project gallery (3 pages, 6 projects per page, 18 total)
+- `project-1.html` through `project-18.html` – Individual project detail pages with image galleries
 - `contact.html` – Contact form (Google Forms integration) and FAQ accordion
 - `image-guide.html` – Interactive image placeholder generator for development
 - `css/global.css` – CSS variables, resets, base styles, responsive breakpoints
 - `css/components.css` – All reusable UI components (cards, buttons, forms, menu, grid)
 - `css/landing.css` – Landing page hero and animation styles
+- `css/project-detail.css` – Project detail page styles (sidebar gallery, navigation, responsive layout)
 - `js/main.js` – Global JS: hamburger menu, smooth scroll, nav state, scroll animations
-- `js/portfolio.js` – Portfolio filtering logic (category filter, show/hide with animation)
+- `js/portfolio.js` – Portfolio filtering logic and project navigation (determines which project-X.html to open)
+- `js/project-detail.js` – Project gallery: image swapping, navigation buttons, close button with scroll restoration
 - `js/contact.js` – Contact form submission to Google Apps Script, validation, FAQ accordion logic
 - `assets/images/` – All imagery (see `assets/images/README.md` for specs)
 - `README.md` – Complete project documentation
-- `QUICKSTART.md` – Quick setup guide
-- `QUICKSTART-UPDATED.md` – Updated quickstart with contact form details
-- `PRODUCTION-CHECKLIST.md` – Production optimization summary
-- `PROJECT-COMPLETE.md` – Project completion checklist
+- `COPILOT-INSTRUCTIONS-UPDATED.md` – These instructions (for AI agents)
 
 ## Design & UI Patterns
 - **Dark mode:** Uses `--color-bg-primary` (#0A0A0A) / `secondary` (#1A1A1A) with blue (#5B9EFF) and coral (#FF6B6B) accents
@@ -53,6 +52,65 @@ Funnkar Design House is a static, dark-themed creative agency portfolio. It show
   - Toast notifications
 - Setup: See `QUICKSTART-UPDATED.md` for Google Apps Script deployment
 - **Entry Point**: `GOOGLE_FORM_URL` in `js/contact.js` (update with your deployment URL)
+
+## Project Detail Pages (project-1.html through project-18.html)
+**Status**: ✅ Production-ready with individual customizable project pages
+
+### Architecture
+- **18 individual project files** (`project-1.html` - `project-18.html`)
+- Each file is an exact replica of the original project template with no code changes
+- All files use shared `css/project-detail.css` and `js/project-detail.js`
+- Portfolio clicks dynamically determine which project page to open based on card index
+
+### Key Features
+- **Image Gallery**:
+  - Sidebar thumbnails showing all images (always visible, even current main image)
+  - Main image area with large display
+  - No numbering on sidebar thumbnails
+  - Image number badge on main image (e.g., "1/5")
+  
+- **Navigation**:
+  - Left/right arrow buttons (navigate-left.png, navigate-right.png)
+  - Keyboard arrows (ArrowLeft/ArrowRight) for cycling through images
+  - Close button (x.svg) at top-center with #333333 background and 4px blur
+  - Escape key closes and returns to portfolio
+  
+- **Responsive**:
+  - Desktop: 4-column grid (thumbnails, main image, divider, info panel)
+  - Tablet/Mobile: Single column layout with images stacked
+  - All elements adapt with CSS media queries (480px, 768px, 1024px)
+  
+- **Scroll Position Restoration**:
+  - Saves user's scroll position when clicking a portfolio card
+  - Returns to exact scroll position when closing project
+  - Uses `sessionStorage` for temporary storage
+
+### How to Customize
+1. Open `project-X.html` (where X is 1-18)
+2. Before `<script src="js/project-detail.js">`, add your custom images:
+   ```html
+   <script>
+       const projectImages = [
+           'assets/images/your-image-1.png',
+           'assets/images/your-image-2.png',
+           'assets/images/your-image-3.png',
+           // ... up to 5 images
+       ];
+   </script>
+   ```
+3. Edit the text content using these IDs:
+   - `#projectTitle` – Project name
+   - `#projectDate` – Creation date
+   - `#projectIntro` – Introduction section
+   - `#projectContext` – Context section
+   - `#projectProblem` – Problem section
+
+### Important Notes
+- ✅ Do NOT change HTML structure or JS code
+- ✅ Do NOT modify `project-detail.js` or `project-detail.css`
+- ✅ Only update: image array and text content
+- ✅ Images are loaded with lazy loading and fade transition effects
+- ✅ Image count in badge updates automatically based on `projectImages` array length
 
 ## Responsive Design & Accessibility
 - **Breakpoints**: 480px (mobile), 768px (tablet), 1024px (desktop), 1440px+ (wide)

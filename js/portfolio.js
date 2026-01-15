@@ -262,8 +262,22 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('click', function(e) {
     const portfolioCard = e.target.closest('.portfolio-card');
     if (portfolioCard) {
-        // Navigate to project detail page
-        window.location.href = 'project.html';
+        // Save the current scroll position before navigating
+        sessionStorage.setItem('portfolioScrollY', window.scrollY);
+        
+        // Get all portfolio cards
+        const allCards = document.querySelectorAll('.portfolio-card');
+        
+        // Find the index of the clicked card
+        let cardIndex = 0;
+        allCards.forEach((card, index) => {
+            if (card === portfolioCard) {
+                cardIndex = index + 1; // Start from 1
+            }
+        });
+        
+        // Navigate to the corresponding project detail page
+        window.location.href = `project-${cardIndex}.html`;
     }
 });
 

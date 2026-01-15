@@ -25,17 +25,25 @@ A modern, dark-themed creative agency portfolio website showcasing branding, pro
 Funnkar-Design-House/
 ├── index.html              # Landing page with hero, services, portfolio preview
 ├── services.html           # Detailed services showcase
-├── portfolio.html          # Filterable project gallery
-├── project.html            # Project case study template
+├── portfolio.html          # Filterable project gallery (6 projects per page, 3 pages)
+├── project.html            # Original project case study template (legacy)
+├── project-1.html          # Project 1 detail page with image gallery
+├── project-2.html          # Project 2 detail page with image gallery
+├── project-3.html          # Project 3 detail page with image gallery
+├── project-4.html          # Project 4 detail page with image gallery
+├── project-5.html          # Project 5 detail page with image gallery
+├── ... (project-6.html through project-18.html)
 ├── contact.html            # Contact form with FAQ accordion
 ├── image-guide.html        # Interactive image placeholder generator
 ├── css/
 │   ├── global.css         # CSS variables, resets, base styles, utilities
 │   ├── components.css     # Reusable components (buttons, cards, forms, etc.)
-│   └── landing.css        # Landing page hero and animation styles
+│   ├── landing.css        # Landing page hero and animation styles
+│   └── project-detail.css # Project detail page styles (image gallery, layout)
 ├── js/
 │   ├── main.js            # Global functionality (menu, navigation, animations)
-│   ├── portfolio.js       # Portfolio filtering logic
+│   ├── portfolio.js       # Portfolio filtering and project navigation logic
+│   ├── project-detail.js  # Project detail page gallery and navigation
 │   └── contact.js         # Form validation and FAQ accordion
 ├── assets/
 │   └── images/            # All website imagery (see assets/images/README.md)
@@ -91,12 +99,30 @@ Funnkar-Design-House/
 - Project cards with tags
 - Animated filtering transitions
 
-### Project Page (`project.html`)
-- Project hero with client info
-- Detailed case study layout
-- Challenge, approach, and solution sections
-- Results metrics
-- Project gallery
+### Project Pages (`project-1.html` through `project-18.html`)
+- **18 individual project detail pages** — one for each portfolio item
+- **Image Gallery**: Thumbnail sidebar (always shows all images), main image display with navigation buttons
+- **Image Badge**: Red rounded badge showing current image number (e.g., "1/5")
+- **Navigation**: Left/right arrow buttons to cycle through images, keyboard arrows (ArrowLeft/ArrowRight)
+- **Close Button**: X button at top-center to return to portfolio at exact scroll position
+- **Responsive Layout**: Adapts from desktop 4-column grid to mobile single column
+- **Customizable Content**: Each project file contains:
+  - Custom image array (override `projectImages` in `<script>` block before project-detail.js)
+  - Project title, date, introduction, context, and problem sections
+  - All text and images easily editable
+
+**How to Customize Each Project:**
+1. Edit `project-X.html` (where X is 1-18)
+2. Update the `projectImages` array with your project's images:
+   ```javascript
+   const projectImages = [
+       'assets/images/project-image-1.png',
+       'assets/images/project-image-2.png',
+       // ... up to 5 images per project
+   ];
+   ```
+3. Update project content (title, date, text sections) using the provided `id` attributes
+4. Images are loaded with lazy loading and fade transition effect
 
 ### Contact Page (`contact.html`)
 - Contact form with validation

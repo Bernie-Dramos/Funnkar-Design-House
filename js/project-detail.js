@@ -15,12 +15,11 @@ const projectImages = [
     'assets/images/laptop-roll.gif',
     'assets/images/video-editor.gif',
     'assets/images/phone+laptop-scroll.gif',
-    'assets/images/agent.png',
-    'assets/images/red-car.gif'
+    'assets/images/agent.png'
 ];
 
 let currentImageIndex = 0;
-let sidebarImages = [1, 2, 3, 4, 5]; // Sidebar starts with images 1-5
+let sidebarImages = [0, 1, 2, 3, 4]; // All 5 images shown as thumbnails
 
 // Initialize the gallery
 document.addEventListener('DOMContentLoaded', function() {
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeGallery() {
-    // Create thumbnail items for sidebar (only 5 images, not the current main)
+    // Create thumbnail items for sidebar (all 5 images)
     const thumbnailList = document.getElementById('thumbnailList');
     thumbnailList.innerHTML = '';
 
@@ -39,9 +38,13 @@ function initializeGallery() {
         thumbnailItem.dataset.sidebarIndex = sidebarIndex;
         thumbnailItem.dataset.index = sidebarIndex;
 
+        // Mark as active if this is the initial main image
+        if (sidebarIndex === currentImageIndex) {
+            thumbnailItem.classList.add('active');
+        }
+
         thumbnailItem.innerHTML = `
             <img src="${projectImages[sidebarIndex]}" alt="Project thumbnail ${sidebarIndex + 1}" loading="lazy">
-            <div class="thumbnail-badge">${sidebarIndex + 1}/${projectImages.length}</div>
         `;
 
         thumbnailItem.addEventListener('click', () => switchMainImage(sidebarIndex));
@@ -53,13 +56,6 @@ function initializeGallery() {
 }
 
 function switchMainImage(newMainIndex) {
-    const oldMainIndex = currentImageIndex;
-    
-    // Find position of clicked image in sidebar
-    const clickedSidebarPosition = sidebarImages.indexOf(newMainIndex);
-    
-    // Swap: old main goes into sidebar where new main was, new main becomes main
-    sidebarImages[clickedSidebarPosition] = oldMainIndex;
     currentImageIndex = newMainIndex;
     
     // Update display
@@ -90,9 +86,13 @@ function updateSidebarThumbnails() {
         thumbnailItem.className = 'thumbnail-item';
         thumbnailItem.dataset.index = sidebarIndex;
 
+        // Mark as active if this is the current main image
+        if (sidebarIndex === currentImageIndex) {
+            thumbnailItem.classList.add('active');
+        }
+
         thumbnailItem.innerHTML = `
             <img src="${projectImages[sidebarIndex]}" alt="Project thumbnail ${sidebarIndex + 1}" loading="lazy">
-            <div class="thumbnail-badge">${sidebarIndex + 1}/${projectImages.length}</div>
         `;
 
         thumbnailItem.addEventListener('click', () => switchMainImage(sidebarIndex));
@@ -101,16 +101,59 @@ function updateSidebarThumbnails() {
 }
 
 function setupThumbnailListeners() {
+    // Setup close button listener
+    const closeBtn = document.getElementById('closeBtn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            goBackToPortfolio();
+        });
+    }
+
+    // Setup navigation button listeners
+    const navLeftBtn = document.getElementById('navLeft');
+    const navRightBtn = document.getElementById('navRight');
+
+    if (navLeftBtn) {
+        navLeftBtn.addEventListener('click', () => {
+            const prevIndex = currentImageIndex === 0 ? projectImages.length - 1 : currentImageIndex - 1;
+            switchMainImage(prevIndex);
+        });
+    }
+
+    if (navRightBtn) {
+        navRightBtn.addEventListener('click', () => {
+            const nextIndex = currentImageIndex === projectImages.length - 1 ? 0 : currentImageIndex + 1;
+            switchMainImage(nextIndex);
+        });
+    }
+
     // Optional: Add keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowRight') {
-            // Get next image from sidebar or wrap around
-            const nextSidebarImage = sidebarImages[0];
-            switchMainImage(nextSidebarImage);
+            const nextIndex = currentImageIndex === projectImages.length - 1 ? 0 : currentImageIndex + 1;
+            switchMainImage(nextIndex);
         } else if (e.key === 'ArrowLeft') {
-            // Get previous image from sidebar or wrap around
-            const prevSidebarImage = sidebarImages[sidebarImages.length - 1];
-            switchMainImage(prevSidebarImage);
+            const prevIndex = currentImageIndex === 0 ? projectImages.length - 1 : currentImageIndex - 1;
+            switchMainImage(prevIndex);
+        } else if (e.key === 'Escape') {
+            // Close on Escape key
+            goBackToPortfolio();
+        }
+    });
+}
+
+function goBackToPortfolio() {
+    // Get the saved scroll position from sessionStorage
+    const savedScrollY = sessionStorage.getItem('portfolioScrollY');
+    
+    // Navigate back to portfolio
+    window.location.href = 'portfolio.html';
+    
+    // After page loads, scroll to saved position
+    window.addEventListener('load', function() {
+        if (savedScrollY) {
+            window.scrollTo(0, parseInt(savedScrollY));
+            sessionStorage.removeItem('portfolioScrollY');
         }
     });
 }

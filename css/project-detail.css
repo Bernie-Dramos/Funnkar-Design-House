@@ -105,20 +105,92 @@
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    background-color: var(--color-accent-red);
+    background-color: #EF0102;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    width: 65px;
+    height: 35px;
+    padding: 10px;
+    border-radius: 33px;
     font-size: 1rem;
     font-weight: 700;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button img {
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.nav-left {
+    left: 1.5rem;
+}
+
+.nav-right {
+    right: 1.5rem;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 47%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #333333;
+    backdrop-filter: blur(4px);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 30;
+    padding: 0;
+    opacity: 0.5;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.close-button img {
+    width: 30px;
+    height: 30px;
+    display: block;
 }
 
 /* Divider Line */
 .project-detail-divider {
-    width: 2px;
-    background-color: #333333;
-    opacity: 1;
+    width: 1px;
+    background-color: #D9D9D9;
+    height: 100%;
     margin-left: 0;
 }
 
@@ -141,17 +213,19 @@
 }
 
 .project-title {
-    font-size: clamp(1.6rem, 3vw, 2.6rem);
-    font-weight: 500;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
     color: #000000;
-    line-height: 1.2;
+    line-height: 30px;
+    letter-spacing: -0.15px;
     margin: 0 0 1rem;
 }
 
 .project-date {
     color: #333333;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
+    font-size: 17px;
+    line-height: 30px;
+    letter-spacing: -0.15px;
 }
 
 .project-section {
@@ -159,16 +233,18 @@
 }
 
 .project-section-title {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
-    font-weight: 500;
+    font-size: 20px;
+    font-family: Poppins, sans-serif;
     color: #000000;
+    line-height: 30px;
+    letter-spacing: -0.15px;
     margin: 0 0 1rem;
 }
 
 .project-section-text {
     color: #333333;
-    line-height: 1.6;
-    font-size: 0.9rem;
+    line-height: 20px;
+    font-size: 15px;
     margin: 0;
 }
 

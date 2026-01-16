@@ -1,0 +1,523 @@
+﻿/* =============================================
+   COMPREHENSIVE RESPONSIVE ENHANCEMENTS
+   Ensures smooth UX across all devices
+   ============================================= */
+
+/* =============================================
+   MOBILE RESPONSIVE - 320px to 480px
+   ============================================= */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .section,
+  section {
+    padding: clamp(1.5rem, 4vh, 2.5rem) clamp(1rem, 2.5vw, 1.5rem) !important;
+  }
+
+  .container {
+    padding: clamp(1rem, 2.5vw, 1.5rem) !important;
+  }
+
+  .hero-landing-bottom {
+    padding: 1.5rem 1rem !important;
+  }
+
+  .welcome-container {
+    padding: 2rem 1rem !important;
+  }
+
+  .welcome-image-slot {
+    padding: 0 1rem !important;
+    margin: 0 !important;
+  }
+
+  .portfolio-checker-container {
+    padding: 2rem 1rem !important;
+  }
+
+  .cta-footer-merged {
+    padding: 3rem 1.5rem 2rem !important;
+  }
+
+  .cta-footer-title {
+    font-size: 2rem !important;
+  }
+
+  .contact-hero-container {
+    padding: 2rem 1rem !important;
+  }
+
+  button,
+  .btn,
+  a.btn {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+
+  form input,
+  form textarea,
+  form select {
+    min-height: 44px !important;
+    padding: 0.75rem 1rem !important;
+    width: 100% !important;
+  }
+
+  .menu-btn-fixed {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+  }
+
+  .logo-img {
+    height: 40px !important;
+  }
+
+  .menu-overlay {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .menu-content {
+    padding: 5rem 1.5rem 2rem !important;
+  }
+
+  .menu-nav,
+  .menu-secondary {
+    padding-left: 0 !important;
+  }
+
+  .menu-nav li,
+  .menu-secondary li {
+    padding: 1rem 0 !important;
+  }
+
+  .menu-footer {
+    padding: 2rem 1.5rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .portfolio-grid {
+    gap: 1.5rem !important;
+    padding: 1.5rem !important;
+  }
+
+  .portfolio-card {
+    border-radius: 16px !important;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem !important;
+  }
+
+  .accordion-header {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .accordion-content {
+    padding: 1rem !important;
+  }
+
+  .service-section-content {
+    padding: 2rem 1rem !important;
+  }
+
+  .grid > div,
+  .grid-2 > div {
+    padding: 0 !important;
+  }
+
+  .card,
+  .project-card {
+    padding: 1.5rem 1rem !important;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  .project-info-content {
+    padding: 1.5rem 1rem 1.5rem 1rem !important;
+  }
+}
+
+/* =============================================
+   TABLET RESPONSIVE - 481px to 768px
+   ============================================= */
+@media (max-width: 768px) and (min-width: 481px) {
+  /* Balanced padding for tablet */
+  .section,
+  section {
+    padding: clamp(2rem, 5vh, 3rem) clamp(1.5rem, 3vw, 2.5rem) !important;
+  }
+
+  .container {
+    padding: clamp(1.5rem, 3vw, 2.5rem) !important;
+  }
+
+  /* Hero section tablet */
+  .hero-landing-bottom {
+    padding: 2rem 1.5rem !important;
+  }
+
+  /* Welcome section tablet */
+  .welcome-container {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  .welcome-image-slot {
+    padding: 0 1.5rem !important;
+  }
+
+  /* Portfolio preview tablet */
+  .portfolio-checker-container {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  /* CTA/Footer tablet */
+  .cta-footer-merged {
+    padding: 4rem 2rem 2.5rem !important;
+  }
+
+  .cta-footer-title {
+    font-size: 2.5rem !important;
+  }
+
+  /* Contact tablet */
+  .contact-hero-container {
+    padding: 2.5rem 1.5rem !important;
+    flex-direction: column !important;
+  }
+
+  /* Hamburger menu tablet */
+  .menu-btn-fixed {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .logo-img {
+    height: 45px !important;
+  }
+
+  /* Menu overlay tablet */
+  .menu-content {
+    padding: 6rem 2rem 2.5rem !important;
+  }
+
+  .menu-nav li,
+  .menu-secondary li {
+    padding: 1.25rem 0 !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* Portfolio grid tablet */
+  .portfolio-grid {
+    gap: 2rem !important;
+    padding: 2rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .portfolio-card {
+    border-radius: 18px !important;
+  }
+
+  /* Accordion tablet */
+  .accordion-header {
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  /* Service sections tablet */
+  .service-section-content {
+    padding: 2.5rem 1.5rem !important;
+  }
+
+  /* Cards tablet */
+  .card,
+  .project-card {
+    padding: 2rem 1.5rem !important;
+  }
+
+  /* Project detail tablet */
+  .project-info-content {
+    padding: 2rem 1.5rem 2rem 1.5rem !important;
+  }
+
+  /* Form elements */
+  form input,
+  form textarea,
+  form select {
+    min-height: 44px !important;
+  }
+}
+
+/* =============================================
+   TABLET LANDSCAPE / SMALL DESKTOP - 769px to 1024px
+   ============================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Generous padding on tablet landscape */
+  .section,
+  section {
+    padding: 3rem 2.5rem !important;
+  }
+
+  .container {
+    padding: 2rem 2.5rem !important;
+  }
+
+  /* Hero section */
+  .hero-landing-bottom {
+    padding: 2.5rem 2rem !important;
+  }
+
+  /* Welcome section */
+  .welcome-container {
+    padding: 3rem 2rem !important;
+  }
+
+  /* Portfolio preview */
+  .portfolio-checker-container {
+    padding: 3rem 2rem !important;
+  }
+
+  /* CTA/Footer */
+  .cta-footer-merged {
+    padding: 5rem 2.5rem 3rem !important;
+  }
+
+  /* Contact section */
+  .contact-hero-container {
+    padding: 3rem 2.5rem !important;
+    flex-direction: column !important;
+  }
+
+  /* Logo and menu sizing */
+  .menu-btn-fixed {
+    width: 44px !important;
+    height: 44px !important;
+    top: 20px !important;
+    right: 20px !important;
+  }
+
+  .logo-fixed {
+    top: 20px !important;
+    left: 20px !important;
+  .menu-content {
+    padding: 7rem 3rem 3rem !important;
+  }
+
+  .menu-nav li,
+  .menu-secondary li {
+    padding: 1.5rem 0 !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* Portfolio grid */
+  .portfolio-grid {
+    gap: 2.5rem !important;
+    padding: 2.5rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Cards */
+  .card,
+  .project-card {
+    padding: 2.5rem 2rem !important;
+  }
+
+  /* Project detail */
+  .project-info-content {
+    padding: 2.5rem 2rem !important;
+  }
+}
+
+/* =============================================
+   DESKTOP - 1025px and above
+   ============================================= */
+@media (min-width: 1025px) {
+  /* Desktop generous spacing */
+  .section,
+  section {
+    padding: 4rem 3rem !important;
+  }
+
+  .container {
+    padding: 2rem 3rem !important;
+  }
+
+  /* Hero section desktop */
+  .hero-landing-bottom {
+    padding: 3rem 4rem !important;
+  }
+
+  /* Welcome section desktop */
+  .welcome-container {
+    padding: 4rem 3rem !important;
+  }
+
+  /* Portfolio preview desktop */
+  .portfolio-checker-container {
+    padding: 4rem 3rem !important;
+  }
+
+  /* CTA/Footer desktop */
+  .cta-footer-merged {
+    padding: 6rem 4rem 3rem !important;
+  }
+
+  .cta-footer-title {
+    font-size: 3.5rem !important;
+  }
+
+  /* Contact section desktop */
+  .contact-hero-container {
+    padding: 4rem 3rem !important;
+    flex-direction: row !important;
+  }
+
+  /* Logo and menu desktop */
+  .menu-btn-fixed {
+    display: none !important;
+  }
+
+  .logo-fixed {
+    top: 24px !important;
+    left: 24px !important;
+  }
+
+  .logo-img {
+    height: 60px !important;
+  }
+
+  /* Portfolio grid desktop */
+  .portfolio-grid {
+    gap: 3rem !important;
+    padding: 3rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .portfolio-card {
+    border-radius: 20px !important;
+  }
+
+  /* Cards desktop */
+  .card,
+  .project-card {
+    padding: 3rem 2.5rem !important;
+  }
+
+  /* Project detail desktop */
+  .project-info-content {
+    padding: 3rem 2.5rem !important;
+  }
+
+  /* Service sections desktop */
+  .service-section-content {
+    padding: 4rem 3rem !important;
+  }
+}
+
+/* =============================================
+   WIDE DESKTOP - 1441px and above
+   ============================================= */
+@media (min-width: 1441px) {
+  /* Maximum width containers */
+  .container,
+  .contact-hero-container,
+  .cta-footer-content {
+    max-width: 1400px !important;
+  }
+
+  /* Extra padding on ultra-wide */
+  .section,
+  section {
+    padding: 5rem 4rem !important;
+  }
+
+  /* CTA/Footer on wide */
+  .cta-footer-merged {
+    padding: 7rem 5rem 4rem !important;
+  }
+
+  .cta-footer-title {
+    font-size: 4rem !important;
+  }
+}
+
+/* =============================================
+   SMOOTH TRANSITIONS & ANIMATIONS
+   ============================================= */
+/* Prevent layout shifts on scroll restoration */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth menu transitions */
+.menu-overlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.menu-btn-fixed {
+  transition: all 0.3s ease !important;
+}
+
+/* Smooth button interactions */
+button,
+.btn,
+a.btn {
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* =============================================
+   ACCESSIBILITY IMPROVEMENTS
+   ============================================= */
+/* Better focus states for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Ensure touch targets are always adequate */
+a,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   PRINT STYLES (Optional)
+   ============================================= */
+@media print {
+  .menu-btn-fixed,
+  .logo-fixed,
+  .menu-overlay,
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+}
+}
+
+/* End of responsive-enhancements.css */

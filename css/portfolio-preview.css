@@ -30,14 +30,14 @@
 
 /* Portfolio Item 1 - Left */
 .portfolio-item-1 {
-  left: 60px;
+  left: -200px;
   top: 10px;
 }
 
 /* Portfolio Item 2 - Right */
 .portfolio-item-2 {
-  right: 30px;
-  top: 30px;
+  right: -20px;
+  top: -50px;
   min-width: 300px;
 }
 
@@ -62,11 +62,11 @@
   }
   
   .portfolio-item-1 {
-    left: 80px;
+    left: -100px;
   }
   
   .portfolio-item-2 {
-    right: 60px;
+    right: 40px;
     min-width: 650px;
   }
 }

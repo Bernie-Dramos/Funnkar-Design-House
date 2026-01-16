@@ -2,12 +2,12 @@
 // GLOBAL JAVASCRIPT - MAIN FUNCTIONALITY
 // =============================================
 
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     initHamburgerMenu();
     initSmoothScroll();
     initActiveNavLinks();
     initScrollAnimations();
+    initPrivacyModal();
 });
 
 // =============================================
@@ -21,26 +21,22 @@ function initHamburgerMenu() {
 
     if (!hamburger || !menuOverlay) return;
 
-    // Toggle menu on hamburger click
     hamburger.addEventListener('click', function() {
         toggleMenu();
     });
 
-    // Close menu on close button click
     if (menuClose) {
         menuClose.addEventListener('click', function() {
             closeMenu();
         });
     }
 
-    // Close menu when clicking a link
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
             closeMenu();
         });
     });
 
-    // Close menu on ESC key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
             closeMenu();
@@ -73,7 +69,6 @@ function initSmoothScroll() {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Skip empty anchors
             if (href === '#' || href === '') return;
             
             const target = document.querySelector(href);
@@ -126,7 +121,6 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe all cards and sections
     const animatedElements = document.querySelectorAll('.card, .section > .container > div');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -137,15 +131,8 @@ function initScrollAnimations() {
 }
 
 // =============================================
-// HEADER SCROLL EFFECT - REMOVED (Fixed logo/menu stay constant)
-// =============================================
-// No longer needed since logo and menu are independent fixed elements
-
-// =============================================
 // UTILITY FUNCTIONS
 // =============================================
-
-// Debounce function for performance
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -158,9 +145,8 @@ function debounce(func, wait) {
     };
 }
 
-// Add resize listener with debounce
 window.addEventListener('resize', debounce(function() {
-    // Handle any resize-specific logic here
+    // Reserved for future resize handling
 }, 250));
 // =============================================
 // PRIVACY POLICY MODAL

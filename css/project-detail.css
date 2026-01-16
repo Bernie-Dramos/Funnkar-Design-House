@@ -13,8 +13,9 @@
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
-    height: auto;
+    height: 80vh;
     align-items: start;
+    overflow: hidden;
 }
 
 /* Thumbnail Sidebar */
@@ -200,12 +201,15 @@
     align-items: flex-start;
     margin-left: 0;
     padding-left: 1.5rem;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .project-info-content {
     width: 100%;
     max-width: 320px;
-    padding-right: 0;
+    padding-right: 1rem;
 }
 
 .project-header {

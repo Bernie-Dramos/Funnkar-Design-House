@@ -11,6 +11,27 @@ let filteredGrid = null;
 document.addEventListener('DOMContentLoaded', function() {
     initPortfolioFilter();
     initPagination();
+    
+    // Check if returning from project page
+    const params = new URLSearchParams(window.location.search);
+    const pageParam = params.get('page');
+    if (pageParam) {
+        const savedPage = parseInt(pageParam);
+        if (savedPage > 1 && savedPage <= 3) {
+            showPage(savedPage);
+        }
+    }
+    
+    // Restore scroll position if returning from project
+    const savedScrollY = sessionStorage.getItem('portfolioScrollY');
+    if (savedScrollY) {
+        // Use requestAnimationFrame for smooth scroll restoration
+        requestAnimationFrame(function() {
+            window.scrollTo(0, parseInt(savedScrollY));
+            sessionStorage.removeItem('portfolioScrollY');
+            sessionStorage.removeItem('portfolioPage');
+        });
+    }
 });
 
 // =============================================
@@ -262,22 +283,25 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('click', function(e) {
     const portfolioCard = e.target.closest('.portfolio-card');
     if (portfolioCard) {
-        // Save the current scroll position before navigating
         sessionStorage.setItem('portfolioScrollY', window.scrollY);
+        sessionStorage.setItem('portfolioPage', currentPage.toString());
         
-        // Get all portfolio cards
-        const allCards = document.querySelectorAll('.portfolio-card');
+        // Get the project number from data-project attribute
+        const projectNumber = portfolioCard.getAttribute('data-project');
         
-        // Find the index of the clicked card
-        let cardIndex = 0;
-        allCards.forEach((card, index) => {
-            if (card === portfolioCard) {
-                cardIndex = index + 1; // Start from 1
-            }
-        });
-        
-        // Navigate to the corresponding project detail page
-        window.location.href = `project-${cardIndex}.html`;
+        if (projectNumber) {
+            window.location.href = `project-${projectNumber}.html`;
+        } else {
+            // Fallback: calculate from all cards if data-project missing
+            const allCards = document.querySelectorAll('.portfolio-card');
+            let cardIndex = 0;
+            allCards.forEach((card, index) => {
+                if (card === portfolioCard) {
+                    cardIndex = index + 1;
+                }
+            });
+            window.location.href = `project-${cardIndex}.html`;
+        }
     }
 });
 

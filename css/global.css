@@ -53,16 +53,28 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 100%;
+  /* Base font-size: 16px for 1rem = 16px calculation */
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: var(--font-primary);
-  font-size: var(--font-size-base);
+  font-size: clamp(0.875rem, 2.5vw + 0.5rem, 1.125rem);
   line-height: var(--line-height-base);
   color: var(--color-text-secondary);
   background-color: var(--color-bg-primary);
   overflow-x: hidden;
+  /* Prevent horizontal scroll on all viewports */
+}
+
+/* Image and Video Responsiveness */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =============================================
@@ -167,59 +179,113 @@ a:hover {
 }
 
 /* =============================================
-   RESPONSIVE
+   RESPONSIVE - MOBILE-FIRST APPROACH
    ============================================= */
 
-/* Large Screens (1441px+) */
-@media (min-width: 1441px) {
+/* Mobile: Base styles (320px and up) */
+:root {
+  --container-padding-mobile: 1rem;
+  --section-padding-mobile: 2rem 0;
+}
+
+/* Small Tablets (576px and up) */
+@media (min-width: 576px) {
   :root {
-    --spacing-md: 3rem;
-    --spacing-lg: 5rem;
-    --spacing-xl: 7rem;
-    --header-height: 90px;
-  }
-  
-  .container {
-    max-width: 1600px;
+    --spacing-md: 2.5rem;
+    --container-max-width: 540px;
   }
 }
 
-/* Desktop (1025px - 1440px) - Use default values */
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --spacing-lg: 3.5rem;
+    --spacing-xl: 4.5rem;
+    --header-height: 75px;
+    --container-max-width: 720px;
+  }
 
-/* Small Desktop/Tablet Landscape (769px - 1024px) */
-@media (max-width: 1024px) {
+  .section {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Small Desktops (992px and up) */
+@media (min-width: 992px) {
   :root {
     --spacing-lg: 4rem;
     --spacing-xl: 5rem;
     --header-height: 80px;
+    --container-max-width: 960px;
   }
-  
+
+  .section {
+    padding: var(--spacing-xl) 0;
+    min-height: 100vh;
+  }
+}
+
+/* Large Desktops (1200px and up) */
+@media (min-width: 1200px) {
+  :root {
+    --container-max-width: 1140px;
+  }
+
   .container {
     padding: 0 2rem;
   }
 }
 
-/* Tablet Portrait (481px - 768px) */
-@media (max-width: 768px) {
+/* Extra Large Screens (1400px and up) */
+@media (min-width: 1400px) {
   :root {
-    --spacing-lg: 3rem;
-    --spacing-xl: 4rem;
-    --header-height: 70px;
+    --spacing-md: 3rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 7rem;
+    --header-height: 90px;
+    --container-max-width: 1320px;
   }
-  
-  .section {
-    min-height: auto;
-    padding: var(--spacing-lg) 0;
-  }
-  
+
   .container {
-    padding: 0 var(--spacing-sm);
+    padding: 0 3rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Ultra-wide Screens (1920px and up) */
+@media (min-width: 1920px) {
   :root {
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+    --container-max-width: 1600px;
+  }
+}
+
+/* High DPI / Retina Displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Optimize for high-DPI displays if needed */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Orientation - Landscape on small screens */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-landing,
+  .section {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }

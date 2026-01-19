@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/services-hover.css">
     <link rel="stylesheet" href="css/responsive-enhancements.css">
     <link rel="stylesheet" href="css/mobile-optimization.css">
+    <link rel="stylesheet" href="css/responsive-fix-complete.css">
     <link rel="stylesheet" href="css/mobile-fix.css">
     <link rel="stylesheet" href="css/services-hover.css">
     <link rel="stylesheet" href="css/responsive-enhancements.css">
@@ -63,19 +64,14 @@
         </div>
     </nav>
 
-    <!-- Hero Section (mirrors portfolio hover behavior) -->
-    <section class="hero-landing portfolio-hero services-hero">
-        <!-- Background Video/Image -->
-            <img src="assets/images/phone+laptop-scroll.gif" alt="Services Hero" class="hero-bg-media" loading="lazy">
+    <!-- Hero Section -->
+    <section class="hero-landing services-hero">
+        <!-- Background Image -->
+        <img src="assets/images/phone+laptop-scroll.gif" alt="Services Hero" class="hero-bg-media" loading="lazy">
         
         <!-- Hero Content -->
-        <div class="portfolio-hero-content">
-            <h1 class="portfolio-title">Services</h1>
-            <div class="portfolio-hero-hover-content">
-                <div class="portfolio-hero-image">
-                    <img src="assets/images/video-editor.gif" alt="Video Editor" class="portfolio-hero-phone" loading="lazy">
-                </div>
-            </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Services</h1>
         </div>
     </section>
 
@@ -167,7 +163,7 @@
                 <span class="service-number" style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: #E8E8E8;">03</span>
                 <div class="grid grid-2" style="align-items: flex-start; gap: 4rem;">
                     <div class="service-content" style="max-width: 720px;">
-                        <h2>VFX &<br>Animation</h2>
+                        <h2>VFX & <br>Animation</h2>
                         <p style="font-size: 1.125rem; margin: 20rem 0 1rem 0; line-height: 1.8;">
                             Bring your vision to life with cutting-edge visual effects and animations. We create immersive experiences that captivate and inspire your audience.
                         </p>
@@ -310,12 +306,34 @@
                 .rolling-track {
                     display: flex;
                     gap: 0;
+                    width: calc(380px * 12 + 12px * 12);
                     animation: roll-left 3s linear infinite;
                     will-change: transform;
                 }
                 @keyframes roll-left {
                     0% { transform: translateX(0); }
-                    100% { transform: translateX(-50%); }
+                    100% { transform: translateX(calc(-(380px * 6 + 12px * 6))); }
+                }
+                @media screen and (max-width: 768px) {
+                    .rolling-track {
+                        width: calc(280px * 12 + 12px * 12);
+                        animation: roll-left 3s linear infinite;
+                    }
+                    .portfolio-showcase-card {
+                        flex: 0 0 280px;
+                        height: 320px;
+                    }
+                }
+                @media screen and (max-width: 480px) {
+                    .rolling-track {
+                        width: calc(240px * 12 + 12px * 12);
+                        animation: roll-left 3s linear infinite;
+                    }
+                    .portfolio-showcase-card {
+                        flex: 0 0 240px;
+                        height: 280px;
+                        margin-right: 8px;
+                    }
                 }
                 .btn-primary {
                     transition: background-color 0.3s ease, color 0.3s ease;
@@ -326,50 +344,32 @@
             </style>
             <div class="rolling-gallery" style="margin-bottom: 2rem;">
                 <div class="rolling-track">
-                    <!-- Set 1 -->
-                    <div class="portfolio-showcase-card">
-                        <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Brand Development</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Brand Kit</span>
-                        </div>
-                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/collagen.gif" alt="Brand Development" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                    </div>
+                    <!-- Set 1 - Using Portfolio Card Images -->
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
                             <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">UI/UX Design</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Mobile App Development</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Mobile App</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/phone-app.png" alt="UX/UI Design" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/UI1-3.png" alt="UI/UX Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Graphics Design</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Concept Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Interior Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Space Planning</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/apple-express.png" alt="Graphics Design" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/ID1-3.png" alt="Interior Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Embroidery</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Packaging Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Game Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Asset Development</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/hoodie.png" alt="Hoodie Embroidery" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                    </div>
-                    <div class="portfolio-showcase-card">
-                        <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Digital Marketing</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Motion Graphics</span>
-                        </div>
-                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/red-car.gif" alt="Car Reveal" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/game1-5.png" alt="Game Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
@@ -378,53 +378,53 @@
                             <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">3D Animation</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/agent.png" alt="3D Animation" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/3d2-3.png" alt="3D Animation" style="width:100%;height:100%;object-fit:cover;">
+                        </div>
+                    </div>
+                    <div class="portfolio-showcase-card">
+                        <div style="display:flex;gap:10px;margin-bottom:10px;">
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Immersive UI</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">VFX</span>
+                        </div>
+                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+                            <img src="assets/images/vfx3-2.jpg" alt="VFX" style="width:100%;height:100%;object-fit:cover;">
+                        </div>
+                    </div>
+                    <div class="portfolio-showcase-card">
+                        <div style="display:flex;gap:10px;margin-bottom:10px;">
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Web Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Development</span>
+                        </div>
+                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+                            <img src="assets/images/web1-3.png" alt="Web Development" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <!-- Set 2 (duplicate for seamless loop) -->
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Brand Development</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Brand Kit</span>
-                        </div>
-                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/collagen.gif" alt="Brand Development" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                    </div>
-                    <div class="portfolio-showcase-card">
-                        <div style="display:flex;gap:10px;margin-bottom:10px;">
                             <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">UI/UX Design</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Mobile App Development</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Mobile App</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/phone-app.png" alt="UX/UI Design" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/UI1-3.png" alt="UI/UX Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Graphics Design</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Concept Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Interior Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Space Planning</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/apple-express.png" alt="Graphics Design" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/ID1-3.png" alt="Interior Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
                         <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Embroidery</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Packaging Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Game Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Asset Development</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/hoodie.png" alt="Hoodie Embroidery" style="width:100%;height:100%;object-fit:cover;">
-                        </div>
-                    </div>
-                    <div class="portfolio-showcase-card">
-                        <div style="display:flex;gap:10px;margin-bottom:10px;">
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Digital Marketing</span>
-                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Motion Graphics</span>
-                        </div>
-                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/red-car.gif" alt="Car Reveal" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/game1-5.png" alt="Game Design" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                     <div class="portfolio-showcase-card">
@@ -433,7 +433,25 @@
                             <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">3D Animation</span>
                         </div>
                         <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
-                            <img src="assets/images/agent.png" alt="3D Animation" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="assets/images/3d2-3.png" alt="3D Animation" style="width:100%;height:100%;object-fit:cover;">
+                        </div>
+                    </div>
+                    <div class="portfolio-showcase-card">
+                        <div style="display:flex;gap:10px;margin-bottom:10px;">
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Immersive UI</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">VFX</span>
+                        </div>
+                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+                            <img src="assets/images/vfx3-2.jpg" alt="VFX" style="width:100%;height:100%;object-fit:cover;">
+                        </div>
+                    </div>
+                    <div class="portfolio-showcase-card">
+                        <div style="display:flex;gap:10px;margin-bottom:10px;">
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Web Design</span>
+                            <span style="background-color:#000;padding:9px;border-radius:5px;font-family:'SF Pro', sans-serif;font-weight:590;font-size:14px;line-height:14px;letter-spacing:-0.14px;color:#FFF;text-transform:uppercase;">Development</span>
+                        </div>
+                        <div style="flex:1;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+                            <img src="assets/images/web1-3.png" alt="Web Development" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -448,7 +466,7 @@
     <section class="cta-footer-merged">
         <div class="cta-footer-content">
             <div class="cta-footer-main">
-                <h2 class="cta-footer-title"><span class="cta-footer-bold">Lets talk.</span> We’d love<br>to hear from you</h2>
+                <h2 class="cta-footer-title"><span class="cta-footer-bold">Lets talk.</span> We’d love <br>to hear from you</h2>
                 <a href="contact.html" class="cta-footer-btn">Book A Call</a>
             </div>
             <div class="cta-footer-bottom">
@@ -466,5 +484,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/services-hover.js"></script>
+    <script src="js/scroll-animations.js"></script>
 </body>
 </html>

@@ -87,8 +87,9 @@
 
 .project-main-image-wrapper {
     position: relative;
-    min-width: 600px;
-    min-height: 600px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 400px;
     aspect-ratio: 3 / 2;
     border-radius: 20px;
     overflow: hidden;
@@ -99,7 +100,7 @@
 .project-main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .project-image-badge {
@@ -392,6 +393,10 @@
     }
 
     .project-main-image-wrapper {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        min-height: 300px;
         aspect-ratio: 2 / 1.5;
     }
 

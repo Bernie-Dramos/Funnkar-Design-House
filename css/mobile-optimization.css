@@ -361,7 +361,9 @@ video[loading="lazy"] {
 }
 
 /* Reduce paint operations */
-will-change: transform;
+* {
+  will-change: transform;
+}
 
 /* Optimize animations */
 @media screen and (max-width: 768px) {
@@ -370,6 +372,385 @@ will-change: transform;
   .service-section {
     will-change: auto;
     transform: translateZ(0);
+  }
+}
+
+/* =============================================
+   ACCESSIBILITY FOR MOBILE
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Improve focus states on mobile */
+  button:focus,
+  a:focus,
+  input:focus {
+    outline: 2px solid var(--color-accent-blue);
+    outline-offset: 2px;
+  }
+  
+  /* High contrast for small screens */
+  .btn {
+    border: 1px solid currentColor;
+  }
+}
+
+/* =============================================
+   PORTFOLIO PAGE FIXES (Mobile & Tablet)
+   ============================================= */
+
+/* Portfolio images overflow fix */
+@media screen and (max-width: 768px) {
+  /* Fix project detail images */
+  .project-detail-section img,
+  .project-detail-content img,
+  [class*="project"] img {
+    max-width: 100%;
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Fix portfolio grid overflow */
+  .portfolio-checker-grid {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .portfolio-item {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* =============================================
+   PORTFOLIO FILTER FIXES (Mobile & Tablet)
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Fix filter button layout */
+  .filter-btn,
+  [class*="filter"] button {
+    font-size: 0.875rem !important;
+    padding: 0.5rem 1rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Fix filter container */
+  .filter-container,
+  [class*="filter"] {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hide scrollbar on filter */
+  .filter-container::-webkit-scrollbar {
+    height: 2px;
+  }
+  
+  .filter-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .filter-container::-webkit-scrollbar-thumb {
+    background: var(--color-accent-coral);
+  }
+}
+
+/* =============================================
+   LOGO & HAMBURGER MENU FIXES (Mobile & Tablet)
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Fix logo sizing */
+  .logo-fixed {
+    width: 50px;
+    height: 50px;
+    padding: 0.5rem;
+  }
+  
+  .logo-fixed img,
+  .logo-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Fix hamburger menu button */
+  .menu-btn-fixed {
+    width: 48px;
+    height: 48px;
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.5rem;
+    right: 1rem;
+    top: 1rem;
+  }
+  
+  .menu-btn-text,
+  .menu-btn-close {
+    font-size: 0.75rem;
+  }
+  
+  /* Add proper spacing to fixed elements */
+  .logo-fixed,
+  .menu-btn-fixed {
+    margin: 0;
+    z-index: 100;
+  }
+  
+  /* Reduce edge padding */
+  body {
+    padding: 0;
+  }
+}
+
+/* Extra small phones */
+@media screen and (max-width: 374px) {
+  .logo-fixed {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu-btn-fixed {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* =============================================
+   FOOTER PRIVACY POLICY FIX
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Fix CTA footer layout */
+  .cta-footer-merged,
+  .cta-footer-content {
+    width: 100%;
+  }
+  
+  /* Fix footer bottom section */
+  .cta-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+  
+  /* Privacy policy inline with other footer items */
+  .cta-footer-privacy,
+  .cta-footer-copyright,
+  .cta-footer-socials {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
+  
+  /* Ensure proper footer spacing */
+  .cta-footer-privacy a {
+    white-space: nowrap;
+  }
+}
+
+/* =============================================
+   BOOK A CALL BUTTON CENTERING
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Center book a call buttons on tablets and smaller */
+  .cta-footer-btn,
+  .cta-footer-btn.btn {
+    display: block;
+    margin: 0 auto 1rem;
+    width: fit-content;
+  }
+  
+  .cta-footer-main {
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Other "Book A Call" buttons */
+  a[href="contact.html"].btn,
+  .btn-primary[href="contact.html"] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+  }
+}
+
+/* =============================================
+   PAGINATION ICONS FIX
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Show pagination icons */
+  .pagination,
+  [class*="pagination"],
+  [class*="paging"],
+  [class*="page-"] {
+    display: flex !important;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+  }
+  
+  .pagination button,
+  .pagination a,
+  [class*="pagination"] button,
+  [class*="pagination"] a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Pagination icons visibility */
+  .pagination img,
+  [class*="pagination"] img {
+    display: inline !important;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* =============================================
+   MENU OVERLAY SCALING FIX
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Fix menu overlay display */
+  .menu-overlay {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow-y: auto;
+    background-color: var(--color-bg-primary);
+    z-index: 50;
+  }
+  
+  .menu-overlay.active,
+  .menu-overlay[style*="display: flex"] {
+    display: flex !important;
+  }
+  
+  /* Menu content scaling */
+  .menu-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    width: 100%;
+  }
+  
+  .menu-nav,
+  .menu-secondary {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .menu-nav li,
+  .menu-secondary li {
+    margin: 1rem 0;
+    padding: 0;
+  }
+  
+  .menu-nav a,
+  .menu-secondary a {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: var(--color-text-primary);
+  }
+  
+  /* Menu footer scaling */
+  .menu-footer {
+    padding: 1.5rem;
+    background-color: var(--color-bg-secondary);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .menu-footer-left {
+    margin-bottom: 1rem;
+  }
+  
+  .menu-footer-center {
+    margin-bottom: 1rem;
+  }
+  
+  .menu-footer-right {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Extra small menu fix */
+@media screen and (max-width: 374px) {
+  .menu-nav a,
+  .menu-secondary a {
+    font-size: 1.25rem;
+  }
+}
+
+/* =============================================
+   TABLET FOOTER LAYOUT FIX
+   ============================================= */
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  /* Tablet footer adjustments */
+  .cta-footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .cta-footer-copyright,
+  .cta-footer-privacy,
+  .cta-footer-socials {
+    flex: 0 1 auto;
+  }
+  
+  .cta-footer-main {
+    text-align: center;
+    width: 100%;
   }
 }
 

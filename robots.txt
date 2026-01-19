@@ -1,0 +1,26 @@
+# Robots.txt for Funnkar Design House
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow access to admin or private areas (if any)
+# Uncomment if needed
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl delay (in seconds) - optional
+# Crawl-delay: 1
+
+# Sitemap location (update if you have a sitemap.xml)
+Sitemap: https://funnkardesignhouse.com/sitemap.xml

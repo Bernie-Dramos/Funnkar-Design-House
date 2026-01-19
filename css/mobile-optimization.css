@@ -1,0 +1,393 @@
+/* =============================================
+   MOBILE OPTIMIZATION & PERFORMANCE
+   ============================================= */
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  /* Disable all hover states on touch devices */
+  button:hover,
+  a:hover,
+  .btn-primary:hover,
+  .service-content:hover,
+  .portfolio-item:hover,
+  .card:hover {
+    transform: none !important;
+    background-color: inherit !important;
+    border-color: inherit !important;
+  }
+  
+  /* Prevent tap highlight on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* =============================================
+   MOBILE-FIRST RESPONSIVE DESIGN (320px+)
+   ============================================= */
+
+/* Override About Section for Mobile */
+@media screen and (max-width: 768px) {
+  /* Fix the about section grid */
+  .grid {
+    grid-template-columns: 1fr !important;
+    margin-left: 0 !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Stack content vertically on mobile */
+  .grid > div {
+    width: 100%;
+  }
+  
+  /* Fix about text overflow */
+  .grid p {
+    font-size: clamp(1.125rem, 3vw, 1.5rem) !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+  
+  /* Fix about image sizing */
+  .grid img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: clamp(0.5rem, 2vw, 1rem) !important;
+    max-width: 100%;
+  }
+}
+
+/* Extra small phones (320px - 375px) */
+@media screen and (max-width: 374px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 5vw, 2rem);
+  }
+  
+  /* Reduce padding on small screens */
+  .container {
+    padding: 1rem !important;
+  }
+  
+  /* Reduce button sizes on very small screens */
+  .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Small phones (375px - 480px) */
+@media screen and (min-width: 375px) and (max-width: 480px) {
+  /* Standard mobile optimizations */
+  .container {
+    padding: 1rem;
+  }
+  
+  /* Reduce service section margins */
+  section {
+    padding: 2rem 0 !important;
+  }
+  
+  /* Fix service number sizing */
+  .service-number {
+    font-size: 1rem !important;
+  }
+  
+  /* Optimize button sizing for touch */
+  .btn {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 1rem 2rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Tablet optimizations */
+  .container {
+    padding: 1.5rem;
+  }
+  
+  /* Allow 2-column layout on tablet */
+  .grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  
+  /* Proper spacing on tablet */
+  section {
+    padding: 3rem 0 !important;
+  }
+}
+
+/* =============================================
+   PERFORMANCE OPTIMIZATION
+   ============================================= */
+
+/* Lazy loading optimization */
+img[loading="lazy"],
+video[loading="lazy"] {
+  background-color: var(--color-bg-secondary);
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize transitions for mobile */
+@media screen and (max-width: 768px) {
+  * {
+    transition-duration: 0.15s !important;
+  }
+  
+  /* Disable heavy animations on mobile */
+  @keyframes none {
+    0% { transform: none; }
+    100% { transform: none; }
+  }
+}
+
+/* =============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================= */
+
+/* Increase touch target sizes on mobile */
+@media (pointer: coarse) {
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Add touch padding */
+  .menu-btn-fixed {
+    min-height: 56px;
+    min-width: 56px;
+  }
+}
+
+/* =============================================
+   PORTRAIT ORIENTATION OPTIMIZATION
+   ============================================= */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape mode */
+  section {
+    padding: 1.5rem 0 !important;
+  }
+  
+  .hero-landing {
+    height: 60vh;
+  }
+}
+
+/* =============================================
+   IMAGE & MEDIA OPTIMIZATION
+   ============================================= */
+
+/* Optimize background images */
+@media screen and (max-width: 768px) {
+  /* Reduce quality on mobile for performance */
+  .services-bg-section,
+  .graphics-bg-section,
+  .vfx-bg-section,
+  .story-section-with-bg {
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Lower video opacity on mobile for performance */
+  video {
+    opacity: 0.8;
+  }
+}
+
+/* =============================================
+   OVERFLOW & SPACING FIXES
+   ============================================= */
+
+@media screen and (max-width: 480px) {
+  /* Prevent overflow on small screens */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Fix container overflow */
+  .container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Fix negative margins on mobile */
+  [style*="margin-left: -"],
+  [style*="margin-right: -"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Fix fixed positioning issues */
+  .logo-fixed,
+  .menu-btn-fixed {
+    z-index: 100;
+    position: fixed;
+    top: auto;
+  }
+}
+
+/* =============================================
+   HOVER STATE REMOVAL FOR TOUCH
+   ============================================= */
+
+/* Remove active/hover styles on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  a:active,
+  .btn:active {
+    background-color: inherit;
+    transform: scale(0.98);
+  }
+  
+  /* Disable animations on touch */
+  .hero-landing,
+  .portfolio-item,
+  .service-content {
+    animation: none !important;
+  }
+}
+
+/* =============================================
+   FONT SIZING FOR MOBILE READABILITY
+   ============================================= */
+
+@media screen and (max-width: 480px) {
+  /* Ensure readable text on small screens */
+  body {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  p {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    line-height: 1.5;
+  }
+}
+
+/* =============================================
+   PORTFOLIO GRID MOBILE OPTIMIZATION
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  .portfolio-checker-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .portfolio-item {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250px;
+  }
+  
+  .portfolio-item-1 {
+    height: 200px !important;
+  }
+  
+  .portfolio-item-2 {
+    height: 200px !important;
+    width: 100% !important;
+  }
+}
+
+/* =============================================
+   FORM OPTIMIZATION FOR MOBILE
+   ============================================= */
+
+@media screen and (max-width: 480px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    min-height: 48px;
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  label {
+    font-size: 0.875rem;
+  }
+}
+
+/* =============================================
+   LOADING OPTIMIZATION
+   ============================================= */
+
+/* Optimize critical rendering path */
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+  }
+}
+
+/* Reduce paint operations */
+will-change: transform;
+
+/* Optimize animations */
+@media screen and (max-width: 768px) {
+  .hero-landing,
+  .portfolio-item,
+  .service-section {
+    will-change: auto;
+    transform: translateZ(0);
+  }
+}
+
+/* =============================================
+   ACCESSIBILITY FOR MOBILE
+   ============================================= */
+
+@media screen and (max-width: 768px) {
+  /* Improve focus states on mobile */
+  button:focus,
+  a:focus,
+  input:focus {
+    outline: 2px solid var(--color-accent-blue);
+    outline-offset: 2px;
+  }
+  
+  /* High contrast for small screens */
+  .btn {
+    border: 1px solid currentColor;
+  }
+}

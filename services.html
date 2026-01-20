@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="Our services - Branding, Product Design, Graphics, VFX & Animation">
     <title>Services | Funnkar Design House</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -66,42 +66,36 @@
 
     <!-- Hero Section -->
     <section class="hero-landing services-hero">
-        <!-- Background Image -->
-        <img src="assets/images/phone+laptop-scroll.gif" alt="Services Hero" class="hero-bg-media" loading="lazy">
-        
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <h1 class="hero-title">Services</h1>
+        <div class="hero-background">
+            <img src="assets/images/phone+laptop-scroll.gif" alt="Services Hero" class="hero-bg-media" loading="lazy">
+        </div>
+        <div class="hero-landing-overlay">
+            <div class="hero-landing-bottom">
+                <div class="hero-tagline-container">
+                    <h1 class="hero-title">Services</h1>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Branding & Product Design Section -->
     <section class="section services-bg-section" style="position:relative;overflow:hidden;">
-        <video class="services-bg-video" autoplay loop muted playsinline
-            style="
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            z-index:0;
-            opacity:0.9;
-            pointer-events:none;">
-            <source src="assets/images/Branding.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%);"></div>
+        <div class="media-container">
+            <video class="services-bg-video" autoplay loop muted playsinline>
+                <source src="assets/images/Branding.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div class="container" style="position:relative;z-index:2;">
-            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-left:-850px; margin-top: 50px;">
-                <span class="service-number" style="font-size: 1.25rem; font-weight: 300; letter-spacing: -0.015em; color: #E8E8E8;">01</span>
-                <div class="grid grid-2" style="align-items: flex-start; gap: 4rem; margin-bottom: 6rem;">
-                    <div class="service-content" style="max-width: 500px;">
+            <div class="service-block">
+                <span class="service-number">01</span>
+                <div class="grid grid-2">
+                    <div class="service-content">
                         <h2>Branding <br>& Product Design</h2>
-                        <p style="font-size: 1.125rem; line-height: 1.8; margin: 20rem 0 1rem;">
+                        <p>
                             From concept to experience, we create products that ignite curiosity and empower engagement.
                         </p>
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Book A Call</a>
+                        <a href="contact.html" class="btn btn-primary">Book A Call</a>
                     </div>
                 </div>
             </div>

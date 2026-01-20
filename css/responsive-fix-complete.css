@@ -197,27 +197,6 @@
 
 /* Remove ALL transitions and animations for hero content */
 .portfolio-hero .hero-content,
-.portfolio-hero .portfolio-hero-content,
-.portfolio-hero h1,
-.portfolio-hero p,
-.portfolio-hero .portfolio-hero-description,
-.portfolio-hero .portfolio-title,
-.services-hero .hero-content,
-.services-hero .services-hero-content,
-.services-hero h1,
-.services-hero p,
-.services-hero .services-hero-description,
-.services-hero .services-title,
-.hero-landing .hero-content,
-.hero-landing h1,
-.hero-landing p {
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  transition: none !important;
-  animation: none !important;
-}
-
 /* Ensure hero sections are always at full opacity */
 .portfolio-hero,
 .services-hero,
@@ -232,11 +211,19 @@
   .portfolio-hero .portfolio-hero-content,
   .portfolio-hero h1,
   .portfolio-hero p,
+  .portfolio-hero .portfolio-hero-description,
+  .portfolio-hero .portfolio-title,
   .services-hero .hero-content,
   .services-hero .services-hero-content,
   .services-hero h1,
-  .services-hero p {
+  .services-hero p,
+  .services-hero .services-hero-description,
+  .services-hero .services-title,
+  .hero-landing .hero-content,
+  .hero-landing h1,
+  .hero-landing p {
     opacity: 1 !important;
+    visibility: visible !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;

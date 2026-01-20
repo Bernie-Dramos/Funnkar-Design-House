@@ -1,0 +1,205 @@
+'use client';
+
+export default function Privacy() {
+  return (
+    <>
+      {/* Privacy Policy Content */}
+      <div className="privacy-container">
+        <div className="privacy-header">
+          <h1>Privacy Policy</h1>
+          <p>Last updated: January 2026</p>
+        </div>
+
+        <div className="privacy-content">
+          <h2>Introduction</h2>
+          <p>Welcome to <span className="privacy-highlight">Funnkar Design House</span>. We are committed to protecting your privacy and ensuring you have a positive experience on our website. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.</p>
+
+          <h2>1. Information We Collect</h2>
+          <h3>Contact Form Information</h3>
+          <p>When you submit our contact form, we collect the following information:</p>
+          <ul>
+            <li>Full Name</li>
+            <li>Company Name</li>
+            <li>Email Address</li>
+            <li>Phone Number</li>
+            <li>Subject</li>
+            <li>Message</li>
+            <li>Timestamp of submission</li>
+          </ul>
+          <p>This information is collected solely to respond to your inquiry and provide you with the services you request.</p>
+
+          <h3>Automatic Information Collection</h3>
+          <p>Our website may automatically collect certain technical information, including but not limited to:</p>
+          <ul>
+            <li>Browser type and version</li>
+            <li>Device type and operating system</li>
+            <li>Pages visited and time spent on each page</li>
+            <li>Referring URL</li>
+            <li>IP address</li>
+          </ul>
+
+          <h2>2. How We Use Your Information</h2>
+          <p>We use the information collected for the following purposes:</p>
+          <ul>
+            <li><span className="privacy-highlight">Responding to Inquiries:</span> To answer your questions and provide information about our services</li>
+            <li><span className="privacy-highlight">Service Delivery:</span> To deliver the design and creative services you request</li>
+            <li><span className="privacy-highlight">Communication:</span> To send you updates, newsletters, or follow-up information (with your consent)</li>
+            <li><span className="privacy-highlight">Website Improvement:</span> To analyze website usage and improve our services</li>
+            <li><span className="privacy-highlight">Legal Compliance:</span> To comply with legal obligations and enforce our agreements</li>
+          </ul>
+
+          <h2>3. Data Storage and Security</h2>
+          <p>Contact form submissions are securely stored in a Google Sheet associated with our Google Apps Script backend. We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+          <p>However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.</p>
+
+          <h2>4. Third-Party Services</h2>
+          <h3>Google Apps Script</h3>
+          <p>We use Google Apps Script as our backend service to process and store form submissions. Google's privacy practices are governed by their <a href="https://policies.google.com/privacy" target="_blank" style={{color: '#5b9eff', textDecoration: 'none'}}>Privacy Policy</a>. Your data is processed according to Google's data handling standards.</p>
+
+          <h3>Google Workspace</h3>
+          <p>Form data is stored in a Google Sheet, which is subject to Google's data protection measures and terms of service.</p>
+
+          <h2>5. Data Retention</h2>
+          <p>We retain contact form information for a period of <span className="privacy-highlight">2 years</span> from the date of submission, unless legally required to retain it longer. After this period, the data is securely deleted unless you have an ongoing business relationship with us.</p>
+
+          <h2>6. Your Rights</h2>
+          <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+          <ul>
+            <li><span className="privacy-highlight">Right to Access:</span> Request a copy of the personal data we hold about you</li>
+            <li><span className="privacy-highlight">Right to Correction:</span> Request that we correct inaccurate or incomplete information</li>
+            <li><span className="privacy-highlight">Right to Deletion:</span> Request that we delete your personal data</li>
+            <li><span className="privacy-highlight">Right to Opt-Out:</span> Decline to receive marketing communications from us</li>
+          </ul>
+          <p>To exercise any of these rights, please contact us at <span className="privacy-highlight">funnkar.designhouse@gmail.com</span>.</p>
+
+          <h2>7. Cookies and Tracking</h2>
+          <p>Our website currently does not use cookies or tracking technologies. However, we may implement analytics tools in the future to better understand user behavior and improve our website. If we do so, we will update this Privacy Policy accordingly.</p>
+
+          <h2>8. External Links</h2>
+          <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices of external websites. We encourage you to review their privacy policies before submitting any personal information.</p>
+
+          <h2>9. Children's Privacy</h2>
+          <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child has submitted information, we will take steps to remove such information and terminate the child's account.</p>
+
+          <h2>10. Updates to This Privacy Policy</h2>
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. Any significant changes will be posted on this page with an updated "Last Updated" date. Your continued use of our website following the posting of revised Privacy Policy means you accept and agree to the changes.</p>
+
+          <h2>11. Contact Us</h2>
+          <p>If you have questions about this Privacy Policy or our privacy practices, please contact us at:</p>
+          <ul>
+            <li><span className="privacy-highlight">Email:</span> funnkar.designhouse@gmail.com</li>
+            <li><span className="privacy-highlight">Phone:</span> +91 898 351 6874</li>
+            <li><span className="privacy-highlight">Location:</span> Nashik, Maharashtra, India</li>
+          </ul>
+          <p style={{marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)', color: '#888', fontSize: '0.9rem'}}>By using Funnkar Design House website, you consent to our Privacy Policy. If you do not agree with our policies and practices, please do not use our website.</p>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .privacy-container {
+          max-width: 900px;
+          margin: 0 auto;
+          padding: 120px 60px 60px;
+        }
+        .privacy-header {
+          margin-bottom: 4rem;
+        }
+        .privacy-header h1 {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+        }
+        .privacy-header p {
+          color: #b0b0b0;
+          font-size: 1.1rem;
+        }
+        .privacy-content {
+          color: #d0d0d0;
+          line-height: 1.8;
+          font-size: 1rem;
+        }
+        .privacy-content h2 {
+          color: #fff;
+          font-size: 1.8rem;
+          margin-top: 3rem;
+          margin-bottom: 1.5rem;
+          font-weight: 600;
+        }
+        .privacy-content h3 {
+          color: #f0f0f0;
+          font-size: 1.3rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          font-weight: 600;
+        }
+        .privacy-content p {
+          margin-bottom: 1.2rem;
+        }
+        .privacy-content ul {
+          margin-bottom: 1.2rem;
+          padding-left: 2rem;
+        }
+        .privacy-content li {
+          margin-bottom: 0.8rem;
+        }
+        .privacy-highlight {
+          color: #5b9eff;
+          font-weight: 600;
+        }
+        @media (max-width: 768px) {
+          .privacy-container {
+            padding: 90px 30px 40px;
+          }
+          .privacy-header h1 {
+            font-size: 2rem;
+          }
+          .privacy-content h2 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+          }
+          .privacy-content h3 {
+            font-size: 1.1rem;
+          }
+        }
+        @media (max-width: 480px) {
+          .privacy-container {
+            padding: 80px 20px 30px;
+          }
+          .privacy-header h1 {
+            font-size: 1.6rem;
+          }
+          .privacy-content h2 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+          }
+          .privacy-content h3 {
+            font-size: 1rem;
+          }
+          .privacy-content {
+            font-size: 0.95rem;
+          }
+        }
+      `}</style>
+
+      {/* CTA + Footer Merged Section */}
+      <section className="cta-footer-merged">
+        <div className="cta-footer-content">
+          <div className="cta-footer-bottom">
+            <span className="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
+            <span className="cta-footer-privacy"><a href="/privacy">Privacy & Terms</a></span>
+            <div className="cta-footer-socials">
+              <a href="https://www.linkedin.com/company/funnkar-design-house/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="/linkedin-icon.svg" alt="LinkedIn" className="social-icon" />
+              </a>
+              <a href="https://www.instagram.com/funnkar_design_house?igsh=YnRvNjY5YmtuNHl5" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="/instagram-icon.svg" alt="Instagram" className="social-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

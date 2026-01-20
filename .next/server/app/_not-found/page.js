@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/Desktop_Work_Github_Funnkar-Design-House_c263fe85._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__75286af5._.js")
+R.c("server/chunks/ssr/f2688_next_dist_esm_build_templates_app-page_12aa4483.js")
+R.c("server/chunks/ssr/[root-of-the-server]__707e99de._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0dcecd57._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__ab1577c9._.js")
+R.c("server/chunks/ssr/Desktop_Work_Github_Funnkar-Design-House_app_layout_ff58fc3c.js")
+R.c("server/chunks/ssr/f2688_next_dist_client_components_ec481a60._.js")
+R.c("server/chunks/ssr/f2688_next_dist_client_components_builtin_forbidden_9e0ed9e0.js")
+R.c("server/chunks/ssr/0b34f_Funnkar-Design-House__next-internal_server_app__not-found_page_actions_1fc07d47.js")
+R.m(3750)
+module.exports=R.m(3750).exports

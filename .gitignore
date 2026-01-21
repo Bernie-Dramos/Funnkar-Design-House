@@ -40,6 +40,7 @@ yarn-error.log*
 dist/
 build/
 out/
+.next/
 
 # Dependencies (if you add npm/yarn later)
 node_modules/

@@ -263,6 +263,7 @@ export default function ProjectDetail() {
   const router = useRouter()
   const projectId = parseInt(params.id)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [imageOpacity, setImageOpacity] = useState(1)
 
   const project = projectData[projectId]
 
@@ -270,17 +271,50 @@ export default function ProjectDetail() {
     return <div>Project not found</div>
   }
 
+  const switchMainImage = (newIndex) => {
+    if (newIndex === currentImageIndex) return
+    
+    setImageOpacity(0)
+    setTimeout(() => {
+      setCurrentImageIndex(newIndex)
+      setImageOpacity(1)
+    }, 150)
+  }
+
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length)
+    const nextIndex = (currentImageIndex + 1) % project.images.length
+    switchMainImage(nextIndex)
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length)
+    const prevIndex = (currentImageIndex - 1 + project.images.length) % project.images.length
+    switchMainImage(prevIndex)
   }
 
   const switchToImage = (index) => {
-    setCurrentImageIndex(index)
+    switchMainImage(index)
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case 'ArrowLeft':
+          prevImage()
+          break
+        case 'ArrowRight':
+          nextImage()
+          break
+        case 'Escape':
+          goBack()
+          break
+        default:
+          break
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentImageIndex])
 
   const goBack = () => {
     // Restore scroll position and page from sessionStorage
@@ -335,6 +369,7 @@ export default function ProjectDetail() {
                 src={project.images[currentImageIndex]}
                 alt="Project main image"
                 className="project-main-image"
+                style={{ opacity: imageOpacity, transition: 'opacity 0.15s ease-in-out' }}
                 loading="lazy"
               />
               <div className="project-image-badge">{currentImageIndex + 1}/{project.images.length}</div>

@@ -1,3 +1,0 @@
-module.exports=[70269,a=>{a.n(a.i(2069))},46861,a=>{a.n(a.i(26803))},33184,a=>{a.n(a.i(85439))},44203,a=>{a.n(a.i(53080))},62715,a=>{a.n(a.i(9897))},53080,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return f}});let d=a.r(22575),e=a.r(70824);function f(){return(0,d.jsx)(e.HTTPAccessErrorFallback,{status:401,message:"You're not authorized to access this page."})}("function"==typeof c.default||"object"==typeof c.default&&null!==c.default)&&void 0===c.default.__esModule&&(Object.defineProperty(c.default,"__esModule",{value:!0}),Object.assign(c.default,c),b.exports=c.default)}];
-
-//# sourceMappingURL=Desktop_Work_Github_Funnkar-Design-House_c263fe85._.js.map

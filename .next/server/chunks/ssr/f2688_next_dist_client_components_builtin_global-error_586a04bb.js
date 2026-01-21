@@ -1,3 +1,0 @@
-module.exports=[18615,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(59279);a.n(d("[project]/Desktop/Work/Github/Funnkar-Design-House/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},17538,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(59279);a.n(d("[project]/Desktop/Work/Github/Funnkar-Design-House/node_modules/next/dist/client/components/builtin/global-error.js"))},9897,a=>{"use strict";a.i(18615);var b=a.i(17538);a.n(b)}];
-
-//# sourceMappingURL=f2688_next_dist_client_components_builtin_global-error_586a04bb.js.map

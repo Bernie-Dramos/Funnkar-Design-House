@@ -220,8 +220,8 @@
 .portfolio-hero-content {
   position: absolute;
   left: 60px;
-  top: 850px;
-  bottom: -50px;
+  top: 900px;
+  bottom: -100px;
   right: 1065px;
   z-index: 2;
   display: flex;

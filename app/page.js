@@ -42,7 +42,7 @@ export default function Home() {
             </div>
             <div style={{position: 'relative'}}>
               <div className="glow-effect">
-                <img src="/video-editor.gif" alt="Design mockup" style={{width: '150%', borderRadius: '12px'}} />
+                <img src="/video-editor.gif" alt="Design mockup" style={{width: '150%', borderRadius: '12px'}} loading="lazy" />
               </div>
             </div>
           </div>

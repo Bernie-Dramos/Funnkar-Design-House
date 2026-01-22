@@ -2518,22 +2518,22 @@ a:hover {
   overflow: hidden;
   background: #000;
   /* Independent hover position variables */
-  --hero-title-hover-transform: translateY(-50px);
-  --hero-content-hover-top: 400px;
-  --hero-content-hover-bottom: 400px;
+  --hero-title-hover-transform: translateY(-80px);
+  --hero-content-hover-top: 300px;
+  --hero-content-hover-bottom: 300px;
   --hero-text-hover-opacity: 1;
-  --hero-text-hover-transform: none;
+  --hero-text-hover-transform: translateY(-20px);
   --hero-image-hover-width: 550px;
   --hero-image-hover-height: 382px;
   --hero-image-hover-top: -30px;
   --hero-image-hover-left: 1200px;
   --hero-image-hover-opacity: 1;
   --hero-video-hover-opacity: 1;
-  --hero-video-hover-transform: none;
+  --hero-video-hover-transform: scale(1.05);
   /* Text positioning variables */
-  --hero-description-hover-width: 850px;
-  --hero-description-hover-height: 159px;
-  --hero-description-hover-top: 404px;
+  --hero-description-hover-width: 1050px;
+  --hero-description-hover-height: 200px;
+  --hero-description-hover-top: 350px;
   --hero-description-hover-left: 60px;
   --hero-description-hover-font-size: 48px;
   --hero-description-hover-line-height: 53px;
@@ -2569,8 +2569,8 @@ a:hover {
 .services-hero-content {
   position: absolute;
   left: 60px;
-  top: 850px;
-  bottom: -50px;
+  top: 900px;
+  bottom: -100px;
   right: 1065px;
   z-index: 2;
   display: flex;
@@ -3248,10 +3248,6 @@ a:hover {
   text-align: left;
 }
 
-.welcome-laptop-img {
-  /* Styling defined in components.css - no overrides */
-}
-
 .welcome-image-slot {
   width: 100%;
   max-width: 98vw;
@@ -3314,10 +3310,6 @@ a:hover {
   .welcome-subtitle {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
-
-  .welcome-laptop-img {
-    /* Styling defined in components.css - no overrides */
-  }
 }
 
 /* Mobile (320px - 480px) */
@@ -3342,10 +3334,6 @@ a:hover {
   .welcome-title,
   .welcome-subtitle {
     font-size: clamp(1.4rem, 3.5vw, 2rem);
-  }
-
-  .welcome-laptop-img {
-    /* Styling defined in components.css - no overrides */
   }
 }
 /* =============================================

@@ -1,10 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import './globals.css'
 
 export default function RootLayout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isProjectPage = pathname.startsWith('/project')
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
@@ -155,15 +158,19 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {/* Fixed Logo */}
-        <a href="/" className="logo-fixed">
-          <img src="/funnkar-logo.png" alt="Funnkar Design House" className="logo-img" loading="lazy" />
-        </a>
+        {!isProjectPage && (
+          <a href="/" className="logo-fixed">
+            <img src="/funnkar-logo.png" alt="Funnkar Design House" className="logo-img" loading="lazy" />
+          </a>
+        )}
 
         {/* Fixed Menu Button */}
-        <button className={`menu-btn-fixed ${menuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-expanded={menuOpen} aria-controls="menuOverlay" aria-label="Toggle menu">
-          <span className="menu-btn-text">Menu</span>
-          <span className="menu-btn-close">✕</span>
-        </button>
+        {!isProjectPage && (
+          <button className={`menu-btn-fixed ${menuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-expanded={menuOpen} aria-controls="menuOverlay" aria-label="Toggle menu">
+            <span className="menu-btn-text">Menu</span>
+            <span className="menu-btn-close">✕</span>
+          </button>
+        )}
 
         <nav className={`menu-overlay ${menuOpen ? 'active' : ''}`} id="menuOverlay">
           <div className="menu-content">

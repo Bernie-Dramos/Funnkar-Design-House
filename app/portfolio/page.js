@@ -46,7 +46,7 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="hero-landing portfolio-hero">
         <div className="hero-background">
-          <video src="/Astro.mp4" alt="Portfolio Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
+          <video src="/astro.mp4" alt="Portfolio Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
         </div>
         <div className="hero-landing-overlay">
           <div className="portfolio-hero-content">

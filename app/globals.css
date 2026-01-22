@@ -2519,24 +2519,24 @@ a:hover {
   background: #000;
   /* Independent hover position variables */
   --hero-title-hover-transform: translateY(-80px);
-  --hero-content-hover-top: 300px;
-  --hero-content-hover-bottom: 300px;
+  --hero-content-hover-top: 250px;
+  --hero-content-hover-bottom: 250px;
   --hero-text-hover-opacity: 1;
   --hero-text-hover-transform: translateY(-20px);
   --hero-image-hover-width: 550px;
   --hero-image-hover-height: 382px;
   --hero-image-hover-top: -30px;
-  --hero-image-hover-left: 1200px;
+  --hero-image-hover-left: 200px;
   --hero-image-hover-opacity: 1;
   --hero-video-hover-opacity: 1;
   --hero-video-hover-transform: scale(1.05);
   /* Text positioning variables */
-  --hero-description-hover-width: 1050px;
-  --hero-description-hover-height: 200px;
+  --hero-description-hover-width: 850px;
+  --hero-description-hover-height: 150px;
   --hero-description-hover-top: 350px;
-  --hero-description-hover-left: 60px;
-  --hero-description-hover-font-size: 48px;
-  --hero-description-hover-line-height: 53px;
+  --hero-description-hover-left: -350px;
+  --hero-description-hover-font-size: 40px;
+  --hero-description-hover-line-height: 50px;
   --hero-description-hover-letter-spacing: -0.15px;
 }
 
@@ -2553,32 +2553,30 @@ a:hover {
 
 .portfolio-hero-content {
   position: absolute;
-  left: 60px;
-  top: 850px;
-  bottom: -50px;
-  right: 1065px;
+  left: -350px;
+  bottom: -250px;
+  right: 50px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: clamp(1rem, 2vh, 1.5rem);
-  transition: top 0.8s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 20px;
+  transition: step-end;
 }
 
 .services-hero-content {
   position: absolute;
-  left: 60px;
-  top: 900px;
-  bottom: -100px;
-  right: 1065px;
+  left: 85px;
+  bottom: -290px;
+  right: 50px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  gap: clamp(1rem, 2vh, 1.5rem);
-  transition: top 0.8s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 2rem;
+  transition: bottom 0.7s cubic-bezier(0.4,0,0.2,1);
 }
 
 
@@ -2742,8 +2740,7 @@ a:hover {
 
 /* Services Hero Hover Styles */
 .services-hero:hover .services-hero-content {
-  top: var(--hero-content-hover-top);
-  bottom: var(--hero-content-hover-bottom);
+  bottom: 190px;
 }
 
 .services-hero:hover .services-title {

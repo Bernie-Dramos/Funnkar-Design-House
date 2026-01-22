@@ -39,7 +39,7 @@ export default function Portfolio() {
     { id: 18, category: 'web-development', page: 3, tags: ['MOBILE APP', 'IOS DESIGN'], image: '/web3-2.png', alt: 'Web Development - Card 3' }
   ]
 
-  const filteredItems = activeFilter === 'all' ? portfolioItems.filter(item => item.page === currentPage) : portfolioItems.filter(item => item.category === activeFilter && item.page === currentPage)
+  const filteredItems = activeFilter === 'all' ? portfolioItems.filter(item => item.page === currentPage) : portfolioItems.filter(item => item.category === activeFilter)
 
   return (
     <>

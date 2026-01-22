@@ -6647,3 +6647,187 @@ video[loading="lazy"] {
         font-size: 0.9rem;
     }
 }
+
+/* =============================================
+   INLINE STYLE OVERRIDES FOR RESPONSIVENESS
+   ============================================= */
+
+/* Override inline styles that break responsiveness */
+
+/* Welcome laptop image - override fixed dimensions */
+img[style*="width: 1750px"],
+img[style*="width:1750px"],
+img[style*="height: 850px"],
+img[style*="height:850px"] {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  border-radius: clamp(12px, 2vw, 20px) !important;
+}
+
+/* About section grid - remove negative margin */
+.grid[style*="margin-left: -150px"],
+.grid[style*="margin-left:-150px"] {
+  margin-left: 0 !important;
+}
+
+/* About section image - fix 150% width */
+.grid img[style*="width: 150%"],
+.grid img[style*="width:150%"] {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Service sections - remove negative margins */
+div[style*="margin-left: -850px"],
+div[style*="margin-left:-850px"] {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Service content spacing */
+.service-content p[style*="margin: 20rem 0 1rem"],
+.service-content p[style*="margin:20rem 0 1rem"] {
+  margin: 1rem 0 1rem !important;
+}
+
+/* Video editor image in about section */
+.glow-effect img[style*="width: 150%"] {
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Service content max-width overrides */
+.service-content[style*="max-width: 500px"],
+.service-content[style*="max-width:500px"],
+.service-content[style*="max-width: 720px"],
+.service-content[style*="max-width:720px"] {
+  max-width: 100% !important;
+}
+
+/* Portfolio item fixed dimensions */
+.portfolio-item[style*="width: 150px"],
+.portfolio-item[style*="height: 200px"] {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3/4 !important; /* Maintain proportions */
+}
+
+/* Contact container max-width */
+div[style*="max-width: 1350px"] {
+  max-width: 100% !important;
+}
+
+/* Contact image max-width */
+img[style*="max-width: 420px"] {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Contact form flex containers */
+div[style*="flex: 1 1 420px"],
+div[style*="flex: 1 1 360px"],
+div[style*="min-width: 320px"],
+div[style*="min-width: 340px"] {
+  flex: 1 1 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Service section content positioning */
+@media screen and (min-width: 768px) {
+  div[style*="margin-left: -850px"],
+  div[style*="margin-left:-850px"] {
+    margin-left: 0 !important;
+  }
+}
+
+/* Ensure all containers are responsive */
+@media screen and (max-width: 768px) {
+  .welcome-hero {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    padding: 2rem 1rem !important;
+  }
+
+  .welcome-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .welcome-image-slot {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* About section single column */
+  .grid[style*="grid-template-columns: 2.5fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Service sections stacked */
+  .section .container > div[style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .service-content {
+    max-width: 100% !important;
+  }
+}
+
+/* Touch targets - minimum 44px */
+@media screen and (max-width: 768px) {
+  button,
+  .btn,
+  a[role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  /* Hamburger menu */
+  .menu-btn,
+  .menu-btn-fixed {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Logo */
+  .logo,
+  .logo-fixed {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+@media screen and (max-width: 480px) {
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .container {
+    padding: 0 1rem !important;
+  }
+}
+
+/* =============================================
+   SCROLL INDICATOR RESPONSIVE HIDING
+   ============================================= */
+
+/* Hide scroll indicator on tablets and smaller devices */
+@media screen and (max-width: 991px) {
+  .scroll-indicator {
+    display: none !important;
+  }
+}

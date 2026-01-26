@@ -1,3 +1,128 @@
+/* Portfolio Hero Figma-style Hover */
+/* Portfolio Hero Figma-style Hover - Enhanced for Figma reference */
+.custom-portfolio-hero .custom-portfolio-hero-hover-content {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.custom-portfolio-hero:hover .custom-portfolio-hero-hover-content,
+.custom-portfolio-hero:focus-within .custom-portfolio-hero-hover-content {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3.5rem;
+  opacity: 1;
+  pointer-events: auto;
+  min-height: 380px;
+  width: 100%;
+  flex-wrap: nowrap;
+  clear: both;
+}
+.custom-portfolio-hero .custom-portfolio-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 4rem 3rem 3rem 3rem;
+  min-width: 0;
+  flex: 1 1 0%;
+  max-width: 60%;
+}
+.custom-portfolio-hero .portfolio-title {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+.custom-portfolio-hero .custom-portfolio-hero-description {
+  color: #fff;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 400;
+  max-width: 420px;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+  word-break: break-word;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.custom-portfolio-hero .portfolio-hero-video-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0;
+  min-width: 260px;
+  max-width: 340px;
+  margin-left: 2.5rem;
+  flex-shrink: 0;
+  flex-basis: 320px;
+}
+.custom-portfolio-hero .portfolio-hero-demo-video {
+  border-radius: 16px;
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  background: #23242a;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 1024px) {
+  .custom-portfolio-hero .custom-portfolio-hero-hover-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    min-height: unset;
+    width: 100%;
+  }
+  .custom-portfolio-hero .portfolio-hero-demo-video {
+    width: 180px;
+    border-radius: 12px;
+  }
+  .custom-portfolio-hero .portfolio-hero-video-wrap {
+    min-width: 0;
+    max-width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .custom-portfolio-hero .custom-portfolio-hero-content {
+    padding: 2rem 1rem 1.5rem 1rem;
+  }
+  .custom-portfolio-hero .portfolio-title {
+    font-size: 2rem;
+  }
+  .custom-portfolio-hero .custom-portfolio-hero-description {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+}
+@media (max-width: 1024px) {
+  /* Remove hover and pointer events for all sections on tablets and smaller */
+  .services-bg-section:hover,
+  .graphics-bg-section:hover,
+  .vfx-bg-section:hover,
+  .web-bg-section:hover,
+  .cta-bg-section:hover,
+  .web-section:hover,
+  .service-content:hover {
+    pointer-events: none !important;
+    background: inherit !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .service-number,
+  .service-content {
+    opacity: 1 !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
 /* Footer Privacy & Terms centering adjustment */
 .cta-footer-privacy {
   margin-right: 10px;
@@ -225,8 +350,6 @@
     font-size: 1.1rem;
     padding: 0.8rem 2.5rem;
   }
-}
-/* Removed stray properties that were outside of a selector */
 }
 
 .cta-footer-socials {

@@ -44,17 +44,20 @@ export default function Portfolio() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-landing portfolio-hero">
+      <section className="hero-landing portfolio-hero custom-portfolio-hero">
         <div className="hero-background">
           <video src="/astro.mp4" alt="Portfolio Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
         </div>
         <div className="hero-landing-overlay">
-          <div className="portfolio-hero-content">
+          <div className="portfolio-hero-content custom-portfolio-hero-content">
             <h1 className="portfolio-title">Portfolio</h1>
-            <div className="portfolio-hero-hover-content">
-              <p className="portfolio-hero-description">
-                Explore our diverse portfolio of creative projects spanning UI/UX design, game development, 3D animation, and more. Each project represents our commitment to innovation and excellence.
+            <div className="portfolio-hero-hover-content custom-portfolio-hero-hover-content">
+              <p className="portfolio-hero-description custom-portfolio-hero-description">
+                Funnkar Design House creates striking functional designs that set your brand apart.
               </p>
+              <div className="portfolio-hero-video-wrap">
+                <img src="/video-editor.gif" alt="Video Editor Demo" className="portfolio-hero-demo-video" style={{borderRadius: '12px', width: '180px', height: 'auto', boxShadow: '0 4px 32px rgba(0,0,0,0.25)'}} loading="lazy" />
+              </div>
             </div>
           </div>
         </div>

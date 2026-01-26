@@ -15,47 +15,50 @@ A modern, dark-themed creative agency portfolio website showcasing branding, pro
 - **Production Ready**: All code cleaned, optimized, and tested for deployment
 - **Accessibility**: Semantic HTML, ARIA labels, mobile-friendly navigation
 
+
 ## 🚀 Status
 
-✅ **PRODUCTION READY** - All features implemented, tested, and optimized
+✅ **NEXT.JS SSR DEPLOYMENT READY**
+- All features implemented, tested, and optimized
+- Netlify configuration updated for SSR (Server-Side Rendering) with Next.js
+- SPA routing fixed (_redirects now uses `/*    /    200`)
+- Netlify publishes from `.next` after build
 
-## 📁 Project Structure
+
+## 🗂️ Project Structure (Next.js SSR)
 
 ```
 Funnkar-Design-House/
-├── index.html              # Landing page with hero, services, portfolio preview
-├── services.html           # Detailed services showcase
-├── portfolio.html          # Filterable project gallery (6 projects per page, 3 pages)
-├── project.html            # Original project case study template (legacy)
-├── project-1.html          # Project 1 detail page with image gallery
-├── project-2.html          # Project 2 detail page with image gallery
-├── project-3.html          # Project 3 detail page with image gallery
-├── project-4.html          # Project 4 detail page with image gallery
-├── project-5.html          # Project 5 detail page with image gallery
-├── ... (project-6.html through project-18.html)
-├── contact.html            # Contact form with FAQ accordion
-├── image-guide.html        # Interactive image placeholder generator
-├── css/
-│   ├── global.css         # CSS variables, resets, base styles, utilities
-│   ├── components.css     # Reusable components (buttons, cards, forms, etc.)
-│   ├── landing.css        # Landing page hero and animation styles
-│   └── project-detail.css # Project detail page styles (image gallery, layout)
-├── js/
-│   ├── main.js            # Global functionality (menu, navigation, animations)
-│   ├── portfolio.js       # Portfolio filtering and project navigation logic
-│   ├── project-detail.js  # Project detail page gallery and navigation
-│   └── contact.js         # Form validation and FAQ accordion
-├── assets/
-│   └── images/            # All website imagery (see assets/images/README.md)
-├── .github/
-│   └── copilot-instructions.md  # AI agent guidelines
+├── app/                    # Next.js app directory (all routes/pages)
+│   ├── page.js             # Main landing page
+│   ├── contact/page.js     # Contact form and FAQ
+│   ├── services/page.js    # Services showcase
+│   ├── portfolio/page.js   # Portfolio gallery
+│   ├── image-guide/page.js # Image placeholder generator
+│   ├── privacy/page.js     # Privacy policy
+│   └── project/[id]/page.js# Dynamic project case study pages
+├── css/                    # All CSS files (global, components, responsive, etc.)
+├── js/                     # JS modules for UI logic
+├── public/                 # Static assets (images, videos, icons)
+├── netlify.toml            # Netlify configuration (SSR build/publish)
+├── _redirects              # SPA routing for Netlify
+├── package.json            # Project dependencies and scripts
+├── README.md               # Project documentation
 ├── QUICKSTART.md           # Quick setup guide
 ├── PROJECT-COMPLETE.md     # Project completion checklist
-├── .gitignore              # Git ignore configuration
-└── .gitattributes          # Git line ending configuration
+└── .github/                # AI agent guidelines
 ```
 
 ## 🚀 Getting Started
+
+### Netlify Deployment Notes
+
+- SSR (Server-Side Rendering) is enabled via Next.js (`next build` and `next start`)
+- Netlify build command: `npm run build`
+- Netlify publish directory: `.next`
+- SPA routing: `_redirects` file uses `/*    /    200`
+- Remove any legacy static HTML files from root (index.html, 404.html) unless needed for fallback
+- All routes/pages are managed in the `app/` directory
 
 ### Prerequisites
 - Modern web browser (Chrome, Firefox, Safari, Edge)

@@ -51,13 +51,24 @@ Funnkar-Design-House/
 
 ## 🚀 Getting Started
 
-### Netlify Deployment Notes
 
-- SSR (Server-Side Rendering) is enabled via Next.js (`next build` and `next start`)
+### Netlify Deployment Notes (Next.js SSR)
+
+- SSR (Server-Side Rendering) is enabled via Next.js (`next build`)
 - Netlify build command: `npm run build`
 - Netlify publish directory: `.next`
-- SPA routing: `_redirects` file uses `/*    /    200`
+- Uses official Netlify Next.js plugin for SSR support
+- Add to netlify.toml:
+  ```toml
+  [[plugins]]
+    package = "@netlify/plugin-nextjs"
+  ```
+- Install plugin:
+  ```bash
+  npm install --save-dev @netlify/plugin-nextjs
+  ```
 - Remove any legacy static HTML files from root (index.html, 404.html) unless needed for fallback
+- Remove _redirects file (not needed for SSR)
 - All routes/pages are managed in the `app/` directory
 
 ### Prerequisites

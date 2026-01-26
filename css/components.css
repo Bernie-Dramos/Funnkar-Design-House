@@ -1,3 +1,8 @@
+/* Footer Privacy & Terms centering adjustment */
+.cta-footer-privacy {
+  margin-right: 10px;
+  transform: none !important;
+}
 /* CTA + Footer Merged Section */
 .cta-footer-merged {
   background: #fff;
@@ -221,10 +226,7 @@
     padding: 0.8rem 2.5rem;
   }
 }
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #e5e5e5; /* Thinner, lighter line */
+/* Removed stray properties that were outside of a selector */
 }
 
 .cta-footer-socials {
@@ -269,15 +271,16 @@
 }
 
 .cta-footer-privacy {
-  transform: translateX(200px);
+  transform: none !important;
+  margin-right: 10px !important;
 }
 
-.cta-footer-privacy a {
-  color: #888;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
+  .cta-footer-privacy {
+    order: 2;
+    margin: 0 auto;
+    margin-right: 0 !important;
+    transform: none !important;
+  }
 .cta-footer-privacy a:hover {
   color: #FF8787;
 }

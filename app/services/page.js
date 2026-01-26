@@ -1,98 +1,86 @@
+
 'use client';
 
 import { useEffect } from 'react';
 
 export default function Services() {
+  // On tablets and smaller, always show all service content (no hover reveal)
   useEffect(() => {
-    const serviceSections = document.querySelectorAll(
-      '.services-bg-section, ' +
-      '.graphics-bg-section, ' +
-      '.vfx-bg-section, ' +
-      '.web-bg-section, ' +
-      '.cta-bg-section, ' +
-      '.web-section'
-    );
-    
-    serviceSections.forEach(section => {
-      section.addEventListener('mouseenter', function() {
-        const number = section.querySelector('.service-number');
-        const content = section.querySelector('.service-content');
-        
-        if (number) {
-          number.classList.add('revealed');
-        }
-        if (content) {
-          content.classList.add('revealed');
-        }
-      });
-    });
+    const revealAll = () => {
+      if (window.innerWidth <= 1024) {
+        document.querySelectorAll('.service-number, .service-content').forEach(el => {
+          el.classList.add('revealed');
+        });
+      }
+    };
+    revealAll();
+    window.addEventListener('resize', revealAll);
+    return () => window.removeEventListener('resize', revealAll);
+  }, []);
+
+  // Desktop hover effect for hero section
+  useEffect(() => {
+    const hero = document.querySelector('.services-hero');
+    let def, hov;
+    function onEnter() {
+      if (def && hov) {
+        def.style.opacity = 0;
+        def.style.pointerEvents = 'none';
+        hov.style.opacity = 1;
+        hov.style.pointerEvents = 'auto';
+      }
+    }
+    function onLeave() {
+      if (def && hov) {
+        def.style.opacity = 1;
+        def.style.pointerEvents = 'auto';
+        hov.style.opacity = 0;
+        hov.style.pointerEvents = 'none';
+      }
+    }
+    if (hero) {
+      def = hero.querySelector('.services-hero-default-content');
+      hov = hero.querySelector('.custom-portfolio-hero-hover-content');
+      hero.addEventListener('mouseenter', onEnter);
+      hero.addEventListener('mouseleave', onLeave);
+    }
+    return () => {
+      if (hero) {
+        hero.removeEventListener('mouseenter', onEnter);
+        hero.removeEventListener('mouseleave', onLeave);
+      }
+    };
   }, []);
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="hero-landing services-hero">
-        <div className="hero-background">
-          <img src="/phone+laptop-scroll.gif" alt="Services Hero" className="hero-bg-media" loading="lazy" />
-        </div>
-        <div className="hero-landing-overlay">
-          <div className="services-hero-content">
-            <h1 className="services-title">Services</h1>
-            <div className="services-hero-hover-content">
-              <p className="services-hero-description">
-                From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
-              </p>
-            </div>
+    <section className="hero-landing services-hero custom-portfolio-hero" style={{position: 'relative', overflow: 'hidden'}}>
+      <div className="hero-background">
+        <img src="/phone+laptop-scroll.gif" alt="Services Hero" className="hero-bg-media" loading="lazy" />
+      </div>
+      <div className="hero-landing-overlay" style={{position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 2, background: 'rgba(0,0,0,0.15)', padding: '4.5rem 0 3.5rem 0', boxSizing: 'border-box'}}>
+        {/* Default state: centered title and description */}
+        <div className="services-hero-default-content" style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 2, transition: 'opacity 0.4s', opacity: 1, pointerEvents: 'auto'}}>
+          <h1 className="portfolio-title" style={{fontSize: 'clamp(2.2rem, 6vw, 4rem)', color: '#fff', marginBottom: '1.5rem', zIndex: 2}}>Services</h1>
+          <div className="custom-portfolio-hero-description" style={{color: '#fff', fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', fontWeight: 400, maxWidth: 700, lineHeight: 1.4, margin: 0, wordBreak: 'break-word', textShadow: '0 2px 8px rgba(0,0,0,0.25)'}}>
+            From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
           </div>
         </div>
-      </section>
-
-      {/* Branding & Product Design Section */}
-      <section className="section services-bg-section" style={{position: 'relative', overflow: 'hidden'}}>
-        <video className="services-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.9,
-            pointerEvents: 'none'
-          }}>
-          <source src="/Branding.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>01</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem', marginBottom: '6rem'}}>
-              <div className="service-content" style={{maxWidth: '500px'}}>
-                <h2>Branding <br />& Product Design</h2>
-                <p style={{fontSize: '1.125rem', lineHeight: 1.8, margin: '20rem 0 1rem'}}>
-                  From concept to experience, we create products that ignite curiosity and empower engagement.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
-              </div>
+        {/* Hover state: side-by-side layout with GIF */}
+        <div className="custom-portfolio-hero-hover-content" style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: '3.5rem', opacity: 0, pointerEvents: 'none', minHeight: '380px', flexWrap: 'nowrap', clear: 'both', position: 'absolute', top: 0, left: 0, zIndex: 3, transition: 'opacity 0.4s'}}>
+          <div className="custom-portfolio-hero-content" style={{maxWidth: '60%', flex: '1 1 0%'}}>
+            <h1 className="portfolio-title">Services</h1>
+            <div className="custom-portfolio-hero-description">
+              From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
             </div>
           </div>
+          <div className="portfolio-hero-video-wrap" style={{minWidth: '260px', maxWidth: '340px', marginLeft: '2.5rem', flexShrink: 0, flexBasis: '320px', display: 'flex', alignItems: 'center', height: '100%'}}>
+            <img src="/video-editor.gif" alt="Video Editor Demo" className="portfolio-hero-demo-video" loading="lazy" style={{margin: '0 auto'}} />
+          </div>
         </div>
-      </section>
-
-      {/* Graphics Design Section */}
-      <section className="section graphics-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="graphics-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
+      </div>
+    </section>
+  );
+}
             pointerEvents: 'none'
           }}>
           <source src="/Graphics-Design.mp4" type="video/mp4" />
@@ -461,23 +449,4 @@ export default function Services() {
           </div>
         </div>
       </section>
-      {/* CTA + Footer Merged Section */}
-      <section className="cta-footer-merged">
-        <div className="cta-footer-content">
-          <div className="cta-footer-bottom">
-            <span className="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
-            <span className="cta-footer-privacy"><a href="/privacy">Privacy & Terms</a></span>
-            <div className="cta-footer-socials">
-              <a href="https://www.linkedin.com/company/funnkar-design-house/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <img src="/linkedin-icon.svg" alt="LinkedIn" className="social-icon" />
-              </a>
-              <a href="https://www.instagram.com/funnkar_design_house?igsh=YnRvNjY5YmtuNHl5" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <img src="/instagram-icon.svg" alt="Instagram" className="social-icon" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  )
-}
+      {/* End main Services component */}

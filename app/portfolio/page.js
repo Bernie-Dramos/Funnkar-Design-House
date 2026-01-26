@@ -152,6 +152,23 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+      {/* CTA + Footer Merged Section */}
+      <section className="cta-footer-merged">
+        <div className="cta-footer-content">
+          <div className="cta-footer-bottom">
+            <span className="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
+            <span className="cta-footer-privacy"><a href="/privacy">Privacy & Terms</a></span>
+            <div className="cta-footer-socials">
+              <a href="https://www.linkedin.com/company/funnkar-design-house/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <img src="/linkedin-icon.svg" alt="LinkedIn" className="social-icon" />
+              </a>
+              <a href="https://www.instagram.com/funnkar_design_house?igsh=YnRvNjY5YmtuNHl5" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="/instagram-icon.svg" alt="Instagram" className="social-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -6,6 +6,9 @@
   publish = ".next"
   base = "."
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 [build.environment]
   # No environment variables needed for static site
 

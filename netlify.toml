@@ -1,11 +1,9 @@
 # Netlify Configuration for Funnkar Design House
 
+
 [build]
-  # No build command needed - static site
-  command = ""
-  # Publish directory - root of project since all files are static
-  publish = "."
-  # Base directory
+  command = "npm run build"
+  publish = ".next"
   base = "."
 
 [build.environment]

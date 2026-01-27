@@ -4,252 +4,234 @@ import { useEffect } from 'react';
 
 export default function Services() {
   useEffect(() => {
-    const serviceSections = document.querySelectorAll(
-      '.services-bg-section, ' +
-      '.graphics-bg-section, ' +
-      '.vfx-bg-section, ' +
-      '.web-bg-section, ' +
-      '.cta-bg-section, ' +
-      '.web-section'
-    );
-    
-    serviceSections.forEach(section => {
-      section.addEventListener('mouseenter', function() {
-        const number = section.querySelector('.service-number');
-        const content = section.querySelector('.service-content');
-        
-        if (number) {
-          number.classList.add('revealed');
-        }
-        if (content) {
-          content.classList.add('revealed');
-        }
-      });
-    });
+    // ...existing effect logic (if any, or leave empty)
   }, []);
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-landing services-hero">
-        <div className="hero-background">
-          <img src="/phone+laptop-scroll.gif" alt="Services Hero" className="hero-bg-media" loading="lazy" />
-        </div>
-        <div className="hero-landing-overlay">
-          <div className="services-hero-content">
-            <h1 className="services-title">Services</h1>
-            <div className="services-hero-hover-content">
-              <p className="services-hero-description">
-                From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
-              </p>
-            </div>
+        {/* Hero Section (replicated from portfolio, with hover transition) */}
+        <section className="hero-landing services-hero custom-portfolio-hero">
+          <div className="hero-background">
+            <video src="/astro.mp4" alt="Services Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
           </div>
-        </div>
-      </section>
-
-      {/* Branding & Product Design Section */}
-      <section className="section services-bg-section" style={{position: 'relative', overflow: 'hidden'}}>
-        <video className="services-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.9,
-            pointerEvents: 'none'
-          }}>
-          <source src="/Branding.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>01</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem', marginBottom: '6rem'}}>
-              <div className="service-content" style={{maxWidth: '500px'}}>
-                <h2>Branding <br />& Product Design</h2>
-                <p style={{fontSize: '1.125rem', lineHeight: 1.8, margin: '20rem 0 1rem'}}>
-                  From concept to experience, we create products that ignite curiosity and empower engagement.
+          <div className="hero-landing-overlay">
+            <div className="portfolio-hero-content custom-portfolio-hero-content">
+              <h1 className="portfolio-title">Services</h1>
+              <div className="portfolio-hero-hover-content custom-portfolio-hero-hover-content">
+                <p className="portfolio-hero-description custom-portfolio-hero-description">
+                  From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
                 </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                <div className="portfolio-hero-video-wrap">
+                  <img src="/video-editor.gif" alt="Video Editor Demo" className="portfolio-hero-demo-video" style={{borderRadius: '12px', width: '180px', height: 'auto', boxShadow: '0 4px 32px rgba(0,0,0,0.25)'}} loading="lazy" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Graphics Design Section */}
-      <section className="section graphics-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="graphics-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
-            pointerEvents: 'none'
-          }}>
-          <source src="/Graphics-Design.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>02</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem', marginBottom: '6rem'}}>
-              <div className="service-content" style={{order: 1, maxWidth: '720px'}}>
-                <h2>Graphics Design</h2>
-                <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
-                  Visual communication that tells your story. We design everything from marketing materials to digital assets that capture attention and drive engagement.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+        {/* Branding & Product Design Section */}
+        <section className="section services-bg-section" style={{position: 'relative', overflow: 'hidden'}}>
+          <video className="services-bg-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.9,
+              pointerEvents: 'none'
+            }}>
+            <source src="/Branding.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>01</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
+                <div className="service-content" style={{maxWidth: '720px'}}>
+                  <h2>Branding & Product Design</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    We craft brands and products that stand out in the market. From concept to launch, our team ensures every detail is pixel-perfect and strategically aligned.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* VFX & Animation Section */}
-      <section className="section vfx-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="vfx-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
-            pointerEvents: 'none'
-          }}>
-          <source src="/vfxanime.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>03</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
-              <div className="service-content" style={{maxWidth: '720px'}}>
-                <h2>VFX & <br />Animation</h2>
-                <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
-                  Bring your vision to life with cutting-edge visual effects and animations. We create immersive experiences that captivate and inspire your audience.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+        {/* Graphics Design Section */}
+        <section className="section graphics-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
+          <video className="graphics-bg-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.85,
+              pointerEvents: 'none'
+            }}>
+            <source src="/Graphics-Design.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>02</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem', marginBottom: '6rem'}}>
+                <div className="service-content" style={{order: 1, maxWidth: '720px'}}>
+                  <h2>Graphics Design</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    Visual communication that tells your story. We design everything from marketing materials to digital assets that capture attention and drive engagement.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 3D Design & 3D Modeling Section */}
-      <section className="section web-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="web-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
-            pointerEvents: 'none'
-          }}>
-          <source src="/Animation.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>04</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
-              <div className="service-content" style={{order: 1, maxWidth: '720px'}}>
-                <h2>3D Design & 3D Modeling</h2>
-                <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
-                  We turn concepts into precise, high-quality 3D assets ready for animation, visualization, or production. Each asset is designed with precision, realism, and pipeline compatibility in mind.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+        {/* VFX & Animation Section */}
+        <section className="section vfx-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
+          <video className="vfx-bg-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.85,
+              pointerEvents: 'none'
+            }}>
+            <source src="/vfxanime.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>03</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
+                <div className="service-content" style={{maxWidth: '720px'}}>
+                  <h2>VFX & <br />Animation</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    Bring your vision to life with cutting-edge visual effects and animations. We create immersive experiences that captivate and inspire your audience.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Game Development Section */}
-      <section className="section cta-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="cta-bg-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
-            pointerEvents: 'none'
-          }}>
-          <source src="/developers-designers.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>05</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
-              <div className="service-content" style={{maxWidth: '720px'}}>
-                <h2>Game Development</h2>
-                <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
-                  We develop immersive, well-balanced games with polished mechanics, environments, and player experiences. Worlds that invite exploration and systems that reward skill.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+        {/* 3D Design & 3D Modeling Section */}
+        <section className="section web-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
+          <video className="web-bg-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.85,
+              pointerEvents: 'none'
+            }}>
+            <source src="/Animation.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>04</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
+                <div className="service-content" style={{order: 1, maxWidth: '720px'}}>
+                  <h2>3D Design & 3D Modeling</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    We turn concepts into precise, high-quality 3D assets ready for animation, visualization, or production. Each asset is designed with precision, realism, and pipeline compatibility in mind.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Web Development Section */}
-      <section className="section web-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
-        <video className="web-section-video" autoPlay loop muted playsInline
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            opacity: 0.85,
-            pointerEvents: 'none'
-          }}>
-          <source src="/Web.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
-        <div className="container" style={{position: 'relative', zIndex: 2}}>
-          <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
-            <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>06</span>
-            <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
-              <div className="service-content" style={{maxWidth: '720px'}}>
-                <h2>Web Design & Development</h2>
-                <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
-                  From responsive interfaces to robust backend systems, every site is engineered for speed, usability, and brand impact.
-                </p>
-                <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+        {/* Game Development Section */}
+        <section className="section cta-bg-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
+          <video className="cta-bg-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.85,
+              pointerEvents: 'none'
+            }}>
+            <source src="/developers-designers.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>05</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
+                <div className="service-content" style={{maxWidth: '720px'}}>
+                  <h2>Game Development</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    We develop immersive, well-balanced games with polished mechanics, environments, and player experiences. Worlds that invite exploration and systems that reward skill.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Web Development Section */}
+        <section className="section web-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: 'var(--color-bg-secondary)'}}>
+          <video className="web-section-video" autoPlay loop muted playsInline
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0,
+              opacity: 0.85,
+              pointerEvents: 'none'
+            }}>
+            <source src="/Web.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div style={{position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 65%, #000000 100%)'}}></div>
+          <div className="container" style={{position: 'relative', zIndex: 2}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start', marginLeft: '-850px', marginTop: '50px'}}>
+              <span className="service-number" style={{fontSize: '1.25rem', fontWeight: 300, letterSpacing: '-0.015em', color: '#E8E8E8'}}>06</span>
+              <div className="grid grid-2" style={{alignItems: 'flex-start', gap: '4rem'}}>
+                <div className="service-content" style={{maxWidth: '720px'}}>
+                  <h2>Web Design & Development</h2>
+                  <p style={{fontSize: '1.125rem', margin: '20rem 0 1rem 0', lineHeight: 1.8}}>
+                    From responsive interfaces to robust backend systems, every site is engineered for speed, usability, and brand impact.
+                  </p>
+                  <a href="/contact" className="btn btn-primary" style={{marginTop: '2rem'}}>Book A Call</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* Portfolio Showcase CTA Section */}
       <section className="section portfolio-cta-section" style={{position: 'relative', overflow: 'hidden', backgroundColor: '#000000', padding: '130px 80px 80px'}}>
@@ -479,5 +461,5 @@ export default function Services() {
         </div>
       </section>
     </>
-  )
+  );
 }

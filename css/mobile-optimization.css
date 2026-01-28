@@ -580,8 +580,8 @@ video[loading="lazy"] {
   }
   
   /* Other "Book A Call" buttons */
-  a[href="contact.html"].btn,
-  .btn-primary[href="contact.html"] {
+  a[href="/contact"].btn,
+  .btn-primary[href="/contact"] {
     margin-left: auto;
     margin-right: auto;
     display: block;

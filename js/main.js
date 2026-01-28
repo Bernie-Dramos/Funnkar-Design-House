@@ -92,7 +92,7 @@ function initSmoothScroll() {
 // ACTIVE NAV LINKS
 // =============================================
 function initActiveNavLinks() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || '';
     const navLinks = document.querySelectorAll('.menu-nav a');
     
     navLinks.forEach(link => {
@@ -179,7 +179,7 @@ function initPrivacyModal() {
                         <h3>Contact</h3>
                         <p><strong>Email:</strong> funnkar.designhouse@gmail.com<br><strong>Phone:</strong> +91 898 351 6874<br><strong>Location:</strong> Nashik, Maharashtra, India</p>
                         
-                        <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #888;">For the complete Privacy Policy, <a href="privacy.html" style="color: #5b9eff; text-decoration: none;" onclick="closePrivacyModal()">click here</a>.</p>
+                        <p style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; color: #888;">For the complete Privacy Policy, <a href="/privacy" style="color: #5b9eff; text-decoration: none;" onclick="closePrivacyModal()">click here</a>.</p>
                     </div>
                 </div>
             </div>
@@ -189,11 +189,11 @@ function initPrivacyModal() {
     }
 
     // Add event listeners to all privacy policy links
-    const privacyLinks = document.querySelectorAll('a[href="#privacy"], .menu-footer-right a[href="privacy.html"]');
+    const privacyLinks = document.querySelectorAll('a[href="#privacy"], .menu-footer-right a[href="/privacy"]');
     privacyLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // If it's a link to privacy.html page, allow normal navigation
-            if (this.getAttribute('href') === 'privacy.html') {
+            // If it's a link to privacy page, allow normal navigation
+            if (this.getAttribute('href') === '/privacy') {
                 return;
             }
             e.preventDefault();

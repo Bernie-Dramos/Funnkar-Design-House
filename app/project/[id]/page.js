@@ -273,7 +273,7 @@ export default function ProjectDetail() {
 
   const switchMainImage = (newIndex) => {
     if (newIndex === currentImageIndex) return
-    
+
     setImageOpacity(0)
     setTimeout(() => {
       setCurrentImageIndex(newIndex)

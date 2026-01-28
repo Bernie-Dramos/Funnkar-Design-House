@@ -3,7 +3,7 @@
 export default function ImageGuide() {
   const imageSections = [
     {
-      title: 'Landing Page (index.html)',
+      title: 'Landing Page (Home)',
       images: [
         {
           name: 'hero-laptop-glow.png',
@@ -28,7 +28,7 @@ export default function ImageGuide() {
       ]
     },
     {
-      title: 'Services Page (services.html)',
+      title: 'Services Page (/services)',
       images: [
         {
           name: 'service-branding.png',
@@ -48,7 +48,7 @@ export default function ImageGuide() {
       ]
     },
     {
-      title: 'Portfolio Page (portfolio.html)',
+      title: 'Portfolio Page (/portfolio)',
       images: [
         {
           name: 'portfolio-4.jpg to portfolio-9.jpg',
@@ -58,7 +58,7 @@ export default function ImageGuide() {
       ]
     },
     {
-      title: 'Project Detail Page (project.html)',
+      title: 'Project Detail Page (/project/[id])',
       images: [
         {
           name: 'project-hero.jpg',
@@ -102,8 +102,8 @@ export default function ImageGuide() {
           marginRight: 'auto'
         }}>
           Use this guide to generate placeholder images for your Funnkar Design House website.
-          Visit <a href="https://placeholder.com" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">placeholder.com</a> or
-          <a href="https://via.placeholder.com" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">via.placeholder.com</a>
+          Visit <a href="https://placeholder.com" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">placeholder.com</a> or
+          <a href="https://via.placeholder.com" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">via.placeholder.com</a>
           to quickly generate placeholder images with the exact dimensions needed.
         </p>
 
@@ -135,7 +135,7 @@ export default function ImageGuide() {
                   alignItems: 'center',
                   border: '1px solid rgba(91, 158, 255, 0.2)'
                 }}>
-                  <div style={{flex: 1}}>
+                  <div style={{ flex: 1 }}>
                     <div style={{
                       fontWeight: 600,
                       color: '#FFFFFF',
@@ -187,11 +187,11 @@ export default function ImageGuide() {
           color: '#B0B0B0'
         }}>
           <strong>📝 Note:</strong> These are placeholder dimensions. For production:
-          <ul style={{marginTop: '0.5rem', marginLeft: '1.5rem'}}>
+          <ul style={{ marginTop: '0.5rem', marginLeft: '1.5rem' }}>
             <li>Use high-quality images from your Figma designs</li>
-            <li>Source from <a href="https://unsplash.com" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">Unsplash</a> or <a href="https://pexels.com" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">Pexels</a> for stock photos</li>
-            <li>Optimize all images using <a href="https://tinypng.com" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">TinyPNG</a> or <a href="https://squoosh.app" style={{color: '#5B9EFF'}} target="_blank" rel="noopener noreferrer">Squoosh</a></li>
-            <li>Save images in <code style={{backgroundColor: '#0A0A0A', padding: '0.25rem 0.5rem', borderRadius: '4px', color: '#5B9EFF'}}>assets/images/</code> directory with exact filenames shown above</li>
+            <li>Source from <a href="https://unsplash.com" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">Unsplash</a> or <a href="https://pexels.com" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">Pexels</a> for stock photos</li>
+            <li>Optimize all images using <a href="https://tinypng.com" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">TinyPNG</a> or <a href="https://squoosh.app" style={{ color: '#5B9EFF' }} target="_blank" rel="noopener noreferrer">Squoosh</a></li>
+            <li>Save images in <code style={{ backgroundColor: '#0A0A0A', padding: '0.25rem 0.5rem', borderRadius: '4px', color: '#5B9EFF' }}>assets/images/</code> directory with exact filenames shown above</li>
           </ul>
         </div>
       </div>

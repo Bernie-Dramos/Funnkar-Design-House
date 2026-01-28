@@ -56,7 +56,7 @@ export default function Portfolio() {
                 Funnkar Design House creates striking functional designs that set your brand apart.
               </p>
               <div className="portfolio-hero-video-wrap">
-                <img src="/video-editor.gif" alt="Video Editor Demo" className="portfolio-hero-demo-video" style={{borderRadius: '12px', width: '180px', height: 'auto', boxShadow: '0 4px 32px rgba(0,0,0,0.25)'}} loading="lazy" />
+                <img src="/video-editor.gif" alt="Video Editor Demo" className="portfolio-hero-demo-video" style={{ borderRadius: '12px', width: '180px', height: 'auto', boxShadow: '0 4px 32px rgba(0,0,0,0.25)' }} loading="lazy" />
               </div>
             </div>
           </div>
@@ -85,11 +85,11 @@ export default function Portfolio() {
           {/* Portfolio Grid */}
           <div className="portfolio-grid">
             {filteredItems.map(item => (
-              <div 
-                key={item.id} 
-                className="portfolio-card" 
-                data-category={item.category} 
-                data-page={item.page} 
+              <div
+                key={item.id}
+                className="portfolio-card"
+                data-category={item.category}
+                data-page={item.page}
                 data-project={item.id}
                 onClick={() => {
                   // Save current scroll position and page
@@ -98,7 +98,7 @@ export default function Portfolio() {
                   // Navigate to project page
                   router.push(`/project/${item.id}`)
                 }}
-                style={{cursor: 'pointer'}}
+                style={{ cursor: 'pointer' }}
               >
                 <div className="portfolio-card-tags">
                   {item.tags.map(tag => (

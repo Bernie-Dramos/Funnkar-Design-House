@@ -9,38 +9,18 @@ A modern, dark-themed creative agency portfolio website showcasing branding, pro
 - **Interactive Components**: Full-screen hamburger menu, portfolio filters, FAQ accordion
 - **Smooth Animations**: Scroll animations, transitions, hover effects with glow
 - **Form Validation**: Real-time contact form validation with inline error messages
-- **Google Forms Integration**: Contact form submits to Google Sheets via Apps Script backend
-- **Portfolio Filter**: Category-based filtering with animated transitions
-- **Performance Optimized**: Vanilla JS, CSS custom properties, lazy loading on images, no external dependencies
+  - **Option 1**: Run `npm run dev` and open [http://localhost:3000](http://localhost:3000) in your browser
+  - **Option 2**: Use VS Code Live Server to serve the root directory (for static asset preview only)
 - **Production Ready**: All code cleaned, optimized, and tested for deployment
 - **Accessibility**: Semantic HTML, ARIA labels, mobile-friendly navigation
 
 
-## 🚀 Status
-
-✅ **NEXT.JS SSR DEPLOYMENT READY**
-- All features implemented, tested, and optimized
-- Netlify configuration updated for SSR (Server-Side Rendering) with Next.js
 - SPA routing fixed (_redirects now uses `/*    /    200`)
 - Netlify publishes from `.next` after build
-
-
-## 🗂️ Project Structure (Next.js SSR)
-
 ```
 Funnkar-Design-House/
-├── app/                    # Next.js app directory (all routes/pages)
-│   ├── page.js             # Main landing page
-│   ├── contact/page.js     # Contact form and FAQ
 │   ├── services/page.js    # Services showcase
 │   ├── portfolio/page.js   # Portfolio gallery
-│   ├── image-guide/page.js # Image placeholder generator
-│   ├── privacy/page.js     # Privacy policy
-│   └── project/[id]/page.js# Dynamic project case study pages
-├── css/                    # All CSS files (global, components, responsive, etc.)
-├── js/                     # JS modules for UI logic
-├── public/                 # Static assets (images, videos, icons)
-├── netlify.toml            # Netlify configuration (SSR build/publish)
 ├── _redirects              # SPA routing for Netlify
 ├── package.json            # Project dependencies and scripts
 ├── README.md               # Project documentation
@@ -57,41 +37,24 @@ Funnkar-Design-House/
 - SSR (Server-Side Rendering) is enabled via Next.js (`next build`)
 - Netlify build command: `npm run build`
 - Netlify publish directory: `.next`
-- Uses official Netlify Next.js plugin for SSR support
-- Add to netlify.toml:
-  ```toml
-  [[plugins]]
-    package = "@netlify/plugin-nextjs"
   ```
 - Install plugin:
-  ```bash
-  npm install --save-dev @netlify/plugin-nextjs
-  ```
-- Remove any legacy static HTML files from root (index.html, 404.html) unless needed for fallback
 - Remove _redirects file (not needed for SSR)
 - All routes/pages are managed in the `app/` directory
-
-### Prerequisites
-- Modern web browser (Chrome, Firefox, Safari, Edge)
 - VS Code with Live Server extension (recommended for development)
 
-### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Bernie-Dramos/Funnkar-Design-House.git
-   cd Funnkar-Design-House
-   ```
 
-2. **Add Images**
+### Contact Page (`/contact`)
    - Place your images in `assets/images/` directory
-   - See `assets/images/README.md` for required image list and specifications
+  <img src="/your-image.jpg" alt="Project" class="card-image" loading="lazy">
    - Use placeholder images from Unsplash or Pexels during development
-
+3. Update the `GOOGLE_FORM_URL` in `js/contact.js` (if using legacy form integration)
 3. **Run Locally**
-   - **Option 1**: Right-click `index.html` → Open with Live Server (VS Code)
-   - **Option 2**: Open `index.html` directly in your browser
-   - **Option 3**: Use any local server (Python, Node.js, etc.)
+Remove any legacy static HTML files from root (index.html, 404.html) unless needed for fallback
+Remove _redirects file (not needed for SSR)
+All routes/pages are managed in the `app/` directory using Next.js routing conventions
 
 ## 🎯 Pages Overview
 

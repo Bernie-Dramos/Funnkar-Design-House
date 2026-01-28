@@ -63,7 +63,7 @@ export default function Contact() {
     setFormStatus('Sending...')
 
     const { isValid, errors } = validateForm(formData);
-    
+
     if (!isValid) {
       setFormStatus(Object.values(errors)[0]);
       return;
@@ -182,7 +182,7 @@ export default function Contact() {
                     </select>
                   </div>
                   <div className="form-group phone-group-right">
-                    <label htmlFor="phone" className="form-label" style={{opacity: 0, pointerEvents: 'none'}}>Phone</label>
+                    <label htmlFor="phone" className="form-label" style={{ opacity: 0, pointerEvents: 'none' }}>Phone</label>
                     <input type="tel" id="phone" name="phone" className="form-input" placeholder="Phone number" value={formData.phone} onChange={handleInputChange} />
                   </div>
                   <div className="form-group full-width">
@@ -213,25 +213,25 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section style={{background: 'none', padding: 0, margin: 0}}>
-        <div style={{maxWidth: '1350px', margin: '3rem auto 3rem auto', background: '#1a1a1a', borderRadius: '32px', padding: '3.5rem 2.5rem 3.5rem 2.5rem', display: 'flex', flexWrap: 'wrap', gap: '2.5rem', alignItems: 'flex-start'}}>
+      <section style={{ background: 'none', padding: 0, margin: 0 }}>
+        <div style={{ maxWidth: '1350px', margin: '3rem auto 3rem auto', background: '#1a1a1a', borderRadius: '32px', padding: '3.5rem 2.5rem 3.5rem 2.5rem', display: 'flex', flexWrap: 'wrap', gap: '2.5rem', alignItems: 'flex-start' }}>
           {/* Left: FAQ Title, Subtitle, and Image */}
-          <div style={{flex: '1 1 420px', minWidth: '320px', maxWidth: '600px'}}>
-            <span style={{display: 'inline-block', background: '#18191b', color: '#fff', fontSize: '0.95rem', fontWeight: 500, borderRadius: '18px', padding: '0.35em 1.2em 0.35em 1.2em', marginBottom: '1.5rem'}}>Frequently Asked Questions</span>
-            <h2 style={{color: '#fff', fontSize: '2.7rem', fontWeight: 700, marginBottom: '1.5rem', lineHeight: 1.15}}>Get All Your Questions<br />Answered Here</h2>
-            <p style={{color: '#a0a0a0', fontSize: '1.1rem', fontWeight: 400, marginBottom: '1.5rem'}}>Have Questions? Here Are Quick Answers To Some Of<br />The Most Common Queries About Our Services And Process</p>
-            <img src="/tommy_cat.png" alt="FAQ Support" style={{maxWidth: '420px', borderRadius: '15px', marginTop: '0.5px', marginLeft: '30px'}} loading="lazy" />
+          <div style={{ flex: '1 1 420px', minWidth: '320px', maxWidth: '600px' }}>
+            <span style={{ display: 'inline-block', background: '#18191b', color: '#fff', fontSize: '0.95rem', fontWeight: 500, borderRadius: '18px', padding: '0.35em 1.2em 0.35em 1.2em', marginBottom: '1.5rem' }}>Frequently Asked Questions</span>
+            <h2 style={{ color: '#fff', fontSize: '2.7rem', fontWeight: 700, marginBottom: '1.5rem', lineHeight: 1.15 }}>Get All Your Questions<br />Answered Here</h2>
+            <p style={{ color: '#a0a0a0', fontSize: '1.1rem', fontWeight: 400, marginBottom: '1.5rem' }}>Have Questions? Here Are Quick Answers To Some Of<br />The Most Common Queries About Our Services And Process</p>
+            <img src="/tommy_cat.png" alt="FAQ Support" style={{ maxWidth: '420px', borderRadius: '15px', marginTop: '0.5px', marginLeft: '30px' }} loading="lazy" />
           </div>
           {/* Right: Accordion */}
-          <div style={{flex: '1 1 360px', minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '1.2rem'}}>
+          <div style={{ flex: '1 1 360px', minWidth: '340px', maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
             {faqs.map((faq, index) => (
-              <div key={index} className="accordion-item" style={{background: '#2d2d2d', borderRadius: '12px', boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)', border: '1px solid #444'}}>
-                <div className="accordion-header" style={{padding: '1.2rem 1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}} onClick={() => toggleAccordion(index)}>
-                  <h3 className="accordion-title" style={{color: '#fff', fontSize: '1.15rem', fontWeight: 600, margin: 0}}>{faq.title}</h3>
-                  <span className="accordion-icon" style={{fontSize: '1.5rem', color: '#fff'}}>{openAccordion === index ? '×' : '+'}</span>
+              <div key={index} className="accordion-item" style={{ background: '#2d2d2d', borderRadius: '12px', boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)', border: '1px solid #444' }}>
+                <div className="accordion-header" style={{ padding: '1.2rem 1.5rem', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} onClick={() => toggleAccordion(index)}>
+                  <h3 className="accordion-title" style={{ color: '#fff', fontSize: '1.15rem', fontWeight: 600, margin: 0 }}>{faq.title}</h3>
+                  <span className="accordion-icon" style={{ fontSize: '1.5rem', color: '#fff' }}>{openAccordion === index ? '×' : '+'}</span>
                 </div>
                 {openAccordion === index && (
-                  <div className="accordion-content" style={{padding: '0 1.5rem 1.2rem 1.5rem', color: '#a0a0a0'}}>
+                  <div className="accordion-content" style={{ padding: '0 1.5rem 1.2rem 1.5rem', color: '#a0a0a0' }}>
                     {faq.content}
                   </div>
                 )}

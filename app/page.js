@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Funnkar Design House',
+  description: 'Creative digital agency specializing in branding, product design, graphics, VFX, animation, and web development. Modern, dark, and responsive.'
+};
 export default function Home() {
   return (
     <>

@@ -2445,7 +2445,7 @@ a:hover {
   /* Independent hover position variables */
   --hero-title-hover-transform: translateY(-80px);
   --hero-content-hover-top: 250px;
-  --hero-content-hover-bottom: 250px;
+  --hero-content-hover-bottom: 350px; /* Increased to push up and center description */
   --hero-text-hover-opacity: 1;
   --hero-text-hover-transform: translateY(-20px);
   --hero-image-hover-width: 550px;
@@ -2460,8 +2460,38 @@ a:hover {
   --hero-description-hover-height: 150px;
   --hero-description-hover-top: 350px;
   --hero-description-hover-left: -350px;
-  --hero-description-hover-font-size: 40px;
-  --hero-description-hover-line-height: 50px;
+  --hero-description-hover-font-size: 35px; /* Slightly smaller */
+  --hero-description-hover-line-height: 45px; /* Adjusted */
+  --hero-description-hover-letter-spacing: -0.15px;
+}
+
+.services-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #000;
+  /* Independent hover position variables */
+  --hero-title-hover-transform: translateY(-80px);
+  --hero-content-hover-top: 250px;
+  --hero-content-hover-bottom: 350px; /* Increased to push up and center description */
+  --hero-text-hover-opacity: 1;
+  --hero-text-hover-transform: translateY(-20px);
+  --hero-image-hover-width: 550px;
+  --hero-image-hover-height: 382px;
+  --hero-image-hover-top: -30px;
+  --hero-image-hover-left: 200px;
+  --hero-image-hover-opacity: 1;
+  --hero-video-hover-opacity: 1;
+  --hero-video-hover-transform: scale(1.05);
+  /* Text positioning variables */
+  --hero-description-hover-width: 850px;
+  --hero-description-hover-height: 150px;
+  --hero-description-hover-top: 350px;
+  --hero-description-hover-left: -350px;
+  --hero-description-hover-font-size: 35px; /* Slightly smaller */
+  --hero-description-hover-line-height: 45px; /* Adjusted */
   --hero-description-hover-letter-spacing: -0.15px;
 }
 
@@ -2479,7 +2509,7 @@ a:hover {
 .portfolio-hero-content {
   position: absolute;
   left: -350px;
-  bottom: -250px;
+  bottom: -100px;
   right: 50px;
   z-index: 2;
   display: flex;
@@ -2502,6 +2532,20 @@ a:hover {
   justify-content: flex-end;
   gap: 2rem;
   transition: bottom 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+.services-hero-content {
+  position: absolute;
+  left: 150px;
+  bottom: -250px;
+  right: 50px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 20px;
+  transition: step-end;
 }
 
 
@@ -2631,6 +2675,7 @@ a:hover {
 .portfolio-hero:hover .portfolio-hero-content {
   top: var(--hero-content-hover-top);
   bottom: var(--hero-content-hover-bottom);
+  gap: 40px; /* Double the gap */
 }
 
 .portfolio-hero:hover .portfolio-title {
@@ -2648,6 +2693,7 @@ a:hover {
   letter-spacing: var(--hero-description-hover-letter-spacing);
   width: var(--hero-description-hover-width);
   height: var(--hero-description-hover-height);
+  font-weight: 400; /* Not so bold */
 }
 
 .portfolio-hero:hover .portfolio-hero-image {
@@ -2663,9 +2709,14 @@ a:hover {
   transform: var(--hero-video-hover-transform);
 }
 
+.portfolio-hero:hover .portfolio-hero-demo-video {
+  width: 540px !important; /* Enlarge by 3x */
+}
+
 /* Services Hero Hover Styles */
 .services-hero:hover .services-hero-content {
-  bottom: 190px;
+  bottom: var(--hero-content-hover-bottom);
+  gap: 40px; /* Double the gap */
 }
 
 .services-hero:hover .services-title {
@@ -2683,6 +2734,7 @@ a:hover {
   letter-spacing: var(--hero-description-hover-letter-spacing);
   width: var(--hero-description-hover-width);
   height: var(--hero-description-hover-height);
+  font-weight: 400; /* Not so bold */
 }
 
 .services-hero:hover .services-hero-image {
@@ -2691,6 +2743,10 @@ a:hover {
   top: var(--hero-image-hover-top);
   left: var(--hero-image-hover-left);
   opacity: var(--hero-image-hover-opacity);
+}
+
+.services-hero:hover .portfolio-hero-demo-video {
+  width: 540px !important; /* Enlarge by 3x */
 }
 
 /* Filter Wrapper */
@@ -2828,7 +2884,7 @@ a:hover {
   }
 
   .portfolio-hero-hover-content {
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
   }
 

@@ -15,10 +15,10 @@ export default function Services() {
           <video src="/astro.mp4" alt="Services Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
         </div>
         <div className="hero-landing-overlay">
-          <div className="portfolio-hero-content custom-portfolio-hero-content">
-            <h1 className="portfolio-title">Services</h1>
-            <div className="portfolio-hero-hover-content custom-portfolio-hero-hover-content">
-              <p className="portfolio-hero-description custom-portfolio-hero-description">
+          <div className="services-hero-content custom-portfolio-hero-content">
+            <h1 className="services-title">Services</h1>
+            <div className="services-hero-hover-content custom-portfolio-hero-hover-content">
+              <p className="services-hero-description custom-portfolio-hero-description">
                 From branding and UI/UX design to 3D animation and web development, we offer comprehensive creative services that bring your vision to life. Our multidisciplinary approach ensures every project receives expert attention across all creative domains.
               </p>
               <div className="portfolio-hero-video-wrap">

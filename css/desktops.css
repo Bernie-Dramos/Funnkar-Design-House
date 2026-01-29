@@ -1,0 +1,23 @@
+/* =============================================
+   DESKTOPS STYLES (1400px and up)
+   ============================================= */
+
+@media (min-width: 1400px) {
+  :root {
+    --spacing-md: 3rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 7rem;
+    --header-height: 90px;
+    --container-max-width: 1320px;
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --container-max-width: 1600px;
+  }
+}

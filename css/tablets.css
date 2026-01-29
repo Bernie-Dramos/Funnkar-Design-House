@@ -1,0 +1,60 @@
+/* =============================================
+   TABLETS STYLES (768px and up)
+   ============================================= */
+
+@media (min-width: 576px) {
+  :root {
+    --spacing-md: 2.5rem;
+    --container-max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-lg: 3.5rem;
+    --spacing-xl: 4.5rem;
+    --header-height: 75px;
+    --container-max-width: 720px;
+  }
+
+  .section {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-footer-merged {
+    padding: 5rem 3rem 3.5rem;
+  }
+
+  .cta-footer-title {
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-footer-btn {
+    font-size: 1.05rem;
+    padding: 0.8rem 2.25rem;
+  }
+
+  .cta-footer-bottom {
+    margin: 4rem auto 0;
+    padding: 2.5rem 0;
+    justify-content: space-between;
+  }
+
+  .cta-footer-privacy {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .cta-footer-socials {
+    order: 3;
+    margin-left: auto;
+  }
+}

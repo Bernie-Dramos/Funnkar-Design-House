@@ -1,4 +1,3 @@
-
 # Funnkar Design House – Copilot AI Agent Instructions
 
 ## Project Purpose & Structure
@@ -157,6 +156,16 @@ button { min-width: 44px; min-height: 44px; }
 - ❌ Using overflow: hidden without care on mobile
 - ❌ Forgetting `loading="lazy"` on images
 - ❌ Not testing form interactions on mobile keyboards
+
+---
+
+## 🛑 Copilot Agent Process Rules (MANDATORY)
+
+1. When the user gives a to-do/command, your only objective is to work specifically on that request and touch no other code.
+2. After every request is complete, your description of what you did must mention every single line number that you changed and the file name.
+3. Always ensure when the user gives a request there isn't any existing hard code that blocks the request; prioritize scalable and malleable code.
+
+**You must follow these rules for every request, in addition to all other project instructions above.**
 
 ---
 

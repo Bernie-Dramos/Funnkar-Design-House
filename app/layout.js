@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import './globals.css'
 
@@ -8,10 +8,36 @@ export default function RootLayout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
   const isProjectPage = pathname.startsWith('/project')
+  const [showLogoMenu, setShowLogoMenu] = useState(true)
+  const lastScrollY = useRef(0)
+  const threshold = 2
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen)
   }
+
+  useEffect(() => {
+    // Scroll reveal for logo/menu button
+    function onScroll() {
+      const currentScrollY = window.scrollY
+      if (currentScrollY < 10) {
+        setShowLogoMenu(true)
+      } else if (currentScrollY < lastScrollY.current - threshold) {
+        setShowLogoMenu(true)
+      } else if (currentScrollY > lastScrollY.current + threshold) {
+        setShowLogoMenu(false)
+      }
+      lastScrollY.current = currentScrollY
+    }
+    window.addEventListener('scroll', onScroll)
+    // Initial state
+    if (window.scrollY < 10) {
+      setShowLogoMenu(true)
+    } else {
+      setShowLogoMenu(false)
+    }
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     // Scroll-based Animation for Service Sections on Tablets and Mobile
@@ -156,19 +182,19 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         {/* Favicon for legacy browsers */}
-        <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body>
         {/* Fixed Logo */}
         {!isProjectPage && (
-          <a href="/" className="logo-fixed">
+          <a href="/" className={`logo-fixed${showLogoMenu ? ' show-on-scroll' : ''}`}>
             <img src="/funnkar-logo.png" alt="Funnkar Design House" className="logo-img" loading="lazy" />
           </a>
         )}
 
         {/* Fixed Menu Button */}
         {!isProjectPage && (
-          <button className={`menu-btn-fixed ${menuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-expanded={menuOpen} aria-controls="menuOverlay" aria-label="Toggle menu">
+          <button className={`menu-btn-fixed${showLogoMenu ? ' show-on-scroll' : ''} ${menuOpen ? 'active' : ''}`} onClick={toggleMenu} aria-expanded={menuOpen} aria-controls="menuOverlay" aria-label="Toggle menu">
             <span className="menu-btn-text">Menu</span>
             <span className="menu-btn-close">✕</span>
           </button>

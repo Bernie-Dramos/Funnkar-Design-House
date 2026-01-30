@@ -12,7 +12,7 @@ export default function Services() {
       {/* Hero Section (replicated from portfolio, with hover transition) */}
       <section className="hero-landing services-hero custom-portfolio-hero">
         <div className="hero-background">
-          <video src="/astro.mp4" alt="Services Hero" className="hero-bg-media" loop autoPlay muted playsInline></video>
+          <img src="/phone+laptop-scroll.gif" alt="Hero Background" className="hero-gif" loading="lazy" />
         </div>
         <div className="hero-landing-overlay">
           <div className="services-hero-content custom-portfolio-hero-content">
@@ -429,23 +429,6 @@ export default function Services() {
             <h2 className="cta-footer-title"><span className="cta-footer-bold">Lets talk.</span> We’d love <br />to hear from you</h2>
             <a href="/contact" className="cta-footer-btn">Book A Call</a>
           </div>
-          <div className="cta-footer-bottom">
-            <span className="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
-            <span className="cta-footer-privacy"><a href="/privacy">Privacy & Terms</a></span>
-            <div className="cta-footer-socials">
-              <a href="https://www.linkedin.com/company/funnkar-design-house/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <img src="/linkedin-icon.svg" alt="LinkedIn" className="social-icon" />
-              </a>
-              <a href="https://www.instagram.com/funnkar_design_house?igsh=YnRvNjY5YmtuNHl5" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <img src="/instagram-icon.svg" alt="Instagram" className="social-icon" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* CTA + Footer Merged Section */}
-      <section className="cta-footer-merged">
-        <div className="cta-footer-content">
           <div className="cta-footer-bottom">
             <span className="cta-footer-copyright">Copyright © 2025 Funnkar Design House. All rights reserved</span>
             <span className="cta-footer-privacy"><a href="/privacy">Privacy & Terms</a></span>

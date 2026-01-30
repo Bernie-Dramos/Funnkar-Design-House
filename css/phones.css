@@ -153,6 +153,7 @@ a:hover {
 }
 
 .blur-bg {
+  -webkit-backdrop-filter: blur(var(--blur-amount));
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
 }
@@ -202,7 +203,7 @@ a:hover {
 @media (orientation: landscape) and (max-height: 500px) {
   .hero-landing,
   .section {
-    min-height: auto;
+    min-height: initial;
     height: auto;
   }
 }
@@ -1113,6 +1114,7 @@ a:hover {
   z-index: 1000;
   pointer-events: auto;
   background: rgba(51, 51, 51, 0.75);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   width: clamp(44px, 6vh, 44px);
   height: clamp(44px, 6vh, 44px);
@@ -1147,6 +1149,7 @@ a:hover {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   z-index: 1001;
   display: flex;
@@ -2325,6 +2328,7 @@ a:hover {
   align-items: center;
   padding: 10px;
   background-color: rgba(51, 51, 51, 0.75);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   border-radius: 5.66px;
   gap: 10px;
@@ -2820,7 +2824,7 @@ a:hover {
 
 .filter-group-horizontal {
   gap: 0.5rem;
-  scrollbar-width: none;
+  /* scrollbar-width: none; Not supported in Chrome/Safari/Samsung Internet */
 }
 
 .filter-group-horizontal::-webkit-scrollbar {
@@ -4814,7 +4818,7 @@ video[loading="lazy"] {
     gap: 0.5rem;
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+    /* -webkit-overflow-scrolling: touch; Not supported in most browsers */
     padding: 0.5rem 0;
     margin-bottom: 1rem;
   }

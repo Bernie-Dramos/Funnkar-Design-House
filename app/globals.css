@@ -1,34 +1,9 @@
 /* =============================================
    GLOBAL CSS IMPORTS
-   Mobile-First Responsive Architecture
    ============================================= */
 
-/* 1. Configuration & Variables (Load First) */
-@import '../css/global.css';          /* Base CSS variables */
-@import '../css/responsive.config.css'; /* Responsive design system */
-
-/* 2. Consolidated Responsive Styles (Mobile-First) */
-@import '../css/breakpoints.css';     /* New unified breakpoints */
-
-/* 3. Legacy Device-Specific Styles (To be deprecated) */
-/* These files contain existing styles that will be gradually migrated to breakpoints.css */
+/* Import device-specific styles in mobile-first order */
 @import '../css/phones.css';
 @import '../css/tablets.css';
 @import '../css/laptops.css';
 @import '../css/desktops.css';
-
-/* 4. Component Styles */
-@import '../css/components.css';
-@import '../css/landing.css';
-@import '../css/portfolio-preview.css';
-@import '../css/services-hover.css';
-@import '../css/services-responsive.css';
-@import '../css/project-detail.css';
-@import '../css/contact-responsive.css';
-
-/* 5. Enhancement & Fix Layers */
-@import '../css/responsive-enhancements.css';
-@import '../css/responsive-fix-complete.css';
-@import '../css/mobile-optimization.css';
-@import '../css/mobile-header.css';
-@import '../css/mobile-fix.css';

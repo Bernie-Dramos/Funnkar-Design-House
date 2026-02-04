@@ -1,5 +1,6 @@
 /* =============================================
-   TABLETS STYLES (768px and up)
+   TABLETS STYLES (481px - 768px)
+   Enhanced for iPad, Samsung Tab, and similar devices
    ============================================= */
 
 @media (min-width: 576px) {
@@ -18,7 +19,7 @@
   }
 
   .section {
-    min-height: auto;
+    min-height: 0;
     padding: var(--spacing-lg) 0;
   }
 
@@ -26,6 +27,351 @@
     padding: 0 1.5rem;
   }
 }
+
+/* =============================================
+   TABLET PORTRAIT (481px - 768px) 
+   ============================================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Base Layout */
+  body {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding: 0 clamp(1.25rem, 3vw, 2rem);
+    max-width: 100%;
+  }
+
+  /* Hero Section */
+  .hero-landing {
+    height: clamp(60vh, 70vh, 80vh);
+    min-height: 450px;
+  }
+
+  .hero-landing-bottom {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
+  /* Navigation */
+  .logo-fixed,
+  .menu-btn-fixed {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-fixed {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-btn-fixed {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  /* Menu Overlay */
+  .menu-content {
+    padding: clamp(5rem, 10vh, 7rem) clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .menu-nav a {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+  }
+
+  .menu-nav li {
+    margin: clamp(0.75rem, 2vh, 1.25rem) 0;
+  }
+
+  .menu-secondary {
+    gap: clamp(1rem, 2vw, 2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu-footer {
+    padding: clamp(1.5rem, 3vh, 2.5rem);
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Welcome Section */
+  .welcome-container {
+    margin: 0 auto;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    max-width: 95%;
+  }
+
+  .welcome-title,
+  .welcome-subtitle {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+  }
+
+  .welcome-image-slot {
+    padding: 0 1rem;
+  }
+
+  /* Portfolio Preview Grid */
+  .portfolio-checker-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .portfolio-item {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 500px;
+    height: auto !important;
+  }
+
+  .portfolio-item-1,
+  .portfolio-item-2 {
+    padding: 0.75rem;
+  }
+
+  .portfolio-gif {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* Story/Services Sections */
+  .story-section-desc {
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    padding: clamp(1.25rem, 3vh, 2rem) clamp(1rem, 3vw, 1.5rem);
+    max-width: 95%;
+  }
+
+  .story-section-with-bg,
+  .vfx-section-with-bg,
+  .graphics-section-with-bg,
+  .branding-section-with-bg {
+    height: clamp(350px, 50vh, 550px);
+  }
+
+  /* Service Content */
+  .service-content {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Trusted Partner Section */
+  .trusted-partner-section {
+    min-height: 350px;
+  }
+
+  .trusted-partner-title {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    padding: 0 1rem;
+  }
+
+  .trusted-partner-bg-below {
+    height: clamp(300px, 40vw, 450px);
+  }
+
+  /* Portfolio Grid (Portfolio Page) */
+  .portfolio-section {
+    padding: clamp(3rem, 5vh, 5rem) 0;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding: 0 clamp(1rem, 3vw, 2rem);
+  }
+
+  .portfolio-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .portfolio-card-imagewrap {
+    width: 100%;
+    height: clamp(200px, 40vw, 280px);
+  }
+
+  /* Filter Buttons */
+  .filter-group-horizontal {
+    gap: 0.5rem;
+    padding: 0.4rem;
+    overflow-x: auto;
+  }
+
+  .filter-btn-hero {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    padding: clamp(0.5rem, 1.5vw, 0.65rem) clamp(0.8rem, 2vw, 1.1rem);
+    min-height: 44px;
+    white-space: nowrap;
+  }
+
+  /* Pagination */
+  .portfolio-pagination {
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .pagination-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  /* Contact Page */
+  .contact-hero-container {
+    flex-direction: column;
+    gap: clamp(2rem, 4vh, 3rem);
+    padding: clamp(2rem, 4vh, 3rem) clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: clamp(65px, 9vh, 85px);
+  }
+
+  .contact-hero-left,
+  .contact-form-stack {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 100% !important;
+  }
+
+  .contact-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .contact-form-card {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  /* FAQ Section */
+  .faq-container {
+    flex-direction: column;
+    padding: clamp(2rem, 4vw, 3rem);
+  }
+
+  .faq-intro,
+  .faq-accordion {
+    width: 100%;
+    max-width: none;
+    min-width: 100%;
+  }
+
+  .faq-intro img {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .accordion-title {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+  }
+
+  /* CTA/Footer */
+  .cta-footer-merged {
+    padding: clamp(3.5rem, 6vh, 5rem) clamp(2rem, 4vw, 3rem) clamp(2.5rem, 4vh, 3.5rem);
+  }
+
+  .cta-footer-title {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    text-align: left;
+    margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+  }
+
+  .cta-footer-btn {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    min-height: 48px;
+  }
+
+  .cta-footer-bottom {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: clamp(1.5rem, 3vh, 2.5rem) 0;
+    margin-top: clamp(2.5rem, 4vh, 4rem);
+  }
+
+  /* Project Detail Page */
+  .project-detail-container {
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .project-detail-divider {
+    display: none;
+  }
+
+  .project-info-panel {
+    grid-column: 1 / -1;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e5e5;
+  }
+
+  .project-info-content {
+    max-width: 100%;
+  }
+
+  .thumbnail-item {
+    width: 75px;
+    height: 75px;
+  }
+
+  /* Privacy Modal */
+  .privacy-modal-content {
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    max-height: 85vh;
+  }
+
+  .privacy-modal-title {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  /* Touch Targets */
+  button,
+  .btn,
+  a.btn,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Form Elements */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    min-height: 48px;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* =============================================
+   CTA FOOTER TABLET SPECIFIC
+   ============================================= */
 
 @media (min-width: 768px) {
   .cta-footer-merged {

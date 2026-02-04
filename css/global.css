@@ -153,8 +153,8 @@ a:hover {
 }
 
 .blur-bg {
-  backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
+  backdrop-filter: blur(var(--blur-amount));
 }
 
 /* =============================================
@@ -206,7 +206,7 @@ a:hover {
   }
 
   .section {
-    min-height: auto;
+    min-height: 0;
     padding: var(--spacing-lg) 0;
   }
 
@@ -277,7 +277,7 @@ a:hover {
 @media (orientation: landscape) and (max-height: 500px) {
   .hero-landing,
   .section {
-    min-height: auto;
+    min-height: 0;
     height: auto;
   }
 }

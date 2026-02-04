@@ -151,10 +151,14 @@ video[loading="lazy"] {
     transition-duration: 0.15s !important;
   }
   
-  /* Note: Heavy animations disabled via animation-duration instead of invalid @keyframes none */
+  /* Disable heavy animations on mobile */
+  @keyframes none {
+    0% { transform: none; }
+    100% { transform: none; }
+  }
 }
 
-/* ====================================================================
+/* =============================================
    TOUCH DEVICE OPTIMIZATIONS
    ============================================= */
 

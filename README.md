@@ -107,6 +107,109 @@ All routes/pages are managed in the `app/` directory using Next.js routing conve
 - FAQ accordion section
 - Social media links
 
+## 🗂️ Public Asset Usage Map (Next.js `/public`)
+
+Every media reference in JSX that starts with `/` points to the `/public` folder. Use this list to locate the exact asset and where it appears.
+
+### Global (app/layout.js)
+- `favicon.png` — Site favicon in `<head>`.
+- `funnkar-logo.png` — Fixed logo link shown on all non-project pages.
+
+### Home (app/page.js)
+- `hero-vid.gif` — Hero background GIF.
+- `scroll-icon.png` — Scroll indicator icon in hero.
+- `laptop-roll.gif` — Welcome section large image.
+- `video-editor.gif` — About section mockup image.
+- `Branding.mp4` — Branding & Product Design background video.
+- `Graphics-Design.mp4` — Graphics Design background video.
+- `vfxanime.mp4` — VFX & Animation background video.
+- `04.gif` — Story section background GIF.
+- `phone+laptop-scroll.gif` — Portfolio preview left GIF.
+- `Mob.mp4` — Portfolio preview right video.
+- `ship-vid.gif` — Trusted partner background GIF.
+- `linkedin-icon.svg` — Footer social icon (LinkedIn).
+- `instagram-icon.svg` — Footer social icon (Instagram).
+
+### Services (app/services/page.js)
+- `phone+laptop-scroll.gif` — Services hero background GIF.
+- `video-editor.gif` — Services hero hover demo image.
+- `Branding.mp4` — Branding & Product Design background video.
+- `Graphics-Design.mp4` — Graphics Design background video.
+- `vfxanime.mp4` — VFX & Animation background video.
+- `Animation.mp4` — 3D Design & 3D Modeling background video.
+- `developers-designers.mp4` — Game Development background video.
+- `Web.mp4` — Web Design & Development background video.
+- `UI1-3.png` — Rolling showcase card image (UI/UX).
+- `ID1-3.png` — Rolling showcase card image (Interior Design).
+- `game1-5.png` — Rolling showcase card image (Game Design).
+- `3d2-3.png` — Rolling showcase card image (3D Animation).
+- `vfx3-2.jpg` — Rolling showcase card image (VFX).
+- `web1-3.png` — Rolling showcase card image (Web Development).
+- `linkedin-icon.svg` — Footer social icon (LinkedIn).
+- `instagram-icon.svg` — Footer social icon (Instagram).
+
+### Portfolio (app/portfolio/page.js)
+- `astro.mp4` — Portfolio hero background video.
+- `video-editor.gif` — Portfolio hero hover demo image.
+- `UI1-3.png` — Portfolio card image (UI/UX, page 1).
+- `ID1-3.png` — Portfolio card image (Interior, page 1).
+- `game1-5.png` — Portfolio card image (Game, page 1).
+- `3d2-3.png` — Portfolio card image (3D Animation, page 1).
+- `vfx3-2.jpg` — Portfolio card image (VFX, page 1).
+- `web1-3.png` — Portfolio card image (Web Dev, page 1).
+- `UI2-5.png` — Portfolio card image (UI/UX, page 2).
+- `ID2-3.png` — Portfolio card image (Interior, page 2).
+- `game2-3.png` — Portfolio card image (Game, page 2).
+- `3d1-5.png` — Portfolio card image (3D Animation, page 2).
+- `vfx2-5.png` — Portfolio card image (VFX, page 2).
+- `web2-1.png` — Portfolio card image (Web Dev, page 2).
+- `UI3-1.png` — Portfolio card image (UI/UX, page 3).
+- `ID3-5.png` — Portfolio card image (Interior, page 3).
+- `game3-2.png` — Portfolio card image (Game, page 3).
+- `3d3-1.png` — Portfolio card image (3D Animation, page 3).
+- `vfx1-2.png` — Portfolio card image (VFX, page 3).
+- `web3-2.png` — Portfolio card image (Web Dev, page 3).
+- `arrow-left.svg` — Pagination previous button icon.
+- `arrow-right.svg` — Pagination next button icon.
+- `linkedin-icon.svg` — Footer social icon (LinkedIn).
+- `instagram-icon.svg` — Footer social icon (Instagram).
+
+### Contact (app/contact/page.js)
+- `tommy_cat.png` — FAQ illustration image.
+- `linkedin-icon.svg` — Footer social icon (LinkedIn).
+- `instagram-icon.svg` — Footer social icon (Instagram).
+
+### Project Detail Pages (app/project/1…18/page.js)
+All project pages share the same UI controls, and each page loads its own image set:
+
+**Shared UI controls (all project pages):**
+- `x.svg` — Close button icon.
+- `navigate-left.png` — Previous image button icon.
+- `navigate-right.png` — Next image button icon.
+
+**Project image sets:**
+- Project 1 (Language Learning App): `UI1-1.png` → `UI1-5.png`
+- Project 2 (Residential Interior Design): `ID1-1.png` → `ID1-5.png`
+- Project 3 (Mobile Game Development): `game1-1.png` → `game1-5.png`
+- Project 4 (Architectural Visualization): `3d1-1.png` → `3d1-5.png`
+- Project 5 (Immersive VFX Experience): `vfx1-1.png` → `vfx1-5.png`
+- Project 6 (E-commerce Platform): `web1-1.png` → `web1-5.png`
+- Project 7 (UI/UX Mobile Application): `UI2-1.png` → `UI2-5.png`
+- Project 8 (Commercial Interior Design): `ID2-1.png` → `ID2-5.png`
+- Project 9 (Game Level Design): `game2-1.png` → `game2-5.png`
+- Project 10 (3D Architectural Rendering): `3d2-1.png` → `3d2-5.png`
+- Project 11 (Simulation VFX Project): `vfx2-1.png` → `vfx2-5.png`
+- Project 12 (Web Development Platform): `web2-1.png` → `web2-5.png`
+- Project 13 (Graphics Design Collection): `UI3-1.png` → `UI3-5.png`
+- Project 14 (Office Interior Design): `ID3-1.png` → `ID3-5.png`
+- Project 15 (Mobile Game UI/UX): `game3-1.png` → `game3-5.png`
+- Project 16 (Motion Design Animation): `3d3-1.png` → `3d3-5.png`
+- Project 17 (World-Building VFX): `vfx3-1.jpg` → `vfx3-5.jpg`
+- Project 18 (iOS App Development): `web3-1.png` → `web3-5.png`
+
+**Note (dynamic route fallback):**
+The dynamic route at `app/project/[id]/page.js` uses the same image sets, but project 17 is currently listed as `vfx3-1.png` → `vfx3-5.png`. If you rely on the dynamic route, align the extension with the actual files in `/public`.
+
 ## 🎨 Design System
 
 ### Colors

@@ -155,7 +155,6 @@ a:hover {
 .blur-bg {
   -webkit-backdrop-filter: blur(var(--blur-amount));
   backdrop-filter: blur(var(--blur-amount));
-  -webkit-backdrop-filter: blur(var(--blur-amount));
 }
 
 /* =============================================
@@ -3028,7 +3027,7 @@ a:hover {
 .story-section-with-bg {
   position: relative;
   overflow: hidden;
-  min-height: auto;
+  min-height: 0;
   height: clamp(400px, 60vw, 950px);
   display: flex;
   align-items: flex-start;
@@ -3071,7 +3070,7 @@ a:hover {
 .vfx-section-with-bg {
   position: relative;
   overflow: hidden;
-  min-height: auto;
+  min-height: 0;
   height: clamp(400px, 60vw, 950px);
 }
 
@@ -3112,7 +3111,7 @@ a:hover {
 .graphics-section-with-bg {
   position: relative;
   overflow: hidden;
-  min-height: auto;
+  min-height: 0;
   height: clamp(400px, 60vw, 950px);
 }
 
@@ -3153,7 +3152,7 @@ a:hover {
 .branding-section-with-bg {
   position: relative;
   overflow: hidden;
-  min-height: auto;
+  min-height: 0;
   height: clamp(400px, 60vw, 950px);
 }
 
@@ -3235,7 +3234,7 @@ a:hover {
 .welcome-image-slot {
   width: 100%;
   max-width: 98vw;
-  min-height: auto;
+  min-height: 0;
   margin-top: clamp(1.5rem, 3vh, 2.5rem);
   display: flex;
   align-items: center;
@@ -3623,7 +3622,7 @@ a:hover {
   .web-section,
   .story-section-with-bg,
   .vfx-section-with-bg {
-    min-height: auto;
+    min-height: 0;
     height: clamp(350px, 70vh, 950px);
   }
 
@@ -6578,7 +6577,7 @@ video[loading="lazy"] {
     .project-detail-section {
         padding: 1.5rem 1rem;
         margin-top: 20px;
-        min-height: auto;
+        min-height: 0;
     }
 
     .project-detail-container {

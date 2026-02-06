@@ -403,7 +403,7 @@
 
 .filter-group-horizontal {
   gap: 0.5rem;
-  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .filter-group-horizontal::-webkit-scrollbar {
